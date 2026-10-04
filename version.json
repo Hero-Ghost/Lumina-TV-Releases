@@ -1,0 +1,17 @@
+{
+  "appName": "Lumina TV",
+  "packageName": "com.iptv.tv",
+  "versionCode": 5,
+  "versionName": "1.2.2",
+  "minSdk": 26,
+  "targetSdk": 34,
+  "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
+  "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
+  "publishedAt": "2026-10-04T22:20:00Z",
+  "changelog": [
+    "מספור ערוצים עצמאי מ-1 בכל קטגוריה בנפרד (1..N)",
+    "זיפזופ מעגלי נעול וסגור בתוך הקטגוריה בלבד ללא גלישה לקטגוריות שכנות",
+    "הקלדת ערוצים ישירה בשלט לפי המספר המקומי של הקטגוריה",
+    "שיפור יציבות נגן והתאמה מדויקת לשלט Android TV"
+  ]
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina TV — הורדת האפליקציה הרשמית ל-Android TV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #090b10;
+            --surface: #121620;
+            --surface-hover: #1b2130;
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.35);
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Assistant', sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(59, 130, 246, 0.15), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.1), transparent 40%);
+        }
+        .container {
+            max-width: 680px;
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 44px 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            backdrop-filter: blur(12px);
+        }
+        .icon-box {
+            width: 88px;
+            height: 88px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            box-shadow: 0 12px 30px var(--primary-glow);
+        }
+        h1 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge.highlight {
+            color: #60a5fa;
+            border-color: rgba(96, 165, 250, 0.3);
+            background: rgba(96, 165, 250, 0.08);
+            font-weight: 700;
+        }
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 18px 28px;
+            border-radius: 18px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 25px var(--primary-glow);
+            margin-bottom: 16px;
+        }
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+        .url-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--text-muted);
+            word-break: break-all;
+            margin-top: 10px;
+            user-select: all;
+            direction: ltr;
+        }
+        .features {
+            margin-top: 36px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            text-align: right;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 14px;
+        }
+        .feature-card h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        footer {
+            margin-top: 28px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-box">📺</div>
+        <h1>Lumina TV</h1>
+        <p class="subtitle">נגן IPTV מתקדם למסכי Android TV וסטרימרים, בעל ביצועים מהירים וממשק עברי מלא.</p>
+
+        <div class="badge-row">
+            <span class="badge highlight">גרסה 1.2.2 (Build 5)</span>
+            <span class="badge">אנדרואיד 8.0+</span>
+            <span class="badge">גודל: 9.6 MB</span>
+            <span class="badge">חתום רשמית</span>
+        </div>
+
+        <a class="btn-download" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
+            <span>📥</span>
+            <span>הורד את LuminaTV.apk</span>
+        </a>
+
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">קישור ישיר להתקנה דרך אפליקציית Downloader:</p>
+        <div class="url-box">https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk</div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h4>🔢 מספור מ-1 בכל קטגוריה</h4>
+                <p>הערוצים ממוספרים החל מ-1 ועד סוף הקטגוריה באופן עצמאי ומסודר.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔄 זיפזופ מעגלי סגור</h4>
+                <p>מעבר ערוצים למעלה ולמטה נשאר תמיד בתוך הקטגוריה וללא גלישה לאחרות.</p>
+            </div>
+            <div class="feature-card">
+                <h4>⚡ מותאם לשלט טלוויזיה</h4>
+                <p>ניווט D-pad מלא, הקלדת מספרים ישירה ופתיחת סרגל בכפתור חזור.</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔒 בקרת הורים ו-AFR</h4>
+                <p>נעילת תכנים בקוד PIN והתאמת קצב פריימים חלק ללא גמגומים.</p>
+            </div>
+        </div>
+
+        <footer>
+            ערוץ ההפצה הרשמי ב-GitHub: <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases" target="_blank">Hero-Ghost/Lumina-TV-Releases</a>
+        </footer>
+    </div>
+</body>
+</html>
