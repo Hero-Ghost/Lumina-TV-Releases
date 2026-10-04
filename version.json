@@ -1,17 +1,18 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 7,
-  "versionName": "1.2.4",
+  "versionCode": 8,
+  "versionName": "1.3.0",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-05T00:11:00Z",
+  "publishedAt": "2026-10-05T01:05:00Z",
   "changelog": [
-    "סגירת סרגל הערוצים בלחיצת Back אחת מיידית ללא צורך בלחיצה כפולה",
-    "יירוט חומרתי ישיר של כפתור החזור (Back) מרמת ה-Activity לפני כל שכבת ממשק",
-    "שמירה על חוק 10 לחיצות רצופות לסגירת האפליקציה עם מחוון ספירה בתחתית",
-    "מספור ערוצים עצמאי מ-1 בכל קטגוריה וזיפזופ מעגלי סגור"
+    "תמיכה מלאה בסרטים וסדרות (VOD) למשתמשי Xtream Codes עם ניגון ישיר, בחירת עונות ופרקים",
+    "מסך תנאי שימוש והסכם משתמש מובנה בהפעלה ראשונה ובהגדרות",
+    "ניהול קבוצות מתקדם - הסתרה וסינון קבוצות ערוצים, סרטים וסדרות",
+    "הוספת שורת ערוצים מועדפים ישירות למסך הבית של הטלוויזיה (Android TV Preview Channels)",
+    "סגירת סרגל הערוצים בלחיצת Back אחת וממשק עברית מלא"
   ]
 }
