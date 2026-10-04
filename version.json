@@ -1,19 +1,17 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 6,
-  "versionName": "1.2.3",
+  "versionCode": 7,
+  "versionName": "1.2.4",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-04T23:52:00Z",
+  "publishedAt": "2026-10-05T00:11:00Z",
   "changelog": [
-    "מנגנון יציאה מתקדם: 10 לחיצות רצופות על כפתור חזור (Back) עם פתיחה וסגירה לסירוגין של הסרגל",
-    "איפוס אוטומטי של מונה הלחיצות לאחר 2.5 שניות של חוסר פעילות או בעת פעולה אחרת",
-    "מחוון תחתון אלגנטי המציג את ספירת הלחיצות (X/10) עם הסבר מפורט ופס התקדמות",
-    "מספור ערוצים עצמאי מ-1 בכל קטגוריה בנפרד (1..N)",
-    "זיפזופ מעגלי נעול וסגור בתוך הקטגוריה בלבד ללא גלישה לקטגוריות שכנות",
-    "הצגת מספר גרסה בהגדרות האפליקציה"
+    "סגירת סרגל הערוצים בלחיצת Back אחת מיידית ללא צורך בלחיצה כפולה",
+    "יירוט חומרתי ישיר של כפתור החזור (Back) מרמת ה-Activity לפני כל שכבת ממשק",
+    "שמירה על חוק 10 לחיצות רצופות לסגירת האפליקציה עם מחוון ספירה בתחתית",
+    "מספור ערוצים עצמאי מ-1 בכל קטגוריה וזיפזופ מעגלי סגור"
   ]
 }
