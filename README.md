@@ -17,10 +17,13 @@
 
 <br/>
 
-**קישור ישיר להתקנה מהירה באפליקציית Downloader בטלוויזיה:**
-```text
-https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk
-```
+#### 🚀 התקנה מהירה באפליקציית Downloader בטלוויזיה:
+
+| שיטת הזנה | ערך להזנה בשורת הכתובת |
+| :--- | :--- |
+| **🔢 קוד מהיר (Downloader Code)** | `4933886` |
+| **🔗 קישור מקוצר (Short URL)** | `aftv.news/4933886` |
+| **🌐 קישור ישיר מלא** | `https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk` |
 
 </div>
 
