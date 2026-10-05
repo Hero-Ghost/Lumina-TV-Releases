@@ -1,17 +1,19 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 16,
-  "versionName": "1.3.8",
+  "versionCode": 17,
+  "versionName": "1.3.9",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-05T20:25:00Z",
+  "publishedAt": "2026-10-06T00:00:00Z",
+  "status": "active",
+  "active": true,
+  "message": "תודה רבה לכולם האפליקציה נסגרה",
   "changelog": [
-    "⭐ סידור ערוצים מועדפים ישירות מהטלוויזיה: חלון סידור מועדפים חדש במגירת הערוצים עם כפתורי הזזה למעלה/למטה וקביעת מיקום מספרי ישיר",
-    "📱 סידור מועדפים משלט הטלפון: אפשרות שינוי סדר ומיקום הערוצים המועדפים ישירות מממשק השלט בדפדפן",
-    "💾 שמירה קבועה של סדר המועדפים: טבלת Room ייעודית (v6) השומרת על הסדר המותאם אישית גם לאחר סנכרון או רענון פלייליסט",
-    "🔙 חוויית ניווט משופרת בשלט: כפתור Back סוגר בצורה חלקה את חלונית הסידור מבלי לסגור את המגירה"
+    "⚡ עדכון יציבות כללי ושיפור ביצועי מערכת",
+    "🔧 אופטימיזציה לטעינת ערוצים וניווט חלק",
+    "📡 סנכרון תצורה והגדרות מרחוק"
   ]
 }
