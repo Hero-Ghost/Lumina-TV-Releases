@@ -2,7 +2,7 @@
 
 # 📺 Lumina TV — ערוץ ההפצה ודף ההורדות הרשמי 🚀
 
-[![גרסה אחרונה](https://img.shields.io/badge/%D7%92%D7%A8%D7%A1%D7%94-v1.3.5-blue?style=for-the-badge&logo=android)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
+[![גרסה אחרונה](https://img.shields.io/badge/%D7%92%D7%A8%D7%A1%D7%94-v1.3.6-blue?style=for-the-badge&logo=android)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
 [![סטטוס שחרור](https://img.shields.io/badge/%D7%A1%D7%98%D7%98%D7%95%D7%A1-%D7%99%D7%A6%D7%99%D7%91%20%2F%20%D7%A8%D7%A9%D7%9E%D7%99-success?style=for-the-badge)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
 [![הורדות](https://img.shields.io/github/downloads/Hero-Ghost/Lumina-TV-Releases/total?style=for-the-badge&color=2ea44f&label=%D7%94%D7%95%D7%A8%D7%93%D7%95%D7%AA)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
 
@@ -34,7 +34,7 @@ https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/Lumina
 |---|---|
 | **שם האפליקציה** | Lumina TV |
 | **מזהה חבילה (Package)** | `com.iptv.tv` |
-| **גרסה** | **1.3.5** (Build 13) |
+| **גרסה** | **1.3.6** (Build 14) |
 | **גודל קובץ** | כ-9.7 מגה-בייט (מותאם וחתום רשמית) |
 | **דרישת מערכת מינימלית** | Android 8.0 (Oreo / API 26) ומעלה |
 | **מכשירים נתמכים** | כל מסכי Android TV (Sony Bravia, TCL, Philips, Hisense), סטרימרים (Chromecast with Google TV, Xiaomi TV Box, Shield TV), Amazon Fire TV |
@@ -42,7 +42,11 @@ https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/Lumina
 
 ---
 
-## ✨ תכונות עיקריות בגרסה 1.3.5
+## ✨ תכונות עיקריות בגרסה 1.3.6
+
+- ⚡ **תיקון קריסת זיכרון (OOM) בטעינת חשבונות ענק:** מפענח JsonReader בהזרמה (Streaming) ישירה מהרשת מבלי לצבור עשרות מגה-בייט ב-Heap, ומניעת קריסות גם בחשבונות עם עשרות אלפי ערוצים וסרטים.
+- 💾 **הרחבת מגבלת זיכרון המערכת (largeHeap):** העלאת תקרת זיכרון האפליקציה ב-Android TV ל-512MB לביצועים ויציבות מקסימליים.
+- 🚀 **טעינת ערוצי שידור חי, סרטים וסדרות ישירות ל-SQLite:** כתיבה ישירה במנות אופטימליות ללא תקיעות וללא הקפאת ממשק.
 
 - 🎯 **שימור ונעילת פוקוס בסרגל הערוצים (Channel Drawer):** מניעת איבוד פוקוס בשלט בעת החלפת קטגוריות או הסרת מועדפים, עם שחזור פוקוס אוטומטי לערוץ או לקטגוריה האחרונה.
 - 🎬 **שימור פוקוס בתפריט VOD (סרטים וסדרות):** מנגנון שחזור פוקוס אוטומטי לרשת הפוסטרים במעבר קבוצות ורענון רשימה.
