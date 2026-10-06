@@ -4,7 +4,7 @@
 
 **חוויית צפייה פרימיום, ממשק עברי מלא (RTL), זיפזופ מהיר במיוחד, סידור מועדפים מתקדם ושליטה חכמה מהסמארטפון.**
 
-[![גרסה אחרונה](https://img.shields.io/badge/%D7%92%D7%A8%D7%A1%D7%94-v1.4.1-3b82f6?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
+[![גרסה אחרונה](https://img.shields.io/badge/%D7%92%D7%A8%D7%A1%D7%94-v1.4.2-3b82f6?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
 [![פלטפורמה](https://img.shields.io/badge/%D7%A4%D7%9C%D7%98%D7%A4%D7%95%D7%A8%D7%9E%D7%94-Android%20TV%20%7C%20Google%20TV-green?style=for-the-badge&logo=google)](https://github.com/Hero-Ghost/Lumina-TV-Releases)
 [![שפה](https://img.shields.io/badge/%D7%A9%D7%A4%D7%94-Kotlin%20%7C%20Compose%20TV-7f52ff?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/Hero-Ghost/Lumina-TV-Releases)
 [![סטטוס שחרור](https://img.shields.io/badge/%D7%A1%D7%98%D7%98%D7%95%D7%A1-%D7%A8%D7%A9%D7%9E%D7%99%20%2F%20%D7%99%D7%A6%D7%99%D7%91-10b981?style=for-the-badge)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
@@ -12,7 +12,7 @@
 
 <br/>
 
-### 📥 הורדה מהירה של גרסה 1.4.1:
+### 📥 הורדה מהירה של גרסה 1.4.2:
 [<img src="https://img.shields.io/badge/%D7%94%D7%95%D7%A8%D7%93%20%D7%A2%D7%9B%D7%A9%D7%99%D7%95-LuminaTV.apk-2563eb?style=for-the-badge&logo=android&logoColor=white" height="46">](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk)
 
 <br/>
@@ -97,7 +97,7 @@
 
 | מאפיין | ערך נוכחי |
 |---|---|
-| **גרסה רשמית** | **1.4.1** (Build 19) |
+| **גרסה רשמית** | **1.4.2** (Build 20) |
 | **חבילה (Package ID)** | `com.iptv.tv` |
 | **גודל הקובץ** | כ-9.6MB |
 | **גרסת Android מינימלית** | Android 8.0 Oreo (API 26) |
