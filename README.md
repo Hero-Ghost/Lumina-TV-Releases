@@ -154,9 +154,9 @@ adb install -r -d LuminaTV.apk
 
 ## ⚖️ Legal & DMCA
 
-Lumina TV (Tuvora) functions solely as a client-side interface for browsing metadata and playing media provided by user-installed extensions and/or user-provided sources. It is intended for content the user owns or is otherwise authorized to access.
+Lumina TV functions solely as a client-side interface for browsing metadata and playing media provided by user-installed extensions and/or user-provided sources. It is intended for content the user owns or is otherwise authorized to access.
 
-Lumina TV (Tuvora) is not affiliated with any third-party extensions or content providers. It does not host, store, or distribute any media content.
+Lumina TV is not affiliated with any third-party extensions or content providers. It does not host, store, or distribute any media content.
 
 For comprehensive legal information, including our full disclaimer, third-party extension policy, and DMCA/Copyright information, please visit our [Legal & Disclaimer Page](https://nuvioapp.space/legal).
 
