@@ -1,176 +1,149 @@
-<div dir="rtl" align="center">
+<div dir="rtl">
 
-# 📺 Lumina TV — נגן IPTV מתקדם ל-Android TV 🚀
+<div align="center">
 
-**חוויית צפייה פרימיום, ממשק עברי מלא (RTL), זיפזופ מהיר במיוחד, סידור מועדפים מתקדם ושליטה חכמה מהסמארטפון.**
+# Lumina TV
 
-[![גרסה אחרונה](https://img.shields.io/badge/%D7%92%D7%A8%D7%A1%D7%94-v1.4.3-3b82f6?style=for-the-badge&logo=android&logoColor=white)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
-[![פלטפורמה](https://img.shields.io/badge/%D7%A4%D7%9C%D7%98%D7%A4%D7%95%D7%A8%D7%9E%D7%94-Android%20TV%20%7C%20Google%20TV-green?style=for-the-badge&logo=google)](https://github.com/Hero-Ghost/Lumina-TV-Releases)
-[![שפה](https://img.shields.io/badge/%D7%A9%D7%A4%D7%94-Kotlin%20%7C%20Compose%20TV-7f52ff?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/Hero-Ghost/Lumina-TV-Releases)
-[![סטטוס שחרור](https://img.shields.io/badge/%D7%A1%D7%98%D7%98%D7%95%D7%A1-%D7%A8%D7%A9%D7%9E%D7%99%20%2F%20%D7%99%D7%A6%D7%99%D7%91-10b981?style=for-the-badge)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
-[![הורדות](https://img.shields.io/github/downloads/Hero-Ghost/Lumina-TV-Releases/total?style=for-the-badge&color=f59e0b&label=%D7%94%D7%95%D7%A8%D7%93%D7%95%D7%AA)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
+### נגן IPTV לטלוויזיה, בעברית, שפשוט עובד
 
-<br/>
+ממשק נקי שנבנה לשלט רחוק, מעבר ערוצים מהיר, ספריית סרטים וסדרות, ושלט מהטלפון בלי להתקין כלום.
 
-### 📥 הורדה מהירה של גרסה 1.4.3:
-[<img src="https://img.shields.io/badge/%D7%94%D7%95%D7%A8%D7%93%20%D7%A2%D7%9B%D7%A9%D7%99%D7%95-LuminaTV.apk-2563eb?style=for-the-badge&logo=android&logoColor=white" height="46">](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk)
+[![Version](https://img.shields.io/github/v/release/Hero-Ghost/Lumina-TV-Releases?style=flat-square&label=version&color=3b82f6)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Hero-Ghost/Lumina-TV-Releases/total?style=flat-square&label=downloads&color=10b981)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
+[![Android TV](https://img.shields.io/badge/Android%20TV%208.0+-3ddc84?style=flat-square&logo=android&logoColor=white)](#דרישות-מערכת)
 
-<br/>
+<br>
 
-#### 🚀 התקנה מהירה באפליקציית Downloader בטלוויזיה:
-
-| שיטת הזנה | ערך להזנה בשורת הכתובת |
-| :--- | :--- |
-| **🔢 קוד מהיר (Downloader Code)** | `4933886` |
-| **🔗 קישור מקוצר (Short URL)** | `aftv.news/4933886` |
-| **🌐 קישור ישיר מלא** | `https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk` |
+<a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
+  <img src="https://img.shields.io/badge/להורדת_האפליקציה-LuminaTV.apk-2563eb?style=for-the-badge&logo=android&logoColor=white" alt="הורדה">
+</a>
 
 </div>
 
 ---
 
-<div dir="rtl">
+## התקנה בדקה
 
-## 🌟 למה דווקא Lumina TV?
+הדרך הכי קלה היא דרך אפליקציית **Downloader** בטלוויזיה. מקלידים את הקוד, והשאר קורה לבד.
 
-**Lumina TV** פותחה מהיסוד במיוחד עבור מסכי טלוויזיה חכמים וסטרימרים, תוך שימת דגש על **מהירות שיא**, **חוויית שימוש טבעית בשלט הרחוק**, ועיצוב מודרני מרהיב המותאם לשפה העברית.
-
-| יכולת | Lumina TV ⚡ | אפליקציות IPTV מסורתיות 🐢 |
-|---|---|---|
-| **זיפזופ בין ערוצים** | **מיידי (פחות מ-300ms)** | 2–5 שניות טעינה |
-| **ממשק ועיצוב** | **Jetpack Compose TV מודרני בעברית מלאה** | תפריטי אנדרואיד מיושנים ועמוסים |
-| **סידור מועדפים** | **בטלוויזיה ובטלפון עם שמירה קבועה** | סדר קבוע שלא ניתן לשינוי |
-| **שלט רחוק מהטלפון** | **מובנה דרך דפדפן וסריקת QR (ללא התקנה)** | דורש אפליקציות צד-שלישי מסורבלות |
-| **התאמת תדר מסך (AFR)** | **מובנית אוטומטית (ללא קרטועי 10fps)** | תנועה מקרטעת בשידורי ספורט |
-| **ספריות ענק (VOD)** | **טעינת JsonReader בהזרמה ללא קריסות OOM** | קריסות חוזרות על פלייליסטים גדולים |
-| **עדכונים** | **עדכוני OTA אוטומטיים מתוך הטלוויזיה** | הורדה ידנית מחדש בכל גרסה |
-
----
-
-## 🚀 תכונות עיקריות בפירוט
-
-### 1. 📺 שידור חי וזיפזופ בזק (Live TV)
-- **זיפזופ מעגלי חלק:** מעבר מיידי ורציף בין ערוצים ללא המתנה וללא מסכים שחורים.
-- **מספור עצמאי מ-1 בכל קטגוריה:** בכל קבוצה וערוצי מועדפים, הערוצים ממוספרים בנוחות מ-1 ומעלה.
-- **ניווט מדויק בספרות:** הקשת ספרות בשלט מעבירה בדיוק לערוץ המבוקש בתוך הקבוצה הנוכחית.
-- **קפיצה מיידית ב-OK:** לחיצה על כפתור האמצע קופצת ישירות לערוץ ללא צורך להמתין לסיום טיימר הספרות.
-- **לוח שידורים אלקטרוני (EPG):** הצגת התוכנית הנוכחית והבאה, זמני שידור וסרגל התקדמות.
-
-### 2. ⭐ ניהול וסידור מועדפים מתקדם (Favorites Studio)
-- **סידור ערוצים במסך הטלוויזיה:** ממשק ייעודי לסידור מועדפים המאפשר הזזה מהירה למעלה/למטה או קביעת מיקום מספרי מדויק.
-- **סידור ישיר משלט הטלפון:** שנה את סדר הערוצים המועדפים מתוך דפדפן הסמארטפון בלחיצת כפתור.
-- **שמירה קבועה בבסיס הנתונים (Room v6):** סדר הערוצים נשמר בבסיס הנתונים המקומי ושורד רענונים וסנכרונים מחדש של הפלייליסט.
-- **שורת ערוצי מועדפים במסך הבית:** תמיכה ב-Android TV Channels להצגת הערוצים האהובים עליך ישירות ממסך הבית של הטלוויזיה.
-
-### 3. 🎬 ספריית סרטים וסדרות מלאה (VOD Movies & Series)
-- **קטלוג עשיר למשתמשי Xtream Codes:** חלוקה נוחה לפי ז'אנרים, סרטים וסדרות.
-- **מידע מקיף:** פוסטרים באיכות גבוהה, תקצירים, פירוט עונות ופרקים.
-- **חיפוש חכם ומהיר:** חיפוש מובנה בעברית ובאנגלית בכל הקטלוג.
-- **ניווט חזור חלק:** צפייה בסרט וחזרה לספרייה או לערוצים חיים בצורה טבעית ואינטואיטיבית.
-
-### 4. 📱 שלט חכם מהטלפון (Smart Phone Remote)
-- **חיבור קל בסריקת קוד QR:** אין צורך להתקין אף אפליקציה בטלפון! סורקים את ה-QR שמופיע בטלוויזיה ומתחברים מיידית דרך הדפדפן.
-- **שליטה מלאה בטלוויזיה:** מקשי חיצים (D-Pad), אישור, ווליום, ספרות, השתקה ומקלדת להקלדה קלה.
-- **מיני-נגן בסמארטפון:** סרגל גרירה (Scrub Bar) להתקדמות בסרטים, בחירת שפת שמע (Audio Tracks) וכתוביות (Subtitles).
-- **סידור מועדפים נייד:** אפשרות לשנות את סדר הערוצים המועדפים בנוחות מתוך הטלפון.
-
-### 5. ⚡ מנוע וידאו וביצועי קצה (High-Performance Engine)
-- **Media3 & ExoPlayer:** מנוע הנגינה המתקדם ביותר של Google עם תמיכה מלאה ב-HLS, MPEG-TS, DASH ו-Xtream Streams.
-- **מפענח FFmpeg מובנה:** תמיכה בפסקי קול מורכבים (כולל AC3, EAC3 ועוד).
-- **התאמת קצב רענון (Auto Frame Rate):** מנגנון `FrameRateEstimator` ייחודי למניעת קרטועים והתאמת תדר המסך של הטלוויזיה (24Hz, 50Hz, 60Hz) באופן אוטומטי.
-- **מניעת קריסות OOM בפלייליסטים ענקיים:** שימוש ב-`JsonReader` בהזרמה ישירה ל-SQLite, עם תמיכה ב-`largeHeap` (עד 512MB RAM).
-
-### 6. ⚙️ התאמה אישית והגדרות TV חכמות
-- **הגדרות לפי קטגוריות:** ממשק מרווח ומסודר לשמע, וידאו, תצוגה, הגדרות הפעלה ועדכונים.
-- **סנכרון פלייליסטים אוטומטי:** קביעת תדירות עדכון אוטומטי (יומי, שבועי, חודשי או ידני) ברקע דרך Android WorkManager.
-- **הפעלה בהדלקת מסך (Auto-Wake):** פתיחה אוטומטית של האפליקציה כשהטלוויזיה נדלקת ממצב שינה.
-- **ניהול קבוצות:** הסתרת קבוצות ערוצים או קטגוריות VOD לא רצויות.
-- **מנגנון יציאה מוגן:** חוק 10 לחיצות Back למניעת יציאה בטעות מהאפליקציה עם חיווי מונה על המסך.
-
-### 7. 🔄 עדכונים מהאוויר (OTA Updates)
-- מנגנון בדיקת גרסאות אוטומטי מול GitHub Releases.
-- התראה על גרסה חדשה והורדה והתקנה בלחיצת כפתור ישירות מהטלוויזיה.
-
----
-
-## 📋 מפרט טכני ופרטי גרסה
-
-| מאפיין | ערך נוכחי |
+| | |
 |---|---|
-| **גרסה רשמית** | **1.4.3** (Build 21) |
-| **חבילה (Package ID)** | `com.iptv.tv` |
-| **גודל הקובץ** | כ-9.6MB |
-| **גרסת Android מינימלית** | Android 8.0 Oreo (API 26) |
-| **גרסת Android מומלצת** | Android 11 / 12 / 14 (API 30+) |
-| **ארכיטקטורת מעבד** | Universal (ARMv7, ARM64-v8a, x86, x86_64) |
-| **פורמטים נתמכים** | Xtream Codes API, M3U / M3U8, HLS, TS, MP4, MKV |
-| **מסכים נתמכים** | Android TV, Google TV, Sony BRAVIA, TCL, Hisense, Xiaomi Box, Chromecast TV, Fire TV |
+| **קוד Downloader** | `4933886` |
+| **קישור מקוצר** | `aftv.news/4933886` |
 
----
+<details>
+<summary><b>צעד אחר צעד</b></summary>
+<br>
 
-## 🛠️ מדריך התקנה פשוט ומהיר
+1. מתקינים את **Downloader** (של AFTVnews) מחנות Google Play בטלוויזיה.
+2. פותחים אותה ומאשרים התקנה ממקורות לא ידועים, אם היא מבקשת.
+3. מקלידים בשורת הכתובת `4933886` ולוחצים **Go**.
+4. בסיום ההורדה לוחצים **התקנה**. זהו.
 
-### דרך 1: התקנה מהירה עם אפליקציית Downloader (מומלץ ביותר ⭐)
-1. פתח את **Google Play Store** בטלוויזיה וחפש את האפליקציה **Downloader** (מאת AFTVnews).
-2. התקן והפעל את האפליקציה, ואשר לה הרשאות גישה לקבצים והתקנת אפליקציות לא מוכרות.
-3. בשורת הכתובת ב-Downloader, הקלד את הקישור הישיר:
-   ```text
-   https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk
-   ```
-4. לחץ על **Go** — הקובץ יירד וההתקנה תתחיל מיד. לחץ על **התקן**.
+</details>
 
-### דרך 2: התקנה באמצעות התקן USB (דיסק און קי)
-1. הורד למחשב את הקובץ [LuminaTV.apk](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk).
-2. העתק את הקובץ לדיסק און קי וחבר אותו לשקע ה-USB בטלוויזיה או בסטרימר.
-3. פתח סייר קבצים בטלוויזיה (כגון *X-plore* או *File Commander*), בחר בקובץ והתקן.
+<details>
+<summary><b>התקנה מ-USB</b></summary>
+<br>
 
-### דרך 3: התקנה למפתחים דרך ADB
-חבר את המחשב לטלוויזיה ברשת המקומית והרץ:
+1. מורידים את [LuminaTV.apk](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk) למחשב.
+2. מעתיקים לדיסק און קי ומחברים לטלוויזיה או לסטרימר.
+3. פותחים את הקובץ דרך מנהל קבצים (למשל X-plore) ומתקינים.
+
+</details>
+
+<details>
+<summary><b>התקנה דרך ADB</b></summary>
+<br>
+
+<div dir="ltr">
+
 ```bash
-adb connect <TV_IP_ADDRESS>:5555
-adb install -r -d LuminaTV.apk
+adb connect <TV_IP>:5555
+adb install -r LuminaTV.apk
 ```
 
----
-
-## ❓ שאלות נפוצות (FAQ)
-
-<details>
-<summary><b>האם האפליקציה כוללת ערוצים או פלייליסטים מובנים?</b></summary>
-לא. Lumina TV היא נגן נקי ומתקדם. עליך להזין את פרטי החיבור של ספק ה-IPTV שלך (Xtream Codes API או קישור פלייליסט M3U).
-</details>
-
-<details>
-<summary><b>כיצד מחברים את שלט הטלפון?</b></summary>
-פותחים את האפליקציה בטלוויזיה, ניגשים להגדרות &larr; "שלט בטלפון" או סורקים את קוד ה-QR המוצג. הטלפון יפתח ישירות את ממשק השלט בדפדפן (וודא שהטלפון והטלוויזיה מחוברים לאותה רשת Wi-Fi).
-</details>
-
-<details>
-<summary><b>כיצד מתבצע עדכון גרסה?</b></summary>
-כאשר יוצאת גרסה חדשה, האפליקציה תודיע על כך במסך הטלוויזיה ותאפשר להוריד ולהתקין את העדכון ישירות בלחיצת כפתור.
+</div>
 </details>
 
 ---
 
-## ⚖️ Legal & DMCA
+## מה מחכה לכם בפנים
 
-Lumina TV functions solely as a client-side interface for browsing metadata and playing media provided by user-installed extensions and/or user-provided sources. It is intended for content the user owns or is otherwise authorized to access.
+**📺 שידורים חיים**
+מעבר ערוצים מהיר, בלי מסך שחור באמצע. כל קבוצה ממוספרת מ-1, כך שמקלידים מספר בשלט ומגיעים בדיוק לערוץ. לוח שידורים מראה מה משודר עכשיו ומה הבא בתור.
 
-Lumina TV is not affiliated with any third-party extensions or content providers. It does not host, store, or distribute any media content.
+**⭐ מועדפים בסדר שלכם**
+מסדרים את הערוצים האהובים בדיוק כמו שנוח לכם, מהטלוויזיה או מהטלפון. הסדר נשמר גם אחרי רענון הרשימה, והמועדפים יכולים להופיע ישירות במסך הבית של הטלוויזיה.
 
-For comprehensive legal information, including our full disclaimer, third-party extension policy, and DMCA/Copyright information, please visit our [Legal & Disclaimer Page](https://nuvioapp.space/legal).
+**🎬 סרטים וסדרות**
+ספרייה מסודרת לפי ז'אנרים, עם פוסטרים, תקצירים, עונות ופרקים. החיפוש עובד בעברית ובאנגלית.
+
+**📱 הטלפון הופך לשלט**
+סורקים את קוד ה-QR שעל המסך, והשלט נפתח בדפדפן של הטלפון. בלי אפליקציה נוספת. יש חיצים, מספרים, עוצמת שמע, מקלדת להקלדה נוחה, וסרגל להרצה קדימה ואחורה בסרטים. משם אפשר גם לבחור שפת שמע וכתוביות.
+
+**🎞️ תמונה חלקה**
+האפליקציה מתאימה את קצב הרענון של המסך לשידור, כך שגם משחקי כדורגל רצים חלק, בלי קפיצות. יש תמיכה מלאה ב-AC3 ו-EAC3.
+
+**🧩 יציבה גם עם רשימות ענקיות**
+גם מנויים עם עשרות אלפי ערוצים וסרטים נטענים בלי תקיעות. הרשימה מתעדכנת אוטומטית ברקע, יומי, שבועי או חודשי, לפי הבחירה שלכם.
+
+**🔄 עדכונים מתוך הטלוויזיה**
+כשיוצאת גרסה חדשה, תקבלו הודעה על המסך. לחיצה אחת, והיא מותקנת.
+
+**⚙️ ועוד כמה דברים קטנים**
+פתיחה אוטומטית כשהטלוויזיה נדלקת, הסתרת קבוצות שלא מעניינות אתכם, והגנה מיציאה בטעות מהאפליקציה.
 
 ---
 
-## 💬 תמיכה ומשוב
+## דרישות מערכת
 
-מצאת תקלה? יש לך רעיון לפיצ'ר חדש?
-נשמח לשמוע! פתח [Issue במאגר GitHub](https://github.com/Hero-Ghost/Lumina-TV-Releases/issues).
+| | |
+|---|---|
+| **גרסה נוכחית** | 1.4.3 |
+| **מערכת** | Android 8.0 ומעלה |
+| **מכשירים** | Android TV, Google TV, Fire TV, Chromecast, Xiaomi Mi Box, וטלוויזיות Sony, TCL ו-Hisense |
+| **סוגי מנוי** | Xtream Codes, קישורי M3U / M3U8 |
+| **גודל** | כ-10MB |
 
-<br/>
+---
 
-<div align="center">
-  <sub>פותח באהבה עבור קהילת חובבי הטלוויזיה החכמה 📺</sub>
+## שאלות נפוצות
+
+<details>
+<summary><b>האפליקציה מגיעה עם ערוצים?</b></summary>
+<br>
+לא. Lumina TV הוא נגן בלבד. מזינים את פרטי המנוי שקיבלתם מהספק שלכם (Xtream Codes או קישור M3U), והתוכן שלכם מופיע.
+</details>
+
+<details>
+<summary><b>איך מחברים את הטלפון כשלט?</b></summary>
+<br>
+בהגדרות בוחרים "שלט בטלפון" וסורקים את קוד ה-QR. חשוב שהטלפון והטלוויזיה יהיו מחוברים לאותה רשת Wi-Fi.
+</details>
+
+<details>
+<summary><b>צריך להוריד מחדש כל פעם שיוצאת גרסה?</b></summary>
+<br>
+לא. האפליקציה בודקת לבד אם יש עדכון ומציעה להתקין אותו ישר מהטלוויזיה.
+</details>
+
+<details>
+<summary><b>מצאתי באג / יש לי רעיון</b></summary>
+<br>
+מעולה. פתחו <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">Issue</a> וספרו לנו. כל משוב עוזר לשפר את האפליקציה.
+</details>
+
+---
+
+## הבהרה משפטית
+
+Lumina TV הוא נגן מדיה בלבד. האפליקציה לא כוללת, לא מארחת ולא מפיצה תוכן כלשהו, ואינה קשורה לאף ספק תוכן. השימוש מיועד לתוכן שבבעלותכם או שיש לכם הרשאה חוקית לצפות בו, והאחריות על מקורות התוכן שמוזנים לאפליקציה היא של המשתמש בלבד.
+
+<div dir="ltr">
+
+<sub>Lumina TV is a media player only. It does not include, host or distribute any content and is not affiliated with any content provider. Users are responsible for ensuring they have the right to access any source they add. For copyright concerns, please open an issue in this repository.</sub>
+
 </div>
 
 </div>
