@@ -542,7 +542,7 @@ footer small{color:var(--dim);font-size:13px}
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1593784991251-92ded75ea290?auto=format&fit=crop&w=1800&q=60" alt="" fetchpriority="high"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.4.3 זמינה עכשיו</span></span>
+      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.4.4 זמינה עכשיו</span></span>
       <h1 class="rv d1">הטלוויזיה שלך,<br><span class="grad">במהירות האור.</span></h1>
       <p class="lead rv d2"><b>Lumina TV</b> הוא נגן IPTV פרימיום ל-Android&nbsp;TV ו-Google&nbsp;TV. <b>ממשק בעברית מלאה</b> (וגם באנגלית), מעבר ערוצים <b>מתחת ל-300ms</b>, ספריית סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון, בלי להתקין שום דבר.</p>
       <div class="cta-row rv d3">
@@ -906,8 +906,8 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <h2>כל הפרטים, <span class="grad">בקצרה</span></h2>
     </div>
     <div class="specs rv">
-      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.3 (Build 21)</b></div>
-      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-9.6MB</b></div>
+      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.4 (Build 22)</b></div>
+      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-10.0MB</b></div>
       <div class="spec"><small>Android מינימלי</small><b>Android 8.0 Oreo (API 26)</b></div>
       <div class="spec"><small>מומלץ</small><b>Android 11 / 12 / 14</b></div>
       <div class="spec"><small>ארכיטקטורה</small><b>Universal: ARMv7, ARM64, x86, x86_64</b></div>
@@ -923,13 +923,17 @@ adb install -r -d LuminaTV.apk</div></div></li>
     <div class="changelog rv">
       <div class="cl-head">
         <div><b>מה חדש</b><br><span id="clDate">עודכן לאחרונה</span></div>
-        <span class="ver" id="clVer">גרסה 1.4.3</span>
+        <span class="ver" id="clVer">גרסה 1.4.4</span>
       </div>
       <ul id="clList">
-        <li>⚡ אופטימיזציית ביצועים עמוקה לנגן הווידאו וזיפזופ מהיר בערוצים חיים</li>
-        <li>🛡️ שיפורי יציבות מערכת ומניעת קריסות בטלוויזיות חכמות וסטרימרים</li>
-        <li>📺 התאמה ושיפור חוויית הצפייה במסכי Android TV ו-Google TV</li>
-        <li>🚀 זיכרון מטמון ממוטב וריענון מהיר של תכני VOD וסדרות</li>
+        <li>💎 עיצוב פריזם יוקרתי (Prism Glow & Glassmorphism) עם מתג הפעלה/כיבוי בהגדרות</li>
+        <li>🔄 מנגנון שרתים חלופיים (Server Failover) למעבר אוטומטי במקרה של עומס או ניתוק</li>
+        <li>💬 כתוביות בעברית מושלמות: תיקון כיווניות פיסוק RTL, פענוח קידודים (Mojibake) והורדה מ-OpenSubtitles</li>
+        <li>🎧 סנכרון אודיו חי בנגן (Audio Delay) מ-2000ms- עד 2000ms+ לערוצים וסרטים</li>
+        <li>🎬 העשרת VOD חכמה מ-TMDB: זיהוי שמות משופר, תמונות רקע (Backdrops) ודירוגים</li>
+        <li>🛡️ עקיפת חסימות ספקים עם DNS חכם (Cloudflare / Google DoH)</li>
+        <li>🔔 מעקב פרקים חדשים בסדרות (Series Tracker) ברקע</li>
+        <li>📱 שלט רחוק משודרג מהדפדפן עם משטח מגע ומקלדת מלאה</li>
       </ul>
     </div>
   </div>
@@ -1069,7 +1073,7 @@ var T={
   qrT:'Control from your phone',qrS:['Scan the code with your phone camera','The remote opens in your browser','Control it all: arrows, volume, keyboard'],net:'Network: Home-WiFi',
   connected:'📱 Phone connected',muted:'🔇 Muted',unmuted:'🔊 Sound on',play:'▶ Starting playback',backN:function(n){return 'Press '+n+' more times to exit'}}
 };
-var CHANGELOG=null, VERSION='1.4.3', SIZE='9.6MB';
+var CHANGELOG=null, VERSION='1.4.4', SIZE='10.0MB';
 
 function progInfo(c){
   var now=new Date(), mins=now.getHours()*60+now.getMinutes();

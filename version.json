@@ -1,20 +1,24 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 21,
-  "versionName": "1.4.3",
+  "versionCode": 22,
+  "versionName": "1.4.4",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-06T21:40:00Z",
+  "publishedAt": "2026-10-07T20:00:00Z",
   "status": "active",
   "active": true,
   "message": "",
   "changelog": [
-    "⚡ אופטימיזציית ביצועים עמוקה לנגן הווידאו וזיפזופ מהיר בערוצים חיים",
-    "🛡️ שיפורי יציבות מערכת ומניעת קריסות בטלוויזיות חכמות וסטרימרים",
-    "📺 התאמה ושיפור חוויית הצפייה במסכי Android TV ו-Google TV",
-    "🚀 זיכרון מטמון ממוטב וריענון מהיר של תכני VOD וסדרות"
+    "💎 עיצוב פריזם יוקרתי (Prism Glow & Glassmorphism) עם מתג הפעלה/כיבוי בהגדרות",
+    "🔄 מנגנון שרתים חלופיים (Server Failover) למעבר אוטומטי במקרה של עומס או ניתוק",
+    "💬 כתוביות בעברית מושלמות: תיקון כיווניות פיסוק RTL, פענוח קידודים (Mojibake) והורדה מ-OpenSubtitles",
+    "🎧 סנכרון אודיו חי בנגן (Audio Delay) מ-2000ms- עד 2000ms+ לערוצים וסרטים",
+    "🎬 העשרת VOD חכמה מ-TMDB: זיהוי שמות משופר, תמונות רקע (Backdrops) ודירוגים",
+    "🛡️ עקיפת חסימות ספקים עם DNS חכם (Cloudflare / Google DoH)",
+    "🔔 מעקב פרקים חדשים בסדרות (Series Tracker) ברקע",
+    "📱 שלט רחוק משודרג מהדפדפן עם משטח מגע ומקלדת מלאה"
   ]
 }
