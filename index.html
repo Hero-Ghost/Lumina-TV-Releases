@@ -3,162 +3,1366 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumina TV | הורדה ל-Android TV</title>
-<meta name="description" content="Lumina TV - נגן IPTV בעברית לטלוויזיות Android TV ו-Google TV. מעבר ערוצים מהיר, סרטים וסדרות, ושלט מהטלפון.">
+<title>Lumina TV | נגן IPTV בעברית ל-Android TV</title>
+<meta name="description" content="Lumina TV – נגן IPTV פרימיום ל-Android TV ו-Google TV. ממשק בעברית מלאה וגם באנגלית, זיפזופ מתחת ל-300ms, סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון. התקנה בקוד Downloader 4933886.">
+<meta name="theme-color" content="#07080d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lumina TV – הטלוויזיה שלך, במהירות האור">
+<meta property="og:description" content="נגן IPTV בעברית מלאה ל-Android TV. מתקינים בדקה עם קוד Downloader 4933886.">
+<meta property="og:image" content="https://hero-ghost.github.io/Lumina-TV-Releases/assets/banner.jpg">
+<meta property="og:url" content="https://hero-ghost.github.io/Lumina-TV-Releases/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Rubik:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #0a0c12;
-    --card: #11151e;
-    --line: rgba(255,255,255,.08);
-    --text: #f1f5f9;
-    --muted: #94a3b8;
-    --blue: #3b82f6;
-    --blue-dark: #2563eb;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Heebo', system-ui, sans-serif;
-    background: var(--bg);
-    background-image: radial-gradient(ellipse at 50% -10%, rgba(59,130,246,.18), transparent 60%);
-    color: var(--text);
-    min-height: 100vh;
-    padding: 48px 16px;
-    line-height: 1.6;
-  }
-  main { max-width: 640px; margin: 0 auto; }
+:root{
+  --bg:#07080d; --bg2:#0b0d14; --surface:#10131c; --surface2:#151926;
+  --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --text:#f4f6fb; --muted:#9aa3b5; --dim:#6b7385;
+  --blue:#3b82f6; --violet:#8b5cf6; --pink:#ec4899; --green:#22c55e; --amber:#f59e0b; --cyan:#22d3ee;
+  --prism:linear-gradient(90deg,#ff3d81,#ff8a3d,#ffd23d,#3dffa8,#3dc8ff,#8a5bff);
+  --radius:20px;
+  --display:'Rubik','Heebo',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Heebo',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.grad{background:var(--prism);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:prismShift 8s linear infinite}
+@keyframes prismShift{to{background-position:200% 0}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#c7d2fe;letter-spacing:.3px;padding:6px 14px;border-radius:999px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+section{position:relative}
+.sec{padding:110px 0}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 56px}
+.sec-head h2{font-family:var(--display);font-size:clamp(30px,4.4vw,50px);font-weight:800;line-height:1.15;letter-spacing:-.5px;margin:14px 0 14px}
+.sec-head p{color:var(--muted);font-size:clamp(16px,1.6vw,19px)}
 
-  header { text-align: center; margin-bottom: 36px; }
-  .logo {
-    width: 80px; height: 80px; margin: 0 auto 20px;
-    border-radius: 22px;
-    background: linear-gradient(135deg, #1e3a8a, var(--blue));
-    display: grid; place-items: center; font-size: 40px;
-    box-shadow: 0 12px 32px rgba(59,130,246,.3);
-  }
-  h1 { font-size: 40px; font-weight: 800; letter-spacing: -.5px; }
-  .tagline { color: var(--muted); font-size: 18px; margin-top: 6px; }
-  .meta { margin-top: 14px; font-size: 14px; color: var(--muted); }
-  .meta b { color: #93c5fd; font-weight: 500; }
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:17px;padding:16px 26px;border-radius:14px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;box-shadow:0 10px 30px -8px rgba(99,102,241,.7),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(99,102,241,.85),inset 0 1px 0 rgba(255,255,255,.2)}
+.btn-ghost{background:rgba(255,255,255,.05);border:1px solid var(--line2);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.09)}
+.btn-glow{position:relative;isolation:isolate}
+.btn-glow::before{content:"";position:absolute;inset:-2px;border-radius:16px;background:var(--prism);background-size:200% 100%;z-index:-1;filter:blur(14px);opacity:.55;animation:prismShift 6s linear infinite}
 
-  .download {
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    background: var(--blue-dark); color: #fff; text-decoration: none;
-    font-size: 19px; font-weight: 700;
-    padding: 17px; border-radius: 14px;
-    transition: background .15s, transform .15s;
-  }
-  .download:hover { background: var(--blue); transform: translateY(-1px); }
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(7,8,13,.78);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.3px}
+.brand img{width:38px;height:38px;border-radius:10px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav .btn{padding:10px 18px;font-size:15px;border-radius:12px}
+@media (max-width:860px){.nav-links{display:none}}
 
-  .card {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 18px; padding: 24px; margin-top: 16px;
-  }
-  .card h2 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-  .card .hint { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+/* ---------- hero ---------- */
+.hero{min-height:100vh;padding:130px 0 80px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;filter:saturate(1.2) blur(2px);transform:scale(1.08)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(900px 500px at 20% 30%,rgba(139,92,246,.28),transparent 60%),
+  radial-gradient(700px 500px at 85% 70%,rgba(59,130,246,.22),transparent 60%),
+  radial-gradient(600px 400px at 50% 110%,rgba(236,72,153,.18),transparent 60%),
+  linear-gradient(180deg,rgba(7,8,13,.35),var(--bg) 92%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--display);font-size:clamp(40px,6vw,76px);line-height:1.05;font-weight:900;letter-spacing:-1.5px;margin:22px 0 22px}
+.hero .lead{font-size:clamp(17px,1.7vw,20px);color:#c3cad8;max-width:560px}
+.hero .lead b{color:#fff;font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+.code-chip{display:inline-flex;align-items:center;gap:12px;padding:10px 12px 10px 18px;border-radius:14px;background:rgba(255,255,255,.04);border:1px dashed rgba(147,197,253,.45);cursor:pointer;transition:border-color .2s,background .2s}
+.code-chip:hover{background:rgba(59,130,246,.08);border-color:#93c5fd}
+.code-chip small{display:block;font-size:12px;color:var(--muted);line-height:1.2}
+.code-chip strong{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:22px;letter-spacing:3px;color:#93c5fd;direction:ltr;display:block;line-height:1.3}
+.code-chip .cp{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(59,130,246,.15)}
+.code-chip .cp svg{width:18px;height:18px}
+.code-chip.copied{border-color:var(--green);border-style:solid}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:30px;color:var(--muted);font-size:14px}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust svg{width:16px;height:16px;color:var(--green)}
 
-  .codes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .code {
-    background: rgba(0,0,0,.35); border: 1px solid var(--line);
-    border-radius: 12px; padding: 12px 14px; cursor: pointer;
-    text-align: center; transition: border-color .15s;
-  }
-  .code:hover { border-color: rgba(59,130,246,.5); }
-  .code small { display: block; color: var(--muted); font-size: 12px; }
-  .code span { font-family: ui-monospace, monospace; font-size: 20px; font-weight: 700; color: #93c5fd; direction: ltr; display: inline-block; }
-  .code.copied { border-color: #10b981; }
+/* ---------- TV device ---------- */
+.tv-stage{position:relative;perspective:1600px}
+.tv{position:relative;border-radius:16px;padding:10px;background:linear-gradient(160deg,#1d2130,#0b0d13 60%);box-shadow:0 0 0 1px rgba(255,255,255,.06),0 50px 100px -30px rgba(0,0,0,.9),0 0 140px -30px rgba(139,92,246,.55)}
+.tv::before{content:"";position:absolute;inset:-1px;border-radius:17px;padding:1px;background:var(--prism);background-size:300% 100%;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;animation:prismShift 10s linear infinite;pointer-events:none}
+.tv-stand{width:34%;height:16px;margin:0 auto;background:linear-gradient(180deg,#151824,#090a0f);border-radius:0 0 12px 12px;position:relative}
+.tv-stand::after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);width:140%;height:6px;border-radius:6px;background:#0e1018;box-shadow:0 20px 40px 10px rgba(0,0,0,.6)}
+.tv-glow{position:absolute;inset:8% 6% -6%;background:var(--prism);filter:blur(70px);opacity:.22;z-index:-1;border-radius:50%}
+.hero .tv{transform:rotateY(8deg) rotateX(2deg);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.hero .tv-stage:hover .tv{transform:rotateY(0) rotateX(0)}
+.screen{position:relative;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#000;container-type:inline-size;isolation:isolate;font-family:'Heebo',sans-serif;color:#fff}
+.screen .fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.screen-glare{position:absolute;inset:0;z-index:30;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,0) 35%)}
+.sv{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.sv.active{opacity:1;pointer-events:auto}
 
-  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
-  .feature { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
-  .feature h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-  .feature p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+/* in-screen primitives (sized with container units) */
+.vid{position:absolute;inset:0;background:#05060a}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s;animation:kenburns 18s ease-in-out infinite alternate}
+.vid img.on{opacity:1}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12) translate(-1.5%,1%)}}
+.imgfail{background:linear-gradient(135deg,#1e1b4b,#4c1d95 40%,#0f172a)!important}
+.shade-b{position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(0deg,rgba(0,0,0,.88),transparent)}
+.shade-t{position:absolute;inset:0 0 auto 0;height:35%;background:linear-gradient(180deg,rgba(0,0,0,.7),transparent)}
+.osd-top{position:absolute;top:4cqw;inset-inline:4.5cqw;display:flex;justify-content:space-between;align-items:flex-start}
+.chb{display:flex;align-items:center;gap:1.6cqw}
+.chnum{font-family:var(--display);font-weight:800;font-size:4.6cqw;line-height:1;min-width:6cqw;text-align:center}
+.chlogo{width:6.4cqw;height:6.4cqw;border-radius:1.4cqw;display:grid;place-items:center;font-weight:900;font-size:2.6cqw;box-shadow:0 .4cqw 1.4cqw rgba(0,0,0,.5)}
+.chname{font-weight:800;font-size:2.7cqw;line-height:1.2}
+.chmeta{display:flex;gap:.8cqw;align-items:center;margin-top:.5cqw;font-size:1.45cqw;color:#cbd5e1}
+.live{background:#ef4444;color:#fff;font-weight:800;padding:.15cqw .8cqw;border-radius:.5cqw;font-size:1.25cqw;letter-spacing:.1cqw;display:inline-flex;align-items:center;gap:.5cqw}
+.live::before{content:"";width:.8cqw;height:.8cqw;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.tag{border:1px solid rgba(255,255,255,.35);padding:0 .7cqw;border-radius:.5cqw;font-size:1.2cqw;font-weight:700}
+.clock{font-family:var(--display);font-weight:700;font-size:3cqw;text-shadow:0 .3cqw 1cqw rgba(0,0,0,.6);direction:ltr}
+.osd-bot{position:absolute;bottom:3.6cqw;inset-inline:4.5cqw}
+.prow{display:flex;align-items:center;gap:1.4cqw;font-size:1.9cqw}
+.plbl{font-size:1.25cqw;font-weight:800;padding:.2cqw .9cqw;border-radius:.6cqw;background:rgba(59,130,246,.9)}
+.plbl.next{background:rgba(255,255,255,.16)}
+.ptitle{font-weight:700}
+.pleft{margin-inline-start:auto;color:#cbd5e1;font-size:1.5cqw}
+.pbar{height:.7cqw;border-radius:1cqw;background:rgba(255,255,255,.18);margin:1.1cqw 0 1.3cqw;overflow:hidden}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#a78bfa);border-radius:inherit;transition:width .6s}
+.prow.next{font-size:1.6cqw;color:#cbd5e1}
+.hints{display:flex;gap:2.2cqw;margin-top:1.8cqw;font-size:1.3cqw;color:#94a3b8}
+.hints kbd{font-family:inherit;font-weight:700;color:#e2e8f0;border:1px solid rgba(255,255,255,.25);border-radius:.5cqw;padding:0 .6cqw;margin-inline-end:.5cqw;background:rgba(255,255,255,.06)}
+.numovl{position:absolute;top:4cqw;inset-inline-start:50%;transform:translateX(50%);font-family:var(--display);font-weight:900;font-size:7cqw;line-height:1;padding:1cqw 2.4cqw;border-radius:1.6cqw;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(6px);opacity:0;transition:opacity .2s;direction:ltr}
+[dir=ltr] .numovl{transform:translateX(-50%)}
+.numovl.on{opacity:1}
+.zapms{position:absolute;bottom:3.6cqw;inset-inline-end:4.5cqw;transform:translateY(-14cqw);font-size:1.3cqw;font-weight:700;color:#86efac;background:rgba(0,0,0,.55);border:1px solid rgba(134,239,172,.35);padding:.3cqw 1cqw;border-radius:1cqw;opacity:0;transition:opacity .3s;direction:ltr}
+.zapms.on{opacity:1}
+.flash{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.flash.go{animation:flash .32s ease}
+@keyframes flash{0%{opacity:0}35%{opacity:.85}100%{opacity:0}}
 
-  .legal { margin-top: 28px; font-size: 12.5px; color: var(--muted); line-height: 1.7; }
-  footer { text-align: center; margin-top: 28px; font-size: 13px; color: var(--muted); }
-  footer a { color: #93c5fd; text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
+/* drawer + rail */
+.dim{position:absolute;inset:0;background:linear-gradient(270deg,rgba(5,6,10,.97) 0%,rgba(5,6,10,.92) 55%,rgba(5,6,10,.35) 100%)}
+[dir=ltr] .dim{background:linear-gradient(90deg,rgba(5,6,10,.97) 0%,rgba(5,6,10,.92) 55%,rgba(5,6,10,.35) 100%)}
+.ui{position:absolute;inset:0;display:flex;padding:3cqw 2.4cqw;gap:1.8cqw}
+.rail{width:6.4cqw;display:flex;flex-direction:column;align-items:center;gap:1.3cqw;padding:1.2cqw 0;border-radius:2cqw;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.rail .ri{width:4.4cqw;height:4.4cqw;border-radius:1.2cqw;display:grid;place-items:center;color:#94a3b8}
+.rail .ri svg{width:2.3cqw;height:2.3cqw}
+.rail .ri.on{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 .5cqw 1.6cqw rgba(99,102,241,.5)}
+.rail .logo{width:4.4cqw;height:4.4cqw;border-radius:1.1cqw;margin-bottom:.6cqw}
+.cats{width:19cqw;display:flex;flex-direction:column;gap:.5cqw}
+.cats h4{font-size:1.35cqw;color:#64748b;font-weight:700;margin:0 0 .8cqw;padding-inline-start:1cqw}
+.cat{font-size:1.65cqw;padding:.9cqw 1.3cqw;border-radius:1cqw;color:#cbd5e1;display:flex;justify-content:space-between;align-items:center}
+.cat small{color:#64748b;font-size:1.3cqw}
+.cat.on{background:rgba(59,130,246,.18);color:#fff;font-weight:700}
+.list{flex:1;display:flex;flex-direction:column;gap:.7cqw;min-width:0}
+.list h4{font-size:1.35cqw;color:#64748b;font-weight:700;margin:0 0 .4cqw}
+.chrow{display:flex;align-items:center;gap:1.3cqw;padding:.9cqw 1.3cqw;border-radius:1.2cqw;background:rgba(255,255,255,.035);border:.2cqw solid transparent;transition:all .25s}
+.chrow .n{font-family:var(--display);font-weight:800;font-size:1.8cqw;width:3cqw;text-align:center;color:#94a3b8}
+.chrow .chlogo{width:4.2cqw;height:4.2cqw;font-size:1.7cqw;border-radius:1cqw}
+.chrow .t{flex:1;min-width:0}
+.chrow .t b{display:block;font-size:1.75cqw;line-height:1.25}
+.chrow .t span{display:block;font-size:1.3cqw;color:#94a3b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chrow .mini{height:.4cqw;border-radius:1cqw;background:rgba(255,255,255,.12);margin-top:.5cqw;overflow:hidden}
+.chrow .mini i{display:block;height:100%;background:#60a5fa}
+.chrow .ic{color:#fbbf24;width:2cqw;height:2cqw}
+.chrow.focus{background:linear-gradient(135deg,rgba(59,130,246,.95),rgba(139,92,246,.95));border-color:#fff;transform:scale(1.03);box-shadow:0 1cqw 3cqw rgba(79,70,229,.45)}
+.chrow.focus .n,.chrow.focus .t span{color:#e0e7ff}
+.chrow.focus .mini{background:rgba(255,255,255,.3)}.chrow.focus .mini i{background:#fff}
+.eq{display:inline-flex;gap:.25cqw;align-items:flex-end;height:1.6cqw}
+.eq i{width:.4cqw;background:#4ade80;animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:30%}50%{height:100%}}
 
-  @media (max-width: 520px) {
-    body { padding: 32px 16px; }
-    h1 { font-size: 32px; }
-    .codes, .features { grid-template-columns: 1fr; }
-  }
+/* vod */
+.vod{position:absolute;inset:0;background:radial-gradient(80cqw 50cqw at 80% -10%,rgba(139,92,246,.25),transparent 60%),#080a11}
+.vod-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:1.4cqw}
+.vod-top{display:flex;align-items:center;gap:1.4cqw}
+.seg{display:flex;background:rgba(255,255,255,.06);border-radius:1.2cqw;padding:.4cqw}
+.seg span{font-size:1.5cqw;padding:.6cqw 1.8cqw;border-radius:.9cqw;color:#94a3b8;font-weight:600}
+.seg span.on{background:#fff;color:#0b0d14}
+.search{flex:1;display:flex;align-items:center;gap:1cqw;font-size:1.45cqw;color:#64748b;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:1.2cqw;padding:.8cqw 1.4cqw}
+.search svg{width:1.8cqw;height:1.8cqw}
+.search .mic{margin-inline-start:auto;color:#a78bfa}
+.posters{display:grid;grid-template-columns:repeat(5,1fr);gap:1.3cqw}
+.poster{position:relative;aspect-ratio:2/3;border-radius:1.2cqw;overflow:hidden;background:#1e1b4b;transition:transform .3s,box-shadow .3s;border:.2cqw solid transparent}
+.poster img{width:100%;height:100%;object-fit:cover}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 55%)}
+.poster .pt{position:absolute;inset:auto 0 0 0;padding:1cqw;z-index:1}
+.poster .pt b{display:block;font-size:1.45cqw;line-height:1.2}
+.poster .pt span{font-size:1.1cqw;color:#cbd5e1}
+.poster .badge{position:absolute;top:.8cqw;inset-inline-start:.8cqw;z-index:1;font-size:1cqw;font-weight:800;background:rgba(0,0,0,.6);padding:.2cqw .7cqw;border-radius:.6cqw;color:#fde68a}
+.poster.focus{transform:scale(1.08);border-color:#fff;box-shadow:0 1.4cqw 3.6cqw rgba(0,0,0,.6),0 0 0 .4cqw rgba(139,92,246,.6);z-index:2}
+.vod-sub{font-size:1.4cqw;color:#94a3b8;font-weight:700}
+
+/* epg */
+.epg{position:absolute;inset:0;background:#080a11;display:flex;flex-direction:column;padding:2.6cqw 3cqw 0}
+.epg-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4cqw}
+.epg-head h3{font-family:var(--display);font-size:2.6cqw;font-weight:800}
+.epg-head span{font-size:1.4cqw;color:#94a3b8}
+.epg-times,.epg-row{display:grid;grid-template-columns:17cqw 1fr;gap:.8cqw}
+.epg-times .tl{position:relative;height:2.6cqw;font-size:1.3cqw;color:#94a3b8}
+.epg-times .tl span{position:absolute;top:0;padding-inline-start:.6cqw;border-inline-start:1px solid rgba(255,255,255,.18);line-height:1.4}
+.epg-row{margin-bottom:.8cqw}
+.epg-ch{display:flex;align-items:center;gap:1cqw;font-size:1.5cqw;font-weight:700;background:rgba(255,255,255,.04);border-radius:1cqw;padding:.7cqw 1cqw;white-space:nowrap;overflow:hidden}
+.epg-ch .chlogo{width:3.4cqw;height:3.4cqw;font-size:1.4cqw;border-radius:.8cqw;flex:none}
+.epg-grid{position:relative}
+.epg-tr{position:relative;height:5.2cqw}
+.prog{position:absolute;top:0;bottom:0;border-radius:1cqw;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);padding:.6cqw 1cqw;overflow:hidden;transition:background .25s}
+.prog b{display:block;font-size:1.35cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.prog span{font-size:1.1cqw;color:#94a3b8;direction:ltr;display:inline-block}
+.prog.past{opacity:.55}
+.prog.now{background:rgba(59,130,246,.18);border-color:rgba(96,165,250,.4)}
+.prog.focus{background:linear-gradient(135deg,#3b82f6,#8b5cf6);border:.2cqw solid #fff}
+.prog.focus span{color:#e0e7ff}
+.nowline{position:absolute;top:1.6cqw;bottom:0;width:.25cqw;background:#ef4444;z-index:3;box-shadow:0 0 1cqw #ef4444}
+.nowline::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:1.2cqw;height:1.2cqw;border-radius:50%;background:#ef4444}
+.epg-detail{margin-top:auto;margin-inline:-3cqw;padding:1.8cqw 3cqw;background:linear-gradient(0deg,#0f1322,#0b0e19);border-top:1px solid rgba(255,255,255,.08);display:flex;gap:2cqw;align-items:center}
+.epg-detail img{width:14cqw;aspect-ratio:16/9;object-fit:cover;border-radius:1cqw}
+.epg-detail b{font-size:1.9cqw;display:block}
+.epg-detail p{font-size:1.35cqw;color:#94a3b8;margin-top:.3cqw}
+.pill{display:inline-flex;align-items:center;gap:.6cqw;font-size:1.2cqw;font-weight:700;padding:.3cqw 1cqw;border-radius:2cqw;background:rgba(34,197,94,.15);color:#86efac;margin-top:.6cqw}
+
+/* favorites studio */
+.studio{position:absolute;inset:0;background:radial-gradient(60cqw 40cqw at 10% 110%,rgba(236,72,153,.2),transparent 60%),#080a11;display:flex;padding:3cqw;gap:3cqw}
+.studio-l{flex:1;display:flex;flex-direction:column;gap:.8cqw}
+.studio-l h3{font-family:var(--display);font-size:2.6cqw;font-weight:800;margin-bottom:.2cqw}
+.studio-l p{font-size:1.4cqw;color:#94a3b8;margin-bottom:.8cqw}
+.studio-list{position:relative;flex:1}
+.studio-list .chrow{position:absolute;inset-inline:0;height:5.4cqw;transition:top .45s cubic-bezier(.3,.9,.3,1),background .25s,transform .25s}
+.studio-r{width:28cqw;display:flex;flex-direction:column;gap:1.2cqw;justify-content:center}
+.sbtn{display:flex;align-items:center;gap:1.2cqw;font-size:1.6cqw;font-weight:700;padding:1.3cqw 1.6cqw;border-radius:1.2cqw;background:rgba(255,255,255,.05);border:.2cqw solid rgba(255,255,255,.08)}
+.sbtn.focus{background:#fff;color:#0b0d14;border-color:#fff}
+.sbtn kbd{font-family:inherit;font-size:1.3cqw;margin-inline-start:auto;opacity:.7}
+.saved{font-size:1.3cqw;color:#86efac;display:flex;align-items:center;gap:.6cqw}
+
+/* settings */
+.settings{position:absolute;inset:0;background:#080a11}
+.set-main{flex:1;display:flex;flex-direction:column;gap:.9cqw}
+.set-main h3{font-family:var(--display);font-size:2.4cqw;font-weight:800;margin-bottom:.6cqw}
+.opt{display:flex;align-items:center;gap:1.4cqw;padding:1.15cqw 1.6cqw;border-radius:1.2cqw;background:rgba(255,255,255,.04);border:.2cqw solid transparent;transition:all .25s}
+.opt .ot{flex:1}
+.opt .ot b{display:block;font-size:1.65cqw}
+.opt .ot span{font-size:1.25cqw;color:#94a3b8}
+.opt .val{font-size:1.45cqw;font-weight:700;color:#a5b4fc}
+.tgl{width:5cqw;height:2.7cqw;border-radius:2cqw;background:rgba(255,255,255,.18);position:relative;transition:background .25s;flex:none}
+.tgl::after{content:"";position:absolute;top:.35cqw;inset-inline-start:.35cqw;width:2cqw;height:2cqw;border-radius:50%;background:#fff;transition:inset-inline-start .25s}
+.tgl.on{background:#22c55e}
+.tgl.on::after{inset-inline-start:2.65cqw}
+.opt.focus{background:rgba(59,130,246,.2);border-color:#fff}
+
+/* update dialog */
+.dlg-wrap{position:absolute;inset:0;display:grid;place-items:center;background:rgba(3,4,8,.62);backdrop-filter:blur(.6cqw)}
+.dlg{width:56cqw;border-radius:2.4cqw;background:linear-gradient(160deg,#141a2c,#0b0e18);border:1px solid rgba(255,255,255,.12);padding:3cqw;box-shadow:0 3cqw 8cqw rgba(0,0,0,.7)}
+.dlg-h{display:flex;align-items:center;gap:1.8cqw;margin-bottom:1.8cqw}
+.dlg-h img{width:7cqw;height:7cqw;border-radius:1.6cqw}
+.dlg-h b{font-family:var(--display);font-size:2.6cqw;display:block;line-height:1.2}
+.dlg-h span{font-size:1.45cqw;color:#94a3b8}
+.dlg ul{list-style:none;display:flex;flex-direction:column;gap:.7cqw;margin-bottom:2cqw}
+.dlg li{font-size:1.45cqw;color:#cbd5e1}
+.dlg-bar{height:1cqw;border-radius:1cqw;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:1.8cqw}
+.dlg-bar i{display:block;height:100%;width:0;background:var(--prism);background-size:200% 100%;animation:prismShift 3s linear infinite}
+.dlg-btns{display:flex;gap:1.2cqw}
+.dlg-btns span{font-size:1.6cqw;font-weight:800;padding:1.1cqw 2.4cqw;border-radius:1.2cqw;background:rgba(255,255,255,.08)}
+.dlg-btns span.focus{background:#fff;color:#0b0d14}
+.dlg-status{font-size:1.4cqw;color:#86efac;margin-inline-start:auto;align-self:center}
+
+/* qr screen */
+.qrs{position:absolute;inset:0;background:radial-gradient(70cqw 50cqw at 50% 120%,rgba(59,130,246,.3),transparent 60%),#080a11;display:flex;align-items:center;justify-content:center;gap:5cqw;padding:4cqw}
+.qrs .qrbox{width:26cqw;height:26cqw;background:#fff;border-radius:2cqw;padding:1.6cqw;box-shadow:0 0 0 .6cqw rgba(255,255,255,.08),0 2cqw 5cqw rgba(59,130,246,.35)}
+.qrs canvas{width:100%;height:100%;image-rendering:pixelated}
+.qrs h3{font-family:var(--display);font-size:3.4cqw;font-weight:800;line-height:1.2;margin-bottom:1.2cqw}
+.qrs ol{font-size:1.65cqw;color:#cbd5e1;padding-inline-start:2.4cqw;display:flex;flex-direction:column;gap:.6cqw}
+.qrs .net{margin-top:1.8cqw;font-size:1.35cqw;color:#94a3b8;display:flex;gap:.8cqw;align-items:center}
+.toast{position:absolute;top:4cqw;left:50%;transform:translate(-50%,-150%);background:rgba(15,19,34,.95);border:1px solid rgba(134,239,172,.4);color:#bbf7d0;font-size:1.7cqw;font-weight:700;padding:1cqw 2.4cqw;border-radius:3cqw;display:flex;align-items:center;gap:1cqw;transition:transform .4s cubic-bezier(.3,1.4,.5,1);z-index:20;white-space:nowrap}
+.toast.on{transform:translate(-50%,0)}
+.volovl{position:absolute;inset-inline-end:4cqw;top:50%;transform:translateY(-50%);width:4cqw;height:30cqw;border-radius:3cqw;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.15);display:flex;flex-direction:column-reverse;padding:.6cqw;opacity:0;transition:opacity .25s;z-index:15}
+.volovl.on{opacity:1}
+.volovl i{display:block;width:100%;border-radius:2cqw;background:linear-gradient(0deg,#3b82f6,#a78bfa);transition:height .2s}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:-10px}
+.stat{background:var(--bg2);padding:28px 20px;text-align:center}
+.stat b{display:block;font-family:var(--display);font-size:clamp(28px,3.4vw,42px);font-weight:800;line-height:1.1;direction:ltr}
+.stat span{color:var(--muted);font-size:14px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- tour ---------- */
+.tour{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center}
+.tabs{display:flex;flex-direction:column;gap:8px}
+.tab{display:flex;gap:14px;align-items:flex-start;text-align:start;padding:14px 16px;border-radius:16px;border:1px solid transparent;transition:background .25s,border-color .25s;position:relative;overflow:hidden}
+.tab .ti{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.05);flex:none;color:#a5b4fc;transition:all .25s}
+.tab .ti svg{width:20px;height:20px}
+.tab b{display:block;font-size:16px}
+.tab span{display:block;font-size:13.5px;color:var(--muted);line-height:1.45;margin-top:2px}
+.tab:hover{background:rgba(255,255,255,.03)}
+.tab.on{background:var(--surface);border-color:var(--line2)}
+.tab.on .ti{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff}
+.tab .prog-line{position:absolute;bottom:0;inset-inline-start:0;height:2px;width:0;background:var(--prism)}
+.tab.on .prog-line{animation:tabprog 7s linear forwards}
+.tour.paused .tab.on .prog-line{animation-play-state:paused}
+@keyframes tabprog{to{width:100%}}
+.tour-tv{position:relative}
+.tour-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:34px;flex-wrap:wrap}
+.lang{display:inline-flex;padding:4px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.lang button{padding:7px 16px;border-radius:9px;font-size:14px;font-weight:600;color:var(--muted)}
+.lang button.on{background:#fff;color:#0b0d14}
+.kbd-hint{font-size:13.5px;color:var(--muted)}
+.kbd-hint kbd{font-family:inherit;font-size:12px;border:1px solid var(--line2);border-radius:6px;padding:1px 7px;margin:0 2px;background:rgba(255,255,255,.04);color:var(--text)}
+@media (max-width:980px){.tour{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{flex:none;align-items:center;padding:10px 14px}.tab span{display:none}.tab .ti{width:32px;height:32px}}
+
+/* ---------- features ---------- */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.card{position:relative;background:linear-gradient(180deg,var(--surface),var(--bg2));border:1px solid var(--line);border-radius:var(--radius);padding:30px;overflow:hidden;transition:border-color .3s,transform .3s}
+.card:hover{border-color:var(--line2);transform:translateY(-3px)}
+.card::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--c,#3b82f6);filter:blur(90px);opacity:.14;top:-120px;inset-inline-end:-80px;pointer-events:none}
+.card .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c,#3b82f6) 18%,transparent);color:var(--c,#3b82f6);margin-bottom:18px}
+.card .ic svg{width:26px;height:26px}
+.card h3{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:8px}
+.card > p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
+.card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.card li{font-size:14.5px;color:#cfd5e2;padding-inline-start:22px;position:relative;line-height:1.55}
+.card li::before{content:"";position:absolute;inset-inline-start:0;top:.55em;width:10px;height:10px;border-radius:3px;background:var(--c,#3b82f6);opacity:.8;transform:rotate(45deg)}
+.card li b{color:#fff;font-weight:600}
+.c-3{grid-column:span 3}.c-2{grid-column:span 2}.c-4{grid-column:span 4}.c-6{grid-column:span 6}
+@media (max-width:980px){.c-3,.c-2,.c-4{grid-column:span 6}}
+.mono{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.92em;background:rgba(255,255,255,.07);padding:1px 6px;border-radius:6px;direction:ltr;display:inline-block}
+
+/* ---------- photo band ---------- */
+.band{position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden}
+.band > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(7,8,13,.95) 10%,rgba(7,8,13,.55) 55%,rgba(7,8,13,.25)),linear-gradient(0deg,var(--bg),transparent 25%,transparent 75%,var(--bg))}
+.band .wrap{position:relative;z-index:1;width:100%}
+.band-txt{max-width:560px}
+.band-txt h2{font-family:var(--display);font-size:clamp(32px,4.5vw,54px);font-weight:800;line-height:1.12;margin:14px 0 16px}
+.band-txt p{color:#cbd5e1;font-size:18px}
+.quote-row{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+.quote-row div b{display:block;font-family:var(--display);font-size:30px;font-weight:800}
+.quote-row div span{color:var(--muted);font-size:14px}
+
+/* ---------- language ---------- */
+.lang-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.lang-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.lang-card .lbl{display:flex;justify-content:space-between;align-items:center;padding:4px 6px 14px;font-weight:700}
+.lang-card .lbl span{font-size:13px;color:var(--muted);font-weight:500}
+@media (max-width:860px){.lang-grid{grid-template-columns:1fr}}
+
+/* ---------- remote ---------- */
+.remote-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:50px;align-items:center}
+.phone{width:min(290px,100%);margin:0 auto;aspect-ratio:9/19;border-radius:42px;padding:12px;background:linear-gradient(160deg,#262b3b,#0d0f16);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -20px rgba(0,0,0,.8),0 0 100px -20px rgba(59,130,246,.45);position:relative}
+.phone-in{height:100%;border-radius:32px;background:radial-gradient(120% 60% at 50% 0%,#1a2140,#0a0c14 60%);overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:34px 18px 18px;gap:16px;position:relative}
+.phone-in::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:22px;border-radius:12px;background:#000}
+.ph-head{width:100%;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}
+.ph-head b{color:#86efac;display:inline-flex;align-items:center;gap:6px}
+.ph-head b::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e}
+.dpad{position:relative;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,#1b2136 0 40%,#141927 41%);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 2px 0 rgba(255,255,255,.05),0 10px 30px rgba(0,0,0,.5)}
+.dpad button{position:absolute;width:56px;height:56px;display:grid;place-items:center;color:#cbd5e1;border-radius:50%;transition:background .15s,color .15s}
+.dpad button:hover{color:#fff;background:rgba(255,255,255,.05)}
+.dpad button:active,.pk:active{transform:scale(.92)}
+.dpad button svg{width:22px;height:22px}
+.dpad .up{top:6px;left:67px}.dpad .down{bottom:6px;left:67px}.dpad .left{left:6px;top:67px}.dpad .right{right:6px;top:67px}
+.dpad .ok{left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:74px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-weight:800;font-size:16px;box-shadow:0 8px 24px rgba(99,102,241,.5)}
+.dpad .ok:active{transform:translate(-50%,-50%) scale(.92)}
+.pkeys{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%}
+.pk{height:44px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);display:grid;place-items:center;font-size:13px;font-weight:600;color:#cbd5e1;transition:background .15s}
+.pk:hover{background:rgba(255,255,255,.1)}
+.pk svg{width:18px;height:18px}
+.scrub{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:12px 14px;font-size:12px;color:var(--muted)}
+.scrub .sb{height:5px;border-radius:5px;background:rgba(255,255,255,.12);margin:8px 0;position:relative}
+.scrub .sb i{position:absolute;inset-block:0;inset-inline-start:0;width:42%;border-radius:5px;background:linear-gradient(90deg,#60a5fa,#a78bfa)}
+.scrub .sb i::after{content:"";position:absolute;inset-inline-end:-6px;top:50%;transform:translateY(-50%);width:13px;height:13px;border-radius:50%;background:#fff}
+.scrub .row{display:flex;justify-content:space-between;direction:ltr}
+.remote-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.remote-list li{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px}
+.remote-list li svg{width:22px;height:22px;flex:none;color:#93c5fd;margin-top:2px}
+.remote-list b{display:block;font-size:15px}
+.remote-list span{font-size:13.5px;color:var(--muted)}
+@media (max-width:980px){.remote-grid{grid-template-columns:1fr}.remote-list{grid-template-columns:1fr}}
+
+/* ---------- compare ---------- */
+.tbl-wrap{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--bg2)}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th,.tbl td{padding:18px 22px;text-align:start;border-bottom:1px solid var(--line);font-size:15.5px;vertical-align:top}
+.tbl tr:last-child td{border-bottom:0}
+.tbl thead th{font-family:var(--display);font-size:16px;background:var(--surface)}
+.tbl thead th:nth-child(2){color:#c4b5fd}
+.tbl td:first-child{font-weight:700;width:24%}
+.tbl td:nth-child(2){color:#fff;background:rgba(139,92,246,.06)}
+.tbl td:nth-child(2) span{display:inline-flex;gap:8px;align-items:flex-start}
+.tbl td:nth-child(2) svg{width:18px;height:18px;color:var(--green);flex:none;margin-top:3px}
+.tbl td:nth-child(3){color:var(--dim)}
+@media (max-width:760px){.tbl thead{display:none}.tbl tr{display:block;padding:16px 18px;border-bottom:1px solid var(--line)}.tbl td{display:block;border:0;padding:3px 0;width:auto!important;background:none!important}.tbl td:nth-child(3)::before{content:"באפליקציות אחרות: "}}
+
+/* ---------- install ---------- */
+.install{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.code-hero{background:linear-gradient(160deg,#121733,#0b0d18);border:1px solid rgba(99,102,241,.3);border-radius:28px;padding:36px;text-align:center;position:relative;overflow:hidden}
+.code-hero::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent,rgba(139,92,246,.18),transparent 30%);animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.code-hero > *{position:relative}
+.code-hero h3{font-family:var(--display);font-size:22px;font-weight:700}
+.code-hero p{color:var(--muted);font-size:15px;margin-top:4px}
+.digits{display:flex;justify-content:center;gap:8px;margin:26px 0 22px;direction:ltr}
+.digit{width:clamp(38px,6vw,58px);height:clamp(54px,8vw,78px);border-radius:14px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,42px);background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 -3px 0 rgba(255,255,255,.04);transition:all .3s}
+.digit.lit{border-color:#93c5fd;color:#fff;box-shadow:0 0 24px rgba(96,165,250,.35),inset 0 -3px 0 rgba(255,255,255,.04)}
+.digit:not(.lit){color:transparent}
+.code-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.links{display:flex;flex-direction:column;gap:10px;margin-top:22px;text-align:start}
+.linkrow{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;transition:border-color .2s}
+.linkrow:hover{border-color:rgba(147,197,253,.5)}
+.linkrow small{display:block;font-size:12px;color:var(--muted)}
+.linkrow code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13.5px;color:#93c5fd;direction:ltr;display:block;word-break:break-all;text-align:left}
+.linkrow .cp{margin-inline-start:auto;flex:none;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(59,130,246,.15)}
+.linkrow .cp svg{width:16px;height:16px}
+.linkrow.copied{border-color:var(--green)}
+.mtabs{display:flex;gap:6px;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:18px;overflow-x:auto;scrollbar-width:none}
+.mtabs button{flex:1;padding:10px 12px;border-radius:10px;font-size:14.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.mtabs button.on{background:#fff;color:#0b0d14}
+.mpanel{display:none}
+.mpanel.on{display:block;animation:fadeUp .4s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:12px}
+.steps li{counter-increment:s;display:flex;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.steps li::before{content:counter(s);flex:none;width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-family:var(--display);font-weight:800;background:linear-gradient(135deg,#3b82f6,#8b5cf6)}
+.steps b{display:block;font-size:16px;margin-bottom:2px}
+.steps p{font-size:14.5px;color:var(--muted)}
+.term{background:#05060a;border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13.5px;color:#a5f3fc;direction:ltr;text-align:left;margin-top:12px;white-space:pre-wrap;word-break:break-all}
+.term .c{color:#64748b}
+.note{display:flex;gap:10px;margin-top:14px;padding:14px 16px;border-radius:14px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);font-size:14px;color:#fde68a}
+.note svg{width:18px;height:18px;flex:none;margin-top:2px}
+@media (max-width:980px){.install{grid-template-columns:1fr}}
+
+/* ---------- devices / specs ---------- */
+.devices{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.devices span{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line2);font-weight:600;font-size:14.5px;backdrop-filter:blur(8px)}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.spec{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+.spec small{display:block;color:var(--muted);font-size:13px;margin-bottom:4px}
+.spec b{font-size:16.5px;font-weight:700}
+@media (max-width:860px){.specs{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.specs{grid-template-columns:1fr}}
+
+/* ---------- changelog ---------- */
+.changelog{max-width:820px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px}
+.cl-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.cl-head b{font-family:var(--display);font-size:24px}
+.cl-head span{color:var(--muted);font-size:14px}
+.ver{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(34,197,94,.12);color:#86efac;border:1px solid rgba(34,197,94,.3)}
+.changelog ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.changelog li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:15.5px}
+
+/* ---------- faq ---------- */
+.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:18px;transition:border-color .2s}
+.faq details[open]{border-color:var(--line2)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;font-weight:300;color:var(--muted);transition:transform .25s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 22px 20px;color:var(--muted);font-size:15.5px}
+
+/* ---------- final cta ---------- */
+.final{text-align:center;padding:120px 0;overflow:hidden}
+.final::before{content:"";position:absolute;inset:0;background:url(assets/banner.jpg) center/cover;opacity:.18;filter:blur(3px)}
+.final::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 50% 50%,transparent,var(--bg) 80%)}
+.final .wrap{position:relative;z-index:1}
+.final img.logo{width:112px;height:112px;border-radius:28px;margin:0 auto 24px;box-shadow:0 20px 60px rgba(139,92,246,.45);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.final h2{font-family:var(--display);font-size:clamp(34px,5vw,60px);font-weight:900;line-height:1.1}
+.final p{color:#cbd5e1;font-size:18px;margin:16px auto 30px;max-width:560px}
+
+.legal{max-width:820px;margin:0 auto;font-size:13px;color:var(--dim);text-align:center;line-height:1.8}
+footer{border-top:1px solid var(--line);padding:34px 0 44px;margin-top:60px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{text-decoration:none;color:var(--muted);font-size:14.5px}
+footer a:hover{color:var(--text)}
+footer small{color:var(--dim);font-size:13px}
+
+/* sticky mobile cta */
+.mcta{position:fixed;inset:auto 12px 12px 12px;z-index:60;display:none;transform:translateY(140%);transition:transform .35s}
+.mcta.on{transform:none}
+.mcta .btn{width:100%}
+@media (max-width:760px){.mcta{display:block}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+@media (max-width:980px){
+  .hero{min-height:auto;padding-top:110px}
+  .hero-grid{grid-template-columns:1fr;gap:50px}
+  .hero .tv{transform:none}
+  .band::after{background:linear-gradient(0deg,rgba(7,8,13,.96) 30%,rgba(7,8,13,.5)),linear-gradient(0deg,var(--bg),transparent 25%,transparent 75%,var(--bg))}
+  .band{align-items:flex-end;padding:80px 0}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .sec{padding:80px 0}
+  .btn{font-size:16px;padding:15px 20px}
+  .cta-row .btn{flex:1 1 100%}
+  .code-chip{flex:1 1 100%;justify-content:space-between}
+  .code-hero{padding:26px 18px}
+  .card{padding:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <div class="logo">📺</div>
-    <h1>Lumina TV</h1>
-    <p class="tagline">נגן IPTV לטלוויזיה, בעברית, שפשוט עובד.</p>
-    <p class="meta">גרסה <b>1.4.3</b> · Android 8.0 ומעלה · כ-10MB</p>
-  </header>
 
-  <a class="download" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
-    להורדת האפליקציה
-  </a>
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/mark.png" alt="">Lumina TV</a>
+    <ul class="nav-links">
+      <li><a href="#tour">הצצה לאפליקציה</a></li>
+      <li><a href="#features">תכונות</a></li>
+      <li><a href="#remote">שלט מהטלפון</a></li>
+      <li><a href="#install">התקנה</a></li>
+      <li><a href="#faq">שאלות</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#install">להורדה</a>
+  </div>
+</header>
 
-  <section class="card">
-    <h2>מתקינים ישר מהטלוויזיה</h2>
-    <p class="hint">פותחים את אפליקציית Downloader ומקלידים את הקוד. ההורדה מתחילה לבד.</p>
-    <div class="codes">
-      <div class="code" data-copy="4933886"><small>קוד Downloader</small><span>4933886</span></div>
-      <div class="code" data-copy="aftv.news/4933886"><small>קישור מקוצר</small><span>aftv.news/4933886</span></div>
-    </div>
-  </section>
+<main id="top">
 
-  <section class="features">
-    <div class="feature">
-      <h3>📺 זיפזופ בלי לחכות</h3>
-      <p>מעבר ערוצים מהיר, מספור נוח בכל קבוצה ולוח שידורים.</p>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1593784991251-92ded75ea290?auto=format&fit=crop&w=1800&q=60" alt="" fetchpriority="high"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.4.3 זמינה עכשיו</span></span>
+      <h1 class="rv d1">הטלוויזיה שלך,<br><span class="grad">במהירות האור.</span></h1>
+      <p class="lead rv d2"><b>Lumina TV</b> הוא נגן IPTV פרימיום ל-Android TV ו-Google TV. <b>ממשק בעברית מלאה</b> (וגם באנגלית), מעבר ערוצים <b>מתחת ל-300ms</b>, ספריית סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון, בלי להתקין שום דבר.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-primary btn-glow" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+          הורדה ישירה (APK)
+        </a>
+        <div class="code-chip" data-copy="4933886" role="button" tabindex="0" aria-label="העתקת קוד Downloader">
+          <div><small>קוד Downloader</small><strong>4933886</strong></div>
+          <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
+        </div>
+      </div>
+      <div class="trust rv d3">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Android TV · Google TV · Fire TV</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עברית מלאה + English</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עדכונים אוטומטיים מהטלוויזיה</span>
+      </div>
     </div>
-    <div class="feature">
-      <h3>⭐ מועדפים בסדר שלכם</h3>
-      <p>מסדרים מהטלוויזיה או מהטלפון, והסדר נשמר.</p>
+    <div class="tv-stage rv d2">
+      <div class="tv-glow"></div>
+      <div class="tv">
+        <div class="screen" id="heroScreen" dir="rtl">
+          <img class="fallback" src="assets/banner.jpg" alt="Lumina TV">
+          <div class="screen-glare"></div>
+        </div>
+      </div>
+      <div class="tv-stand"></div>
     </div>
-    <div class="feature">
-      <h3>🎬 סרטים וסדרות</h3>
-      <p>פוסטרים, עונות ופרקים, עם חיפוש בעברית ובאנגלית.</p>
-    </div>
-    <div class="feature">
-      <h3>📱 הטלפון הוא השלט</h3>
-      <p>סורקים QR ושולטים מהדפדפן, בלי להתקין כלום.</p>
-    </div>
-    <div class="feature">
-      <h3>🎞️ תמונה חלקה</h3>
-      <p>התאמה אוטומטית לקצב המסך, גם בשידורי ספורט.</p>
-    </div>
-    <div class="feature">
-      <h3>🔄 מתעדכנת לבד</h3>
-      <p>גרסה חדשה? לחיצה אחת מהטלוויזיה וזה מותקן.</p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <p class="legal">
-    Lumina TV הוא נגן מדיה בלבד. האפליקציה לא כוללת ולא מפיצה תוכן, ואינה קשורה לאף ספק תוכן.
-    השימוש מיועד לתוכן שיש לכם הרשאה חוקית לצפות בו.
-  </p>
+<!-- ============ STATS ============ -->
+<div class="wrap">
+  <div class="stats rv">
+    <div class="stat"><b>&lt;300ms</b><span>מעבר בין ערוצים</span></div>
+    <div class="stat"><b id="dlCount">—</b><span id="dlLabel">הורדות עד היום</span></div>
+    <div class="stat"><b>עב · EN</b><span>עברית מלאה (RTL) + אנגלית</span></div>
+    <div class="stat"><b id="sizeStat">~9.6MB</b><span>קל, מהיר, Android 8.0+</span></div>
+  </div>
+</div>
 
-  <footer>
-    <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases">GitHub</a> ·
-    <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases">כל הגרסאות</a> ·
-    <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">דיווח על תקלה</a>
-  </footer>
+<!-- ============ TOUR ============ -->
+<section class="sec" id="tour">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">ככה זה נראה על המסך</span>
+      <h2>הצצה לאפליקציה, <span class="grad">ישר מהספה</span></h2>
+      <p>כל מסך תוכנן לשלט רחוק ולצפייה ממרחק: טקסט גדול, פוקוס ברור, ומעברים חלקים. לחצו על המסכים, או נסו את מקשי החיצים במקלדת.</p>
+    </div>
+    <div class="tour" id="tourBox">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="tour-tv rv">
+        <div class="tv-glow"></div>
+        <div class="tv">
+          <div class="screen" id="tourScreen" dir="rtl">
+            <img class="fallback" src="assets/banner.jpg" alt="">
+            <div class="screen-glare"></div>
+          </div>
+        </div>
+        <div class="tv-stand"></div>
+        <div class="tour-bar">
+          <div class="lang" role="group" aria-label="שפת ממשק">
+            <button class="on" data-lang="he">עברית</button>
+            <button data-lang="en">English</button>
+          </div>
+          <span class="kbd-hint">נסו: <kbd>▲</kbd><kbd>▼</kbd> זיפזופ · <kbd>1</kbd>–<kbd>8</kbd> מעבר לערוץ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO BAND ============ -->
+<section class="band">
+  <img src="https://images.unsplash.com/photo-1586899028174-e7098604235b?auto=format&fit=crop&w=2000&q=65" alt="צפייה בטלוויזיה בסלון" loading="lazy">
+  <div class="wrap">
+    <div class="band-txt rv">
+      <span class="eyebrow">נבנה למסך הגדול</span>
+      <h2>רגליים על השולחן.<br><span class="grad">השלט עושה את השאר.</span></h2>
+      <p>בלי מסכים שחורים בין ערוצים, בלי תפריטים מסורבלים, ובלי קרטועים בשידורי ספורט. מדליקים את הטלוויזיה, והאפליקציה כבר פתוחה וממתינה.</p>
+      <div class="quote-row">
+        <div><b class="grad">0.3s</b><span>זיפזופ מעגלי</span></div>
+        <div><b class="grad">24/50/60Hz</b><span>התאמת תדר אוטומטית</span></div>
+        <div><b class="grad">512MB</b><span>ספריות ענק בלי קריסות</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">למה דווקא Lumina TV</span>
+      <h2>כל מה שצריך מול הספה.<br><span class="grad">כלום ממה שמפריע.</span></h2>
+      <p>פותחה מהיסוד במיוחד למסכי טלוויזיה חכמים וסטרימרים, עם דגש על מהירות שיא, שימוש טבעי בשלט, ועיצוב מודרני בעברית.</p>
+    </div>
+    <div class="bento">
+      <article class="card c-3 rv" style="--c:#3b82f6">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3M13 2l-1 3-1-3"/></svg></div>
+        <h3>שידור חי וזיפזופ בזק</h3>
+        <p>מעבר מיידי ורציף בין ערוצים, בלי המתנה ובלי מסכים שחורים.</p>
+        <ul>
+          <li><b>זיפזופ מעגלי חלק</b> בין כל ערוצי הקבוצה</li>
+          <li><b>מספור עצמאי מ-1</b> בכל קטגוריה ובמועדפים</li>
+          <li>הקשת ספרות בשלט מעבירה <b>בדיוק</b> לערוץ, ו-OK קופץ מיד</li>
+          <li><b>לוח שידורים (EPG)</b>: עכשיו והבא, זמנים וסרגל התקדמות</li>
+        </ul>
+      </article>
+      <article class="card c-3 rv d1" style="--c:#f59e0b">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+        <h3>סטודיו מועדפים</h3>
+        <p>הערוצים שאתם אוהבים, בדיוק בסדר שאתם רוצים.</p>
+        <ul>
+          <li>הזזה למעלה/למטה או <b>קביעת מיקום מספרי</b> מדויק</li>
+          <li>סידור ישיר <b>גם מהטלפון</b> בלחיצת כפתור</li>
+          <li>שמירה קבועה שורדת רענון וסנכרון של הפלייליסט</li>
+          <li>שורת מועדפים <b>במסך הבית</b> של הטלוויזיה</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv" style="--c:#ec4899">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></div>
+        <h3>סרטים וסדרות</h3>
+        <p>קטלוג עשיר למשתמשי Xtream Codes.</p>
+        <ul>
+          <li>חלוקה לז'אנרים, סרטים וסדרות</li>
+          <li>פוסטרים, תקצירים, עונות ופרקים</li>
+          <li><b>חיפוש בעברית ובאנגלית</b>, גם קולי</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv d1" style="--c:#22d3ee">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>מנוע וידאו מתקדם</h3>
+        <p>Media3 ו-ExoPlayer של Google, עם FFmpeg מובנה.</p>
+        <ul>
+          <li>HLS, MPEG-TS, DASH ו-Xtream</li>
+          <li>שמע AC3 ו-EAC3 בלי בעיות</li>
+          <li>ניגון Tunneled לתמונה מושלמת</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv d2" style="--c:#22c55e">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+        <h3>תמונה חלקה באמת</h3>
+        <p>התאמת קצב רענון אוטומטית (AFR).</p>
+        <ul>
+          <li><span class="mono">FrameRateEstimator</span> מודד את הקצב האמיתי</li>
+          <li>מסך מתאים את עצמו ל-24/50/60Hz</li>
+          <li>בלי ריצודים בשידורי ספורט</li>
+        </ul>
+      </article>
+      <article class="card c-4 rv" style="--c:#8b5cf6">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+        <h3>הגדרות חכמות לטלוויזיה</h3>
+        <p>ממשק מרווח ומסודר לפי קטגוריות: שמע, וידאו, תצוגה, הפעלה ועדכונים.</p>
+        <ul>
+          <li><b>סנכרון פלייליסט אוטומטי</b> ברקע: יומי, שבועי, חודשי או ידני</li>
+          <li><b>הפעלה בהדלקת מסך</b>: האפליקציה נפתחת לבד כשהטלוויזיה מתעוררת</li>
+          <li><b>ניהול קבוצות</b>: הסתרת קטגוריות ערוצים ו-VOD לא רצויות</li>
+          <li><b>נעילת הורים בקוד PIN</b> וטיימר שינה (15–90 דק')</li>
+          <li><b>יציאה מוגנת</b>: 10 לחיצות Back עם מונה על המסך, כדי שלא תצאו בטעות</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv d1" style="--c:#f97316">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg></div>
+        <h3>עדכונים מהאוויר</h3>
+        <p>בדיקת גרסאות אוטומטית מול GitHub.</p>
+        <ul>
+          <li>התראה על גרסה חדשה במסך</li>
+          <li>הורדה והתקנה <b>בלחיצה אחת</b> מהטלוויזיה</li>
+          <li>לא צריך להתקין מחדש ידנית</li>
+        </ul>
+      </article>
+      <article class="card c-6 rv" style="--c:#06b6d4">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div>
+        <h3>פלייליסטים ענקיים? בלי קריסות.</h3>
+        <p>טעינה בהזרמה ישירה למסד הנתונים עם <span class="mono">JsonReader</span>, ותמיכה בזיכרון מורחב (<span class="mono">largeHeap</span>, עד 512MB RAM). גם ספריות VOD עצומות נטענות בלי שגיאות OOM. ובנוסף: צפייה לאחור (Catch-up) מתוך מדריך השידורים, מקש "ערוץ אחרון", ו-Resume חכם שממשיך בדיוק מאיפה שעצרתם.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUAGE ============ -->
+<section class="sec" id="lang" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">עברית מלאה · English too</span>
+      <h2>נבנה מימין לשמאל.<br><span class="grad">מדבר גם אנגלית.</span></h2>
+      <p>תפריטים, מקלדת חיפוש, מדריך שידורים ודף השלט – הכל בעברית מלאה ובכיוון RTL אמיתי. מעדיפים אנגלית? כל הממשק מתהפך ל-LTR באותה איכות.</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card rv"><div class="lbl">עברית <span>RTL · ימין לשמאל</span></div>
+        <div class="tv" style="padding:6px"><div class="screen" id="langHe" dir="rtl"></div></div></div>
+      <div class="lang-card rv d1"><div class="lbl">English <span>LTR · left to right</span></div>
+        <div class="tv" style="padding:6px"><div class="screen" id="langEn" dir="ltr"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REMOTE ============ -->
+<section class="sec" id="remote" style="background:linear-gradient(180deg,transparent,rgba(59,130,246,.05),transparent)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">שלט חכם מהטלפון</span>
+      <h2>הטלפון שלכם <span class="grad">הוא השלט.</span></h2>
+      <p>סורקים את קוד ה-QR שבטלוויזיה, והטלפון פותח שלט מלא בדפדפן. בלי להתקין אף אפליקציה. נסו בעצמכם: לחצו על השלט שבטלפון.</p>
+    </div>
+    <div class="remote-grid">
+      <div class="rv">
+        <div class="tv-stage">
+          <div class="tv-glow"></div>
+          <div class="tv"><div class="screen" id="remoteScreen" dir="rtl"></div></div>
+          <div class="tv-stand"></div>
+        </div>
+        <ul class="remote-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/></svg><div><b>חיבור בסריקת QR</b><span>אותה רשת Wi-Fi, וזהו. בלי הורדות.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg><div><b>שליטה מלאה</b><span>חיצים, OK, ווליום, ספרות, השתקה ומקלדת.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M4 12l4-4M4 12l4 4"/><circle cx="14" cy="12" r="2"/></svg><div><b>מיני-נגן בטלפון</b><span>סרגל גרירה, שפת שמע וכתוביות.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7-7 7 7"/></svg><div><b>סידור מועדפים מהנייד</b><span>וגם הוספת פלייליסטים ו-EPG מהטלפון.</span></div></li>
+        </ul>
+      </div>
+      <div class="rv d2">
+        <div class="phone">
+          <div class="phone-in">
+            <div class="ph-head"><span>Lumina Remote</span><b>מחובר לסלון</b></div>
+            <div class="dpad">
+              <button class="up" data-r="up" aria-label="למעלה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 15 6-6 6 6"/></svg></button>
+              <button class="down" data-r="down" aria-label="למטה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button class="left" data-r="left" aria-label="שמאלה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m15 6-6 6 6 6"/></svg></button>
+              <button class="right" data-r="right" aria-label="ימינה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></button>
+              <button class="ok" data-r="ok">OK</button>
+            </div>
+            <div class="pkeys">
+              <button class="pk" data-r="voldown" aria-label="הנמכת ווליום"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4zM16 12h5"/></svg></button>
+              <button class="pk" data-r="mute" aria-label="השתקה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4zM22 9l-6 6M16 9l6 6"/></svg></button>
+              <button class="pk" data-r="volup" aria-label="הגברת ווליום"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4zM16 12h5M18.5 9.5v5"/></svg></button>
+              <button class="pk" data-r="back">חזור</button>
+              <button class="pk" data-r="home">ראשי</button>
+              <button class="pk" data-r="menu">תפריט</button>
+            </div>
+            <div class="scrub">
+              <div style="display:flex;justify-content:space-between"><span>מתנגן כעת</span><span>🎧 עברית · CC</span></div>
+              <div class="sb"><i></i></div>
+              <div class="row"><span>0:42:10</span><span>1:38:00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">ההבדל מורגש מהשנייה הראשונה</span>
+      <h2>Lumina TV מול <span class="grad">אפליקציות IPTV מסורתיות</span></h2>
+    </div>
+    <div class="tbl-wrap rv">
+      <table class="tbl">
+        <thead><tr><th>יכולת</th><th>Lumina TV</th><th>אפליקציות מסורתיות</th></tr></thead>
+        <tbody id="cmpBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTALL ============ -->
+<section class="sec" id="install">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">התקנה בדקה אחת</span>
+      <h2>מקלידים קוד אחד. <span class="grad">זהו.</span></h2>
+      <p>הדרך הכי קלה: אפליקציית Downloader בטלוויזיה. מקלידים את הקוד, ההורדה מתחילה לבד, ולוחצים "התקן".</p>
+    </div>
+    <div class="install">
+      <div class="code-hero rv">
+        <h3>קוד Downloader</h3>
+        <p>מקלידים בשורת הכתובת של Downloader ולוחצים Go</p>
+        <div class="digits" id="digits"></div>
+        <div class="code-actions">
+          <button class="btn btn-ghost" data-copy="4933886" id="copyCodeBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+            <span>העתקת הקוד</span>
+          </button>
+          <a class="btn btn-primary" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+            הורדת APK
+          </a>
+        </div>
+        <div class="links">
+          <div class="linkrow" data-copy="aftv.news/4933886" role="button" tabindex="0">
+            <div><small>קישור מקוצר</small><code>aftv.news/4933886</code></div>
+            <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
+          </div>
+          <div class="linkrow" data-copy="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk" role="button" tabindex="0">
+            <div style="min-width:0"><small>קישור ישיר מלא</small><code>https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk</code></div>
+            <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv d1">
+        <div class="mtabs" role="tablist">
+          <button class="on" data-m="dl">Downloader ⭐</button>
+          <button data-m="usb">דיסק און קי</button>
+          <button data-m="adb">ADB</button>
+        </div>
+        <div class="mpanel on" id="m-dl">
+          <ol class="steps">
+            <li><div><b>מתקינים את Downloader</b><p>בחנות Google Play בטלוויזיה מחפשים <b>Downloader</b> (של AFTVnews) ומתקינים. ב-Fire TV היא נמצאת ב-Amazon Appstore.</p></div></li>
+            <li><div><b>מאשרים הרשאות</b><p>פותחים את האפליקציה ומאשרים גישה לקבצים ו"התקנת אפליקציות לא מוכרות" עבור Downloader.</p></div></li>
+            <li><div><b>מקלידים את הקוד <span class="ltr" style="color:#93c5fd">4933886</span></b><p>בשורת הכתובת, ולוחצים <b>Go</b>. אפשר גם להקליד את הקישור המקוצר או את הקישור הישיר.</p></div></li>
+            <li><div><b>לוחצים "התקן" ונהנים</b><p>הקובץ יורד וההתקנה נפתחת מיד. בסיום פותחים את Lumina TV ומזינים את פרטי ספק ה-IPTV שלכם.</p></div></li>
+          </ol>
+        </div>
+        <div class="mpanel" id="m-usb">
+          <ol class="steps">
+            <li><div><b>מורידים למחשב</b><p>מורידים את הקובץ <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk" style="color:#93c5fd">LuminaTV.apk</a>.</p></div></li>
+            <li><div><b>מעתיקים לדיסק און קי</b><p>ומחברים אותו לשקע ה-USB בטלוויזיה או בסטרימר.</p></div></li>
+            <li><div><b>מתקינים מסייר קבצים</b><p>פותחים סייר קבצים בטלוויזיה (כמו X-plore או File Commander), בוחרים בקובץ ומתקינים.</p></div></li>
+          </ol>
+        </div>
+        <div class="mpanel" id="m-adb">
+          <ol class="steps">
+            <li><div><b>מפעילים ניפוי באגים ברשת</b><p>בהגדרות המפתחים של הטלוויזיה, ומוודאים שהמחשב והטלוויזיה באותה רשת.</p></div></li>
+            <li><div><b>מתחברים ומתקינים</b><p>מריצים במחשב:</p>
+              <div class="term"><span class="c"># replace with your TV's IP</span>
+adb connect &lt;TV_IP_ADDRESS&gt;:5555
+adb install -r -d LuminaTV.apk</div></div></li>
+          </ol>
+        </div>
+        <div class="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          <span>האפליקציה לא כוללת ערוצים. אחרי ההתקנה מזינים את פרטי החיבור של ספק ה-IPTV שלכם (Xtream Codes או קישור M3U), ואפשר לעשות את זה בנוחות גם מהטלפון בסריקת QR.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEVICES BAND ============ -->
+<section class="band" style="min-height:460px">
+  <img src="https://images.unsplash.com/photo-1634045924031-98026a4557c4?auto=format&fit=crop&w=2000&q=65" alt="סלון עם טלוויזיה חכמה" loading="lazy">
+  <div class="wrap" style="text-align:center">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <span class="eyebrow">עובד על המכשיר שכבר יש לכם</span>
+      <h2 style="font-family:var(--display);font-size:clamp(30px,4.2vw,50px);font-weight:800;line-height:1.15;margin-top:14px">כל טלוויזיה חכמה. <span class="grad">כל סטרימר.</span></h2>
+      <div class="devices">
+        <span>Android TV</span><span>Google TV</span><span>Sony BRAVIA</span><span>TCL</span><span>Hisense</span><span>Xiaomi Box</span><span>Chromecast with Google TV</span><span>Amazon Fire TV</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECS ============ -->
+<section class="sec" id="specs" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">מפרט טכני</span>
+      <h2>כל הפרטים, <span class="grad">בקצרה</span></h2>
+    </div>
+    <div class="specs rv">
+      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.3 (Build 21)</b></div>
+      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-9.6MB</b></div>
+      <div class="spec"><small>Android מינימלי</small><b>Android 8.0 Oreo (API 26)</b></div>
+      <div class="spec"><small>מומלץ</small><b>Android 11 / 12 / 14</b></div>
+      <div class="spec"><small>ארכיטקטורה</small><b>Universal: ARMv7, ARM64, x86, x86_64</b></div>
+      <div class="spec"><small>מזהה חבילה</small><b class="ltr">com.iptv.tv</b></div>
+      <div class="spec" style="grid-column:1/-1"><small>פורמטים נתמכים</small><b>Xtream Codes API · M3U / M3U8 · HLS · TS · MP4 · MKV · DASH</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHANGELOG ============ -->
+<section class="sec" id="changelog" style="padding-top:0">
+  <div class="wrap">
+    <div class="changelog rv">
+      <div class="cl-head">
+        <div><b>מה חדש</b><br><span id="clDate">עודכן לאחרונה</span></div>
+        <span class="ver" id="clVer">גרסה 1.4.3</span>
+      </div>
+      <ul id="clList">
+        <li>⚡ אופטימיזציית ביצועים עמוקה לנגן הווידאו וזיפזופ מהיר בערוצים חיים</li>
+        <li>🛡️ שיפורי יציבות מערכת ומניעת קריסות בטלוויזיות חכמות וסטרימרים</li>
+        <li>📺 התאמה ושיפור חוויית הצפייה במסכי Android TV ו-Google TV</li>
+        <li>🚀 זיכרון מטמון ממוטב וריענון מהיר של תכני VOD וסדרות</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">שאלות נפוצות</span>
+      <h2>יש שאלות? <span class="grad">יש תשובות.</span></h2>
+    </div>
+    <div class="faq rv">
+      <details open><summary>האם האפליקציה כוללת ערוצים או פלייליסטים מובנים?</summary><p>לא. Lumina TV היא נגן נקי ומתקדם. מזינים את פרטי החיבור של ספק ה-IPTV שלכם (Xtream Codes API או קישור פלייליסט M3U), והאפליקציה עושה את השאר.</p></details>
+      <details><summary>האם הממשק זמין גם באנגלית?</summary><p>כן. הממשק נבנה בעברית מלאה ובכיוון ימין-לשמאל, ותומך גם באנגלית. החיפוש בסרטים ובסדרות עובד בשתי השפות, כולל מקלדת עברית/אנגלית וחיפוש קולי.</p></details>
+      <details><summary>איך מחברים את שלט הטלפון?</summary><p>פותחים את האפליקציה בטלוויזיה, נכנסים להגדרות ← "שלט בטלפון", וסורקים את קוד ה-QR שמופיע. הטלפון פותח את השלט ישירות בדפדפן. חשוב שהטלפון והטלוויזיה יהיו מחוברים לאותה רשת Wi-Fi.</p></details>
+      <details><summary>איך מתעדכנים לגרסה חדשה?</summary><p>כשיוצאת גרסה חדשה, האפליקציה מודיעה על כך במסך הטלוויזיה ומאפשרת להוריד ולהתקין את העדכון בלחיצת כפתור, ישירות מהטלוויזיה.</p></details>
+      <details><summary>Downloader לא מוריד את הקובץ. מה עושים?</summary><p>ודאו שאישרתם ל-Downloader "התקנת אפליקציות לא מוכרות" בהגדרות הטלוויזיה. אם הקוד 4933886 לא עובד, הקלידו את הקישור המקוצר aftv.news/4933886 או את הקישור הישיר המלא שמופיע למעלה.</p></details>
+      <details><summary>על אילו מכשירים זה עובד?</summary><p>כל מכשיר Android TV או Google TV עם Android 8.0 ומעלה: Sony BRAVIA, TCL, Hisense, Xiaomi Box, Chromecast with Google TV, וגם Amazon Fire TV. הקובץ אוניברסלי ומתאים לכל סוגי המעבדים.</p></details>
+      <details><summary>יש נעילת הורים?</summary><p>כן. אפשר לנעול ערוצים בקוד PIN, שנשמר בצורה מוצפנת במכשיר. אחרי כמה ניסיונות שגויים הנעילה נחסמת זמנית.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final">
+  <div class="wrap rv">
+    <img class="logo" src="assets/logo.png" alt="Lumina TV">
+    <h2>מוכנים לזפזפ <span class="grad">במהירות האור?</span></h2>
+    <p>הורדה אחת, קוד אחד, ואתם בפנים. הטלוויזיה שלכם עומדת להרגיש חדשה.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary btn-glow" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+        להורדת Lumina TV
+      </a>
+      <div class="code-chip" data-copy="4933886" role="button" tabindex="0">
+        <div><small>קוד Downloader</small><strong>4933886</strong></div>
+        <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="legal wrap">Lumina TV הוא נגן מדיה בצד הלקוח בלבד, להפעלת תוכן שהמשתמש מספק בעצמו. האפליקציה אינה מארחת, שומרת או מפיצה תוכן כלשהו, ואינה קשורה לאף ספק תוכן או הרחבה של צד שלישי. השימוש מיועד לתוכן שבבעלותכם או שיש לכם הרשאה חוקית לצפות בו. התמונות באתר להמחשה בלבד.</p>
 </main>
 
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/mark.png" alt="">Lumina TV</a>
+    <nav>
+      <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases">GitHub</a>
+      <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases">כל הגרסאות</a>
+      <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">דיווח על תקלה</a>
+    </nav>
+    <small>פותח באהבה לקהילת הטלוויזיה החכמה · צילומים: Unsplash</small>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-primary btn-glow" href="#install">להורדה · קוד 4933886</a></div>
+
 <script>
-  document.querySelectorAll('.code').forEach(function (el) {
-    el.addEventListener('click', function () {
-      if (!navigator.clipboard) return;
-      navigator.clipboard.writeText(el.dataset.copy).then(function () {
-        var label = el.querySelector('small'), old = label.textContent;
-        el.classList.add('copied'); label.textContent = 'הועתק';
-        setTimeout(function () { el.classList.remove('copied'); label.textContent = old; }, 1500);
-      });
-    });
+(function(){
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var REDUCE=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function IMG(id,w){return 'https://images.unsplash.com/photo-'+id+'?auto=format&fit=crop&w='+(w||1280)+'&q=65'}
+function pad(n){return (n<10?'0':'')+n}
+function hm(d){return pad(d.getHours())+':'+pad(d.getMinutes())}
+function svg(p,fill){return '<svg viewBox="0 0 24 24" '+(fill?'fill="currentColor"':'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"')+'>'+p+'</svg>'}
+var IC={
+  tv:svg('<rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3"/>'),
+  list:svg('<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'),
+  film:svg('<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/>'),
+  series:svg('<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M7 3h10M5 5h14"/>'),
+  search:svg('<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>'),
+  guide:svg('<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h4M7 17h8"/>'),
+  gear:svg('<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9 7 7M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1 7 17M17 7l2.1-2.1"/>'),
+  star:svg('<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>',1),
+  starO:svg('<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/>'),
+  mic:svg('<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/>'),
+  refresh:svg('<path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/>'),
+  check:svg('<path d="m5 12 5 5L20 7"/>'),
+  wifi:svg('<path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0M12 20h.01"/>'),
+  phone:svg('<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>')
+};
+
+/* ---------------- demo data ---------------- */
+var CH=[
+ {n:1,he:'ספורט HD',en:'Sports HD',color:'#16a34a',img:'1706675780107-7c43cc487928',q:'FHD',f:'50fps',cat:{he:'ספורט',en:'Sports'},len:120,off:35,fav:1,
+  now:{he:'כדורגל: הדרבי הגדול · שידור חי',en:'Football: The Big Derby · Live'},next:{he:'אולפן ספורט: סיכום המחזור',en:'Sports Studio: Matchday Review'},prev:{he:'פתיחת אולפן',en:'Pre-match Show'}},
+ {n:2,he:'טבע ועולם',en:'Nature World',color:'#0d9488',img:'1470071459604-3b5ec3a7fe05',q:'4K',f:'25fps',cat:{he:'דוקו וטבע',en:'Docs & Nature'},len:60,off:12,
+  now:{he:'יערות הערפל',en:'Forests of Mist'},next:{he:'מסע אל הפסגה',en:'Journey to the Summit'},prev:{he:'חיים במעמקים',en:'Life in the Deep'}},
+ {n:3,he:'קולנוע פלוס',en:'Cinema Plus',color:'#dc2626',img:'1489599849927-2ee91cede3ba',q:'FHD',f:'24fps',cat:{he:'סרטים',en:'Movies'},len:120,off:80,fav:1,
+  now:{he:'סרט הערב: לילה בעיר',en:"Tonight's Movie: City Night"},next:{he:'מאחורי הקלעים',en:'Behind the Scenes'},prev:{he:'קדימונים',en:'Trailers'}},
+ {n:4,he:'מוזיקה לייב',en:'Music Live',color:'#db2777',img:'1470229722913-7c0e2dbbafd3',q:'HD',f:'50fps',cat:{he:'מוזיקה',en:'Music'},len:90,off:50,
+  now:{he:'הופעה חיה: פסטיבל הקיץ',en:'Live: Summer Festival'},next:{he:'מצעד הלהיטים',en:'Top Hits Countdown'},prev:{he:'קליפים',en:'Music Videos'}},
+ {n:5,he:'עיר ואנשים',en:'City & People',color:'#2563eb',img:'1477959858617-67f85cf4f1df',q:'FHD',f:'25fps',cat:{he:'דוקו וטבע',en:'Docs & Nature'},len:60,off:40,
+  now:{he:'ערים שלא ישנות',en:'Cities That Never Sleep'},next:{he:'אדריכלות העתיד',en:'Future Architecture'},prev:{he:'רחובות',en:'Streets'}},
+ {n:6,he:'ספורט 2',en:'Sports 2',color:'#ea580c',img:'1629217855633-79a6925d6c47',q:'FHD',f:'50fps',cat:{he:'ספורט',en:'Sports'},len:90,off:20,fav:1,
+  now:{he:'ליגת האלופות: תקצירים',en:'Champions League: Highlights'},next:{he:'שער הערב',en:'Goal of the Night'},prev:{he:'מגזין ספורט',en:'Sports Magazine'}},
+ {n:7,he:'הרפתקאות',en:'Adventure',color:'#7c3aed',img:'1506905925346-21bda4d32df4',q:'4K',f:'25fps',cat:{he:'דוקו וטבע',en:'Docs & Nature'},len:60,off:5,
+  now:{he:'מעל העננים',en:'Above the Clouds'},next:{he:'שבילים נסתרים',en:'Hidden Trails'},prev:{he:'מסע במדבר',en:'Desert Journey'}},
+ {n:8,he:'טעמים',en:'Flavors',color:'#ca8a04',img:'1556910103-1c02745aae4d',q:'HD',f:'25fps',cat:{he:'לייף סטייל',en:'Lifestyle'},len:30,off:8,
+  now:{he:'השף בבית',en:'Chef at Home'},next:{he:'מטבח ים-תיכוני',en:'Mediterranean Kitchen'},prev:{he:'קינוחים',en:'Desserts'}}
+];
+var VOD=[
+ {img:'1519681393784-d120267933ba',he:'לילה של כוכבים',en:'Starlight',y:2025,r:'8.1'},
+ {img:'1441974231531-c6227db76b6e',he:'היער הקסום',en:'The Enchanted Forest',y:2024,r:'7.6',s:1},
+ {img:'1477959858617-67f85cf4f1df',he:'העיר שלא ישנה',en:'Sleepless City',y:2025,r:'7.9'},
+ {img:'1505118380757-91f5f5632de0',he:'הגל הגדול',en:'The Big Wave',y:2023,r:'7.2'},
+ {img:'1470229722913-7c0e2dbbafd3',he:'על הבמה',en:'On Stage',y:2024,r:'8.4',s:1},
+ {img:'1501785888041-af3ef285b470',he:'השתקפויות',en:'Reflections',y:2025,r:'7.4'},
+ {img:'1706675780107-7c43cc487928',he:'המשחק האחרון',en:'The Final Match',y:2024,r:'8.0'},
+ {img:'1514565131-fce0801e5785',he:'אורות ניאון',en:'Neon Lights',y:2025,r:'7.7',s:1},
+ {img:'1469474968028-56623f02e42e',he:'הדרך הביתה',en:'The Way Home',y:2023,r:'7.8'},
+ {img:'1506905925346-21bda4d32df4',he:'פסגות',en:'Summits',y:2024,r:'8.2',s:1}
+];
+var T={
+ he:{now:'עכשיו',next:'הבא',left:function(x){return 'נותרו '+x+" דק'"},hints:[['▲▼','זיפזופ'],['OK','רשימת ערוצים'],['MENU','הגדרות']],
+  catsT:'קטגוריות',cats:[['⭐ מועדפים',3],['כל הערוצים',248],['ספורט',36],['סרטים',42],['דוקו וטבע',28],['מוזיקה',19],['ילדים',24]],allT:'כל הערוצים · 248',
+  vodCats:['נוספו לאחרונה','אקשן','דרמה','קומדיה','דוקומנטרי','ילדים','מדע בדיוני'],movies:'סרטים',series:'סדרות',searchPh:'חיפוש סרט או סדרה…',vodSub:'נוספו לאחרונה · 1,240 כותרים',seriesB:'סדרה',
+  guide:'מדריך שידורים',updated:"עודכן לפני 4 דק'",catchup:'⏪ צפייה לאחור זמינה',onair:'● משודר עכשיו',epgDesc:'תוכנית מומלצת · לחצו OK לצפייה, או חזרו אחורה בזמן עם Catch-up',
+  favT:'סטודיו מועדפים',favP:'בחרו ערוץ והזיזו אותו למקום שתרצו. הסדר נשמר לתמיד.',up:'הזז למעלה',down:'הזז למטה',pos:'קבע מיקום',saved:'הסדר נשמר',
+  setCats:['שמע','וידאו','תצוגה','הפעלה','רשימות שידור','עדכונים','אודות'],setT:'וידאו ותמונה',
+  opts:[['התאמת קצב רענון (AFR)','מתאים את המסך ל-24/50/60Hz אוטומטית','t1'],['ניגון Tunneled','תמונה חלקה במיוחד בחלק מהטלוויזיות','t0'],['פרופיל באפר','יציבות מול מהירות','מאוזן'],['פענוח תוכנה FFmpeg','לקודקים שהמכשיר לא תומך בהם','t1'],['טיימר שינה','כיבוי אוטומטי','30 דק\''],['הפעלה בהדלקת מסך','האפליקציה נפתחת כשהטלוויזיה נדלקת','t1']],
+  upd:'גרסה חדשה זמינה',updBtn:'עדכן עכשיו',later:'אחר כך',dl:function(p){return 'מוריד… '+p+'%'},inst:'מתקין…',done:'✓ עודכן בהצלחה',
+  qrT:'שליטה מהטלפון',qrS:['סרקו את הקוד במצלמת הטלפון','השלט נפתח בדפדפן, בלי התקנה','שולטים בהכל: חיצים, ווליום ומקלדת'],net:'רשת: Home-WiFi',
+  connected:'📱 הטלפון התחבר',muted:'🔇 מושתק',unmuted:'🔊 קול פועל',play:'▶ מתחיל לנגן',backN:function(n){return 'לחצו עוד '+n+' פעמים ליציאה'}},
+ en:{now:'NOW',next:'NEXT',left:function(x){return x+' min left'},hints:[['▲▼','Zap'],['OK','Channels'],['MENU','Settings']],
+  catsT:'Categories',cats:[['⭐ Favorites',3],['All Channels',248],['Sports',36],['Movies',42],['Docs & Nature',28],['Music',19],['Kids',24]],allT:'All Channels · 248',
+  vodCats:['Recently Added','Action','Drama','Comedy','Documentary','Kids','Sci-Fi'],movies:'Movies',series:'Series',searchPh:'Search movies or series…',vodSub:'Recently added · 1,240 titles',seriesB:'SERIES',
+  guide:'TV Guide',updated:'Updated 4 min ago',catchup:'⏪ Catch-up available',onair:'● On air now',epgDesc:'Recommended · press OK to watch, or go back in time with Catch-up',
+  favT:'Favorites Studio',favP:'Pick a channel and move it wherever you like. The order is saved for good.',up:'Move up',down:'Move down',pos:'Set position',saved:'Order saved',
+  setCats:['Audio','Video','Display','Startup','Playlists','Updates','About'],setT:'Video & Picture',
+  opts:[['Auto Frame Rate (AFR)','Matches the display to 24/50/60Hz','t1'],['Tunneled playback','Extra-smooth picture on many TVs','t0'],['Buffer profile','Stability vs. speed','Balanced'],['FFmpeg software decoding','For codecs your device lacks','t1'],['Sleep timer','Auto power-off','30 min'],['Launch on TV wake','Opens when the TV turns on','t1']],
+  upd:'New version available',updBtn:'Update now',later:'Later',dl:function(p){return 'Downloading… '+p+'%'},inst:'Installing…',done:'✓ Updated',
+  qrT:'Control from your phone',qrS:['Scan the code with your phone camera','The remote opens in your browser','Control it all: arrows, volume, keyboard'],net:'Network: Home-WiFi',
+  connected:'📱 Phone connected',muted:'🔇 Muted',unmuted:'🔊 Sound on',play:'▶ Starting playback',backN:function(n){return 'Press '+n+' more times to exit'}}
+};
+var CHANGELOG=null, VERSION='1.4.3', SIZE='9.6MB';
+
+function progInfo(c){
+  var now=new Date(), mins=now.getHours()*60+now.getMinutes();
+  var el=(mins+c.off)%c.len, start=new Date(now.getTime()-el*60000-now.getSeconds()*1000);
+  return {start:start,end:new Date(start.getTime()+c.len*60000),el:el,pct:Math.min(98,Math.max(3,el/c.len*100)),left:c.len-el};
+}
+function logo(c,L,cls){return '<span class="chlogo '+(cls||'')+'" style="background:linear-gradient(135deg,'+c.color+',#0b0d14 140%)">'+c[L].charAt(0)+'</span>'}
+function rail(on){
+  var items=[['tv',IC.tv],['film',IC.film],['series',IC.series],['search',IC.search],['guide',IC.guide],['gear',IC.gear]];
+  return '<div class="rail"><img class="logo" src="assets/mark.png" alt="">'+items.map(function(i){return '<span class="ri'+(i[0]===on?' on':'')+'">'+i[1]+'</span>'}).join('')+'</div>';
+}
+function guardImgs(root){
+  $$('img',root).forEach(function(im){
+    im.addEventListener('error',function(){im.style.visibility='hidden';if(im.parentElement)im.parentElement.classList.add('imgfail')},{once:true});
   });
+}
+
+/* ---------------- TV engine ---------------- */
+function TV(el,opt){
+  opt=opt||{};
+  this.el=el;this.lang=opt.lang||'he';this.idx=opt.idx||0;this.manual=!!opt.manual;this.autoZap=!!opt.autoZap;
+  this.view=null;this.timer=null;this.visible=true;this.focus=0;this.vol=60;this.muted=false;this.backs=10;
+  var fb=$('.fallback',el); if(fb) fb.remove();
+  this.root=document.createElement('div');this.root.style.cssText='position:absolute;inset:0';el.insertBefore(this.root,el.firstChild);
+  this.toastEl=document.createElement('div');this.toastEl.className='toast';el.appendChild(this.toastEl);
+  this.volEl=document.createElement('div');this.volEl.className='volovl';this.volEl.innerHTML='<i></i>';el.appendChild(this.volEl);
+  var self=this;
+  if('IntersectionObserver' in window){new IntersectionObserver(function(e){self.visible=e[0].isIntersecting},{threshold:.1}).observe(el)}
+}
+TV.prototype.t=function(){return T[this.lang]};
+TV.prototype.every=function(ms,fn){var self=this;clearInterval(this.timer);this.timer=setInterval(function(){if(self.visible&&!document.hidden)fn()},ms)};
+TV.prototype.show=function(view){
+  clearInterval(this.timer);clearTimeout(this.seq);this.view=view;
+  this.el.setAttribute('dir',this.lang==='he'?'rtl':'ltr');
+  this.root.innerHTML=VIEWS[view].html(this);
+  guardImgs(this.root);
+  var sv=this.root.firstElementChild;
+  requestAnimationFrame(function(){requestAnimationFrame(function(){sv&&sv.classList.add('active')})});
+  if(VIEWS[view].init)VIEWS[view].init(this);
+};
+TV.prototype.setLang=function(l){this.lang=l;this.show(this.view)};
+TV.prototype.toast=function(msg){var t=this.toastEl;t.textContent=msg;t.classList.add('on');clearTimeout(this._tt);this._tt=setTimeout(function(){t.classList.remove('on')},1800)};
+TV.prototype.volume=function(d){this.vol=Math.max(0,Math.min(100,this.vol+d));this.muted=false;var v=this.volEl;v.firstChild.style.height=this.vol+'%';v.classList.add('on');clearTimeout(this._vt);this._vt=setTimeout(function(){v.classList.remove('on')},1300)};
+TV.prototype.zap=function(d){if(this.view!=='live')this.show('live');this.idx=(this.idx+d+CH.length)%CH.length;liveFill(this,true)};
+TV.prototype.go=function(i){if(i<0||i>=CH.length)return;if(this.view!=='live')this.show('live');this.idx=i;liveFill(this,true)};
+
+function liveFill(tv,anim){
+  var r=tv.root,c=CH[tv.idx],L=tv.lang,t=tv.t(),p=progInfo(c);
+  var vid=$('.vid',r);if(!vid)return;
+  vid.style.background='radial-gradient(120% 90% at 30% 30%,'+c.color+'55,#05060a 70%)';
+  var imgs=$$('.vid img',r),cur=$('.vid img.on',r),nx=cur===imgs[0]?imgs[1]:imgs[0];
+  nx.style.visibility='';
+  nx.onload=function(){nx.classList.add('on');if(cur&&cur!==nx)cur.classList.remove('on')};
+  nx.onerror=function(){nx.style.visibility='hidden';nx.classList.add('on');if(cur&&cur!==nx)cur.classList.remove('on')};
+  nx.src=IMG(c.img);
+  if(nx.complete&&nx.naturalWidth)nx.onload();
+  $('.chnum',r).textContent=c.n;
+  var lg=$('.chlogo',r);lg.textContent=c[L].charAt(0);lg.style.background='linear-gradient(135deg,'+c.color+',#0b0d14 140%)';
+  $('.chname',r).textContent=c[L];
+  $('.tq',r).textContent=c.q;$('.tf',r).textContent=c.f;$('.tc',r).textContent=c.cat[L];
+  $('.pn',r).textContent=c.now[L];$('.pleft',r).textContent=t.left(p.left);
+  $('.pbar i',r).style.width=p.pct+'%';
+  $('.nt',r).textContent=hm(p.end);$('.pnx',r).textContent=c.next[L];
+  $('.clock',r).textContent=hm(new Date());
+  if(anim){
+    var f=$('.flash',r);f.classList.remove('go');void f.offsetWidth;f.classList.add('go');
+    var no=$('.numovl',r);no.textContent=pad(c.n);no.classList.add('on');clearTimeout(tv._nt);tv._nt=setTimeout(function(){no.classList.remove('on')},1000);
+    var z=$('.zapms',r);z.textContent='⚡ '+(170+Math.floor(Math.random()*110))+'ms';z.classList.add('on');clearTimeout(tv._zt);tv._zt=setTimeout(function(){z.classList.remove('on')},1400);
+  }
+}
+
+var VIEWS={
+ live:{
+  html:function(tv){var t=tv.t();return '<div class="sv"><div class="vid"><img alt=""><img alt=""></div><div class="shade-t"></div><div class="shade-b"></div><div class="flash"></div>'+
+   '<div class="osd-top"><div class="chb"><span class="chnum"></span><span class="chlogo"></span><div><div class="chname"></div><div class="chmeta"><span class="live">LIVE</span><span class="tag tq"></span><span class="tag tf"></span><span class="tc"></span></div></div></div><div class="clock"></div></div>'+
+   '<div class="osd-bot"><div class="prow"><span class="plbl">'+t.now+'</span><span class="ptitle pn"></span><span class="pleft"></span></div><div class="pbar"><i></i></div>'+
+   '<div class="prow next"><span class="plbl next">'+t.next+'</span><span class="nt ltr"></span><span class="pnx"></span></div>'+
+   '<div class="hints">'+t.hints.map(function(h){return '<span><kbd>'+h[0]+'</kbd>'+h[1]+'</span>'}).join('')+'</div></div>'+
+   '<div class="numovl"></div><div class="zapms"></div></div>'},
+  init:function(tv){liveFill(tv,false);if(tv.autoZap&&!REDUCE)tv.every(4600,function(){tv.zap(1)});else tv.every(20000,function(){liveFill(tv,false)})}
+ },
+ drawer:{
+  html:function(tv){var t=tv.t(),L=tv.lang,c0=CH[tv.idx];
+   return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c0.img)+'" alt=""></div><div class="dim"></div><div class="ui">'+rail('tv')+
+   '<div class="cats"><h4>'+t.catsT+'</h4>'+t.cats.map(function(c,i){return '<div class="cat'+(i===1?' on':'')+'">'+c[0]+'<small>'+c[1]+'</small></div>'}).join('')+'</div>'+
+   '<div class="list"><h4>'+t.allT+'</h4>'+CH.slice(0,7).map(function(c,i){var p=progInfo(c);
+     return '<div class="chrow" data-i="'+i+'"><span class="n">'+c.n+'</span>'+logo(c,L)+'<div class="t"><b>'+c[L]+'</b><span>'+c.now[L]+'</span><div class="mini"><i style="width:'+p.pct+'%"></i></div></div>'+
+     (i===tv.idx?'<span class="eq"><i></i><i></i><i></i></span>':'')+(c.fav?'<span class="ic">'+IC.star+'</span>':'')+'</div>'}).join('')+'</div></div></div>'},
+  init:function(tv){tv.focus=Math.min(tv.idx,6);drawerFocus(tv);if(!tv.manual&&!REDUCE)tv.every(1150,function(){tv.focus=(tv.focus+1)%7;drawerFocus(tv)})}
+ },
+ vod:{
+  html:function(tv){var t=tv.t(),L=tv.lang;
+   return '<div class="sv"><div class="vod"></div><div class="ui">'+rail('film')+
+   '<div class="cats" style="width:16cqw"><h4>'+t.catsT+'</h4>'+t.vodCats.map(function(c,i){return '<div class="cat'+(i===0?' on':'')+'">'+c+'</div>'}).join('')+'</div>'+
+   '<div class="vod-main"><div class="vod-top"><div class="seg"><span class="on">'+t.movies+'</span><span>'+t.series+'</span></div><div class="search">'+IC.search+t.searchPh+'<span class="mic">'+IC.mic+'</span></div></div>'+
+   '<div class="vod-sub">'+t.vodSub+'</div><div class="posters">'+VOD.map(function(v,i){
+     return '<div class="poster" data-i="'+i+'"><img src="'+IMG(v.img,360)+'" alt="" loading="lazy">'+(v.s?'<span class="badge">'+t.seriesB+'</span>':'<span class="badge">★ '+v.r+'</span>')+'<div class="pt"><b>'+v[L]+'</b><span>'+v.y+'</span></div></div>'}).join('')+
+   '</div></div></div></div>'},
+  init:function(tv){tv.focus=0;vodFocus(tv);if(!tv.manual&&!REDUCE)tv.every(1300,function(){tv.focus=(tv.focus+1)%VOD.length;vodFocus(tv)})}
+ },
+ epg:{
+  html:function(tv){var t=tv.t(),L=tv.lang,now=new Date();
+   var ws=new Date(now);ws.setSeconds(0,0);ws.setMinutes(ws.getMinutes()-ws.getMinutes()%30-30);var W=120*60000;
+   function pos(d){return (d-ws)/W*100}
+   var times='';for(var k=0;k<4;k++){var d=new Date(ws.getTime()+k*30*60000);times+='<span style="inset-inline-start:'+(k*25)+'%">'+hm(d)+'</span>'}
+   var rows=CH.slice(0,5).map(function(c,ri){var p=progInfo(c),segs=[];
+     segs.push({s:new Date(p.start.getTime()-90*60000),e:p.start,ti:c.prev[L],cls:'past'});
+     segs.push({s:p.start,e:p.end,ti:c.now[L],cls:'now'});
+     segs.push({s:p.end,e:new Date(p.end.getTime()+60*60000),ti:c.next[L],cls:''});
+     segs.push({s:new Date(p.end.getTime()+60*60000),e:new Date(p.end.getTime()+180*60000),ti:c.prev[L],cls:''});
+     var h='';segs.forEach(function(sg){var a=Math.max(0,pos(sg.s)),b=Math.min(100,pos(sg.e));if(b-a<=0.5)return;
+       h+='<div class="prog '+sg.cls+'" data-r="'+ri+'" style="inset-inline-start:calc('+a+'% + 2px);width:calc('+(b-a)+'% - 4px)"><b>'+sg.ti+'</b><span>'+hm(sg.s)+'–'+hm(sg.e)+'</span></div>'});
+     return '<div class="epg-row"><div class="epg-ch">'+logo(c,L)+c[L]+'</div><div class="epg-tr">'+h+'</div></div>'}).join('');
+   var nl=pos(now);
+   return '<div class="sv"><div class="epg"><div class="epg-head"><h3>'+t.guide+'</h3><span>'+now.toLocaleDateString(L==='he'?'he-IL':'en-US',{weekday:'long',day:'numeric',month:'long'})+' · '+t.updated+'</span></div>'+
+   '<div class="epg-grid"><div class="epg-times"><div></div><div class="tl">'+times+'</div></div>'+rows+
+   '<div class="nowline" style="inset-inline-start:calc(17.8cqw + (100% - 17.8cqw) * '+(nl/100)+')"></div></div>'+
+   '<div class="epg-detail"><img alt=""><div><b class="ed-t"></b><p class="ed-p"></p><span class="pill ed-pill"></span></div></div></div></div>'},
+  init:function(tv){tv.focus=0;epgFocus(tv);if(!REDUCE)tv.every(1700,function(){tv.focus=(tv.focus+1)%5;epgFocus(tv)})}
+ },
+ fav:{
+  html:function(tv){var t=tv.t();
+   return '<div class="sv"><div class="studio"><div class="studio-l"><h3>⭐ '+t.favT+'</h3><p>'+t.favP+'</p><div class="studio-list"></div></div>'+
+   '<div class="studio-r"><div class="sbtn focus">▲ '+t.up+'<kbd>CH+</kbd></div><div class="sbtn">▼ '+t.down+'<kbd>CH−</kbd></div><div class="sbtn"># '+t.pos+'<kbd>0-9</kbd></div><div class="saved" style="opacity:0">'+IC.check.replace('<svg','<svg style="width:1.8cqw;height:1.8cqw"')+t.saved+'</div></div></div></div>'},
+  init:function(tv){
+   var L=tv.lang,list=$('.studio-list',tv.root),saved=$('.saved',tv.root),order=[0,2,5,1,3],sel=1;
+   var rows=order.map(function(ci){var c=CH[ci];var d=document.createElement('div');d.className='chrow';d.innerHTML='<span class="n"></span>'+logo(c,L)+'<div class="t"><b>'+c[L]+'</b><span>'+c.cat[L]+'</span></div><span class="ic">'+IC.star+'</span>';list.appendChild(d);d._ci=ci;return d});
+   function lay(){order.forEach(function(ci,pos){var d=rows.filter(function(x){return x._ci===ci})[0];d.style.top=(pos*6.3)+'cqw';$('.n',d).textContent=pos+1;d.classList.toggle('focus',ci===sel)})}
+   lay();var phase=0;
+   if(!REDUCE)tv.every(1300,function(){
+     var p=order.indexOf(sel);
+     if(phase===0&&p>0){order.splice(p,1);order.splice(p-1,0,sel);lay();if(p-1===0){phase=1;saved.style.opacity=1;saved.style.transition='opacity .3s'}}
+     else if(phase===1){phase=2}
+     else if(phase===2){order=[0,2,5,1,3];saved.style.opacity=0;phase=0;lay()}
+   });
+  }
+ },
+ settings:{
+  html:function(tv){var t=tv.t();
+   return '<div class="sv"><div class="settings"></div><div class="ui">'+rail('gear')+
+   '<div class="cats"><h4>'+t.catsT+'</h4>'+t.setCats.map(function(c,i){return '<div class="cat'+(i===1?' on':'')+'">'+c+'</div>'}).join('')+'</div>'+
+   '<div class="set-main"><h3>'+t.setT+'</h3>'+t.opts.map(function(o){var v=o[2]==='t1'?'<span class="tgl on"></span>':o[2]==='t0'?'<span class="tgl"></span>':'<span class="val">'+o[2]+' ›</span>';
+     return '<div class="opt"><div class="ot"><b>'+o[0]+'</b><span>'+o[1]+'</span></div>'+v+'</div>'}).join('')+'</div></div></div>'},
+  init:function(tv){var opts=$$('.opt',tv.root);tv.focus=0;function f(){opts.forEach(function(o,i){o.classList.toggle('focus',i===tv.focus)})}f();
+   if(!REDUCE)tv.every(1400,function(){tv.focus=(tv.focus+1)%opts.length;f();var g=$('.tgl',opts[tv.focus]);if(g&&tv.focus===1)setTimeout(function(){g.classList.toggle('on')},600)})}
+ },
+ update:{
+  html:function(tv){var t=tv.t(),c=CH[tv.idx];var cl=(tv.lang==='he'&&CHANGELOG?CHANGELOG:(tv.lang==='he'?['⚡ זיפזופ מהיר יותר בערוצים חיים','🛡️ שיפורי יציבות בטלוויזיות וסטרימרים','🚀 ריענון מהיר של סרטים וסדרות']:['⚡ Faster live channel zapping','🛡️ Stability improvements on TVs & streamers','🚀 Faster VOD & series refresh'])).slice(0,3);
+   return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c.img)+'" alt=""></div><div class="dlg-wrap"><div class="dlg">'+
+   '<div class="dlg-h"><img src="assets/mark.png" alt=""><div><b>'+t.upd+'</b><span class="ltr">Lumina TV '+VERSION+' · '+SIZE+'</span></div></div>'+
+   '<ul>'+cl.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul><div class="dlg-bar"><i></i></div>'+
+   '<div class="dlg-btns"><span class="focus">'+t.updBtn+'</span><span>'+t.later+'</span><span class="dlg-status"></span></div></div></div></div>'},
+  init:function(tv){var t=tv.t(),bar=$('.dlg-bar i',tv.root),st=$('.dlg-status',tv.root),p=0,hold=0;
+   if(REDUCE){bar.style.width='100%';st.textContent=t.done;return}
+   tv.every(120,function(){
+     if(hold>0){hold--;if(hold===0){p=0;bar.style.width='0';st.textContent=''}return}
+     p+=2.2;if(p<100){bar.style.width=p+'%';st.textContent=p<80?t.dl(Math.floor(p)):t.inst}
+     else{bar.style.width='100%';st.textContent=t.done;hold=22}
+   })}
+ },
+ qr:{
+  html:function(tv){var t=tv.t();
+   return '<div class="sv"><div class="qrs"><div class="qrbox"><canvas width="29" height="29"></canvas></div><div><h3>'+t.qrT+'</h3><ol>'+t.qrS.map(function(s){return '<li>'+s+'</li>'}).join('')+'</ol><div class="net">'+IC.wifi.replace('<svg','<svg style="width:2cqw;height:2cqw"')+t.net+' · <span class="ltr">192.168.1.24</span></div></div></div></div>'},
+  init:function(tv){drawQR($('canvas',tv.root))}
+ }
+};
+function drawerFocus(tv){$$('.chrow',tv.root).forEach(function(r,i){r.classList.toggle('focus',i===tv.focus)})}
+function vodFocus(tv){$$('.poster',tv.root).forEach(function(r,i){r.classList.toggle('focus',i===tv.focus)})}
+function epgFocus(tv){var L=tv.lang,t=tv.t(),c=CH[tv.focus],p=progInfo(c);
+  $$('.prog',tv.root).forEach(function(e){e.classList.toggle('focus',e.classList.contains('now')&&+e.getAttribute('data-r')===tv.focus)});
+  var im=$('.epg-detail img',tv.root);im.style.visibility='';im.src=IMG(c.img,480);
+  $('.ed-t',tv.root).textContent=c.now[L];
+  $('.ed-p',tv.root).innerHTML=c[L]+' · <span class="ltr">'+hm(p.start)+'–'+hm(p.end)+'</span> · '+t.epgDesc;
+  $('.ed-pill',tv.root).textContent=tv.focus%2?t.catchup:t.onair}
+function drawQR(cv){
+  var x=cv.getContext('2d'),N=29,seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+  x.fillStyle='#fff';x.fillRect(0,0,N,N);x.fillStyle='#0b0d14';
+  for(var i=0;i<N;i++)for(var j=0;j<N;j++){if(rnd()>.52)x.fillRect(i,j,1,1)}
+  [[0,0],[N-7,0],[0,N-7]].forEach(function(p){x.fillStyle='#fff';x.fillRect(p[0]-1<0?0:p[0]-1,p[1]-1<0?0:p[1]-1,9,9);x.fillStyle='#0b0d14';x.fillRect(p[0],p[1],7,7);x.fillStyle='#fff';x.fillRect(p[0]+1,p[1]+1,5,5);x.fillStyle='#0b0d14';x.fillRect(p[0]+2,p[1]+2,3,3)});
+}
+
+/* ---------------- instances ---------------- */
+var hero=new TV($('#heroScreen'),{autoZap:true,idx:0});hero.show('live');
+var tour=new TV($('#tourScreen'),{idx:2});
+var heTV=new TV($('#langHe'),{lang:'he',idx:0});heTV.show('drawer');
+var enTV=new TV($('#langEn'),{lang:'en',idx:0});enTV.show('drawer');
+var rem=new TV($('#remoteScreen'),{manual:true,idx:0});rem.show('qr');
+
+/* tour tabs */
+var TABS=[
+ {v:'live',ic:IC.tv,b:'שידור חי',s:'OSD נקי עם עכשיו/הבא, תגיות איכות וזיפזופ מיידי'},
+ {v:'drawer',ic:IC.list,b:'רשימת ערוצים',s:'קטגוריות, מספור מ-1 בכל קבוצה ומועדפים'},
+ {v:'vod',ic:IC.film,b:'סרטים וסדרות',s:'פוסטרים, ז׳אנרים וחיפוש בעברית ובאנגלית'},
+ {v:'epg',ic:IC.guide,b:'מדריך שידורים',s:'ציר זמן אמיתי, סמן "עכשיו" וצפייה לאחור'},
+ {v:'fav',ic:IC.starO,b:'סטודיו מועדפים',s:'מסדרים את הערוצים בדיוק כמו שאתם רוצים'},
+ {v:'settings',ic:IC.gear,b:'הגדרות חכמות',s:'AFR, באפר, טיימר שינה והפעלה אוטומטית'},
+ {v:'update',ic:IC.refresh,b:'עדכון מהאוויר',s:'גרסה חדשה? לחיצה אחת מהטלוויזיה'}
+];
+var tabsEl=$('#tabs'),tourBox=$('#tourBox'),tabI=0,tabTimer=null,autoTour=!REDUCE;
+tabsEl.innerHTML=TABS.map(function(t,i){return '<button class="tab" role="tab" data-i="'+i+'"><span class="ti">'+t.ic+'</span><span><b>'+t.b+'</b><span>'+t.s+'</span></span><i class="prog-line"></i></button>'}).join('');
+function setTab(i){tabI=i;$$('.tab',tabsEl).forEach(function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i)});tour.show(TABS[i].v);
+  var b=$$('.tab',tabsEl)[i];if(b&&tabsEl.scrollWidth>tabsEl.clientWidth)tabsEl.scrollTo({left:b.offsetLeft-tabsEl.clientWidth/2+b.offsetWidth/2,behavior:'smooth'});
+  clearTimeout(tabTimer);if(autoTour)tabTimer=setTimeout(function(){if(tour.visible&&!document.hidden)setTab((tabI+1)%TABS.length);else setTab(tabI)},7000)}
+tabsEl.addEventListener('click',function(e){var b=e.target.closest('.tab');if(!b)return;autoTour=false;tourBox.classList.add('paused');setTab(+b.getAttribute('data-i'))});
+setTab(0);
+$$('.lang button').forEach(function(b){b.addEventListener('click',function(){$$('.lang button').forEach(function(x){x.classList.toggle('on',x===b)});tour.setLang(b.getAttribute('data-lang'))})});
+
+/* keyboard zapping */
+function inView(el){var r=el.getBoundingClientRect();return r.top<innerHeight*.75&&r.bottom>innerHeight*.25}
+document.addEventListener('keydown',function(e){
+  if(e.target.closest&&e.target.closest('input,textarea,[contenteditable]'))return;
+  var tv=inView($('#tourScreen'))?tour:inView($('#remoteScreen'))?rem:inView($('#heroScreen'))?hero:null;if(!tv)return;
+  var k=e.key;
+  if(k==='ArrowUp'||k==='ArrowDown'){e.preventDefault();if(tv===tour&&tour.view!=='live'){autoTour=false;tourBox.classList.add('paused');setTab(0)}tv.zap(k==='ArrowUp'?1:-1);if(tv===hero)hero.every(4600,function(){hero.zap(1)})}
+  else if(/^[1-8]$/.test(k)){if(tv===tour&&tour.view!=='live'){autoTour=false;tourBox.classList.add('paused');setTab(0)}tv.go(+k-1)}
+});
+
+/* phone remote */
+var connected=false;
+$$('[data-r]').forEach(function(b){b.addEventListener('click',function(){
+  var k=b.getAttribute('data-r'),t=rem.t();
+  if(navigator.vibrate)try{navigator.vibrate(12)}catch(_){}
+  if(!connected){connected=true;rem.toast(t.connected);rem.show('live');return}
+  var v=rem.view;
+  if(k==='up'||k==='down'){
+    if(v==='drawer'){rem.focus=(rem.focus+(k==='down'?1:-1)+7)%7;drawerFocus(rem)}
+    else if(v==='vod'){rem.focus=(rem.focus+(k==='down'?5:-5)+VOD.length)%VOD.length;vodFocus(rem)}
+    else rem.zap(k==='up'?1:-1);
+  }else if(k==='left'||k==='right'){
+    if(v==='vod'){var d=(k==='left')?1:-1;rem.focus=(rem.focus+d+VOD.length)%VOD.length;vodFocus(rem)}
+    else if(v==='live'){rem.show('drawer')}
+  }else if(k==='ok'){
+    if(v==='live')rem.show('drawer');
+    else if(v==='drawer'){rem.idx=rem.focus;rem.show('live');liveFill(rem,true)}
+    else if(v==='vod'){rem.toast(t.play)}
+    else rem.show('live');
+  }else if(k==='volup')rem.volume(10);
+  else if(k==='voldown')rem.volume(-10);
+  else if(k==='mute'){rem.muted=!rem.muted;rem.toast(rem.muted?t.muted:t.unmuted)}
+  else if(k==='back'){if(v!=='live'){rem.show('live');rem.backs=10}else{rem.backs--;if(rem.backs<=0)rem.backs=10;rem.toast(t.backN(rem.backs))}}
+  else if(k==='home')rem.show('vod');
+  else if(k==='menu')rem.show('settings');
+})});
+
+/* compare table */
+var CMP=[['זיפזופ בין ערוצים','מיידי, פחות מ-300ms','2–5 שניות טעינה'],['ממשק ועיצוב','Jetpack Compose TV מודרני, בעברית מלאה ובאנגלית','תפריטי אנדרואיד מיושנים ועמוסים'],['סידור מועדפים','בטלוויזיה ובטלפון, עם שמירה קבועה','סדר קבוע שלא ניתן לשינוי'],['שלט מהטלפון','מובנה, בדפדפן ובסריקת QR, בלי התקנה','דורש אפליקציות צד-שלישי'],['התאמת תדר מסך (AFR)','אוטומטית, בלי קרטועים','תנועה מקרטעת בספורט'],['ספריות ענק (VOD)','טעינה בהזרמה, בלי קריסות זיכרון','קריסות בפלייליסטים גדולים'],['עדכונים','OTA אוטומטי מתוך הטלוויזיה','הורדה ידנית מחדש בכל גרסה']];
+$('#cmpBody').innerHTML=CMP.map(function(r){return '<tr><td>'+r[0]+'</td><td><span>'+IC.check+r[1]+'</span></td><td>'+r[2]+'</td></tr>'}).join('');
+
+/* downloader digits */
+var digits=$('#digits'),CODE='4933886';
+digits.innerHTML=CODE.split('').map(function(d){return '<span class="digit">'+d+'</span>'}).join('');
+function typeDigits(){var ds=$$('.digit',digits);ds.forEach(function(d){d.classList.remove('lit')});ds.forEach(function(d,i){setTimeout(function(){d.classList.add('lit')},REDUCE?0:180+i*170)})}
+if('IntersectionObserver' in window){var typed=false;new IntersectionObserver(function(e){if(e[0].isIntersecting&&!typed){typed=true;typeDigits()}},{threshold:.5}).observe(digits)}else typeDigits();
+digits.addEventListener('mouseenter',typeDigits);
+
+/* method tabs */
+$$('.mtabs button').forEach(function(b){b.addEventListener('click',function(){$$('.mtabs button').forEach(function(x){x.classList.toggle('on',x===b)});$$('.mpanel').forEach(function(p){p.classList.toggle('on',p.id==='m-'+b.getAttribute('data-m'))})})});
+
+/* copy */
+function copyText(txt){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(txt);return new Promise(function(res,rej){var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');res()}catch(e){rej(e)}document.body.removeChild(ta)})}
+$$('[data-copy]').forEach(function(el){
+  function go(){copyText(el.getAttribute('data-copy')).then(function(){
+    var lbl=$('small',el)||$('span',el);var old=lbl?lbl.textContent:'';if(lbl)lbl.textContent='הועתק ✓';el.classList.add('copied');
+    setTimeout(function(){if(lbl)lbl.textContent=old;el.classList.remove('copied')},1600)}).catch(function(){})}
+  el.addEventListener('click',go);el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+});
+
+/* nav + sticky cta + reveal */
+var nav=$('#nav'),mcta=$('#mcta'),inst=$('#install');
+function onScroll(){var y=scrollY;nav.classList.toggle('scrolled',y>20);var r=inst.getBoundingClientRect();mcta.classList.toggle('on',y>innerHeight*.8&&!(r.top<innerHeight&&r.bottom>0))}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+if('IntersectionObserver' in window&&!REDUCE){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});$$('.rv').forEach(function(el){io.observe(el)})}
+else $$('.rv').forEach(function(el){el.classList.add('in')});
+$$('.band > img, .hero-bg img').forEach(function(im){im.addEventListener('error',function(){im.style.display='none'})});
+
+/* live data: version.json + GitHub downloads */
+function countUp(el,to){if(REDUCE){el.textContent=to.toLocaleString('he-IL');return}var t0=null,d=1600;function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/d),e=1-Math.pow(1-k,3);el.textContent=Math.floor(to*e).toLocaleString('he-IL');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+fetch('version.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(v){
+  if(!v)return;VERSION=v.versionName||VERSION;
+  $('#heroVer').textContent='גרסה '+VERSION+' זמינה עכשיו';
+  $('#specVer').textContent=VERSION+(v.versionCode?' (Build '+v.versionCode+')':'');
+  $('#clVer').textContent='גרסה '+VERSION;
+  if(v.publishedAt){var d=new Date(v.publishedAt);if(!isNaN(d))$('#clDate').textContent='פורסם ב-'+d.toLocaleDateString('he-IL',{day:'numeric',month:'long',year:'numeric'})}
+  if(v.changelog&&v.changelog.length){CHANGELOG=v.changelog;$('#clList').innerHTML='';v.changelog.forEach(function(c){var li=document.createElement('li');li.textContent=c;$('#clList').appendChild(li)})}
+  if(v.message){var li=document.createElement('li');li.textContent='📣 '+v.message;li.style.borderColor='rgba(139,92,246,.4)';$('#clList').prepend(li)}
+}).catch(function(){});
+fetch('https://api.github.com/repos/Hero-Ghost/Lumina-TV-Releases/releases?per_page=100').then(function(r){return r.ok?r.json():null}).then(function(rel){
+  if(!rel||!rel.length)throw 0;var total=0,size=0;
+  rel.forEach(function(x,i){(x.assets||[]).forEach(function(a){total+=a.download_count||0;if(i===0&&/\.apk$/i.test(a.name)&&!size)size=a.size})});
+  if(size){SIZE=(size/1048576).toFixed(1)+'MB';$('#sizeStat').textContent='~'+SIZE;$('#specSize').textContent='כ-'+SIZE}
+  if(total>0)countUp($('#dlCount'),total);else throw 0;
+}).catch(function(){$('#dlCount').textContent='OTA';$('#dlLabel').textContent='עדכונים ישר מהטלוויזיה'});
+})();
 </script>
 </body>
 </html>
