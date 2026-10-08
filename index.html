@@ -534,6 +534,33 @@ footer small{color:var(--dim);font-size:13px}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1;transform:none}
 }
+
+/* ---------- all features ---------- */
+.af-tools{display:flex;flex-direction:column;gap:16px;align-items:center;margin:-24px auto 34px}
+.af-search{display:flex;align-items:center;gap:10px;width:min(520px,100%);background:var(--surface);border:1px solid var(--line2);border-radius:14px;padding:0 16px;transition:border-color .2s,box-shadow .2s}
+.af-search:focus-within{border-color:rgba(139,92,246,.6);box-shadow:0 0 0 4px rgba(139,92,246,.15)}
+.af-search svg{width:20px;height:20px;color:var(--dim);flex:none}
+.af-search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font:inherit;font-size:16px;padding:14px 0}
+.af-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.af-chip{font-size:14px;font-weight:600;color:#cbd5e1;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line);transition:background .2s,border-color .2s,color .2s}
+.af-chip i{font-style:normal;font-size:12px;color:var(--dim);margin-inline-start:4px}
+.af-chip:hover{background:rgba(255,255,255,.08)}
+.af-chip.on{background:linear-gradient(135deg,rgba(37,99,235,.35),rgba(124,58,237,.35));border-color:rgba(139,92,246,.6);color:#fff}
+.af-chip.on i{color:#c7d2fe}
+.af-grid{columns:3 340px;column-gap:18px}
+.af-card{break-inside:avoid;margin-bottom:18px;padding:24px}
+.af-card[hidden]{display:none}
+.af-card header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.af-card header .ic{margin:0;width:42px;height:42px;border-radius:12px}
+.af-card header .ic svg{width:22px;height:22px}
+.af-card h3{font-size:19px;margin:0;flex:1}
+.af-n{font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border-radius:999px;padding:3px 10px}
+.af-card li{font-size:14.5px}
+.af-card li[hidden]{display:none}
+.af-card li span{display:block;color:var(--muted);font-size:13.5px;margin-top:1px}
+.af-card mark{background:rgba(250,204,21,.25);color:#fff;border-radius:3px;padding:0 2px}
+.af-empty{text-align:center;color:var(--muted);padding:30px 0}
+.af-note{text-align:center;color:var(--dim);font-size:14px;margin-top:10px}
 </style>
 </head>
 <body>
@@ -545,6 +572,7 @@ footer small{color:var(--dim);font-size:13px}
     <ul class="nav-links">
       <li><a href="#tour">הצצה לאפליקציה</a></li>
       <li><a href="#features">תכונות</a></li>
+      <li><a href="#all-features">כל הפיצ'רים</a></li>
       <li><a href="#remote">שלט מהטלפון</a></li>
       <li><a href="#install">התקנה</a></li>
       <li><a href="#community">קהילה</a></li>
@@ -754,6 +782,85 @@ footer small{color:var(--dim);font-size:13px}
   </div>
 </section>
 
+<!-- ============ ALL FEATURES ============ -->
+<section class="sec" id="all-features" style="padding-top:30px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">הרשימה המלאה</span>
+      <h2>כל הפיצ'רים.<br><span class="grad">91 סיבות לבחור ב-Lumina TV.</span></h2>
+      <p>כל מה שהאפליקציה יודעת לעשות, במקום אחד. סננו לפי קטגוריה או חפשו פיצ'ר מסוים.</p>
+    </div>
+    <div class="af-tools rv">
+      <label class="af-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="afQ" type="search" placeholder="חיפוש פיצ'ר… (למשל: כתוביות, הקלטה, ספורט)" aria-label="חיפוש פיצ'ר"></label>
+      <div class="af-chips" id="afChips"><button class="af-chip on" data-f="all">הכל <i>91</i></button><button class="af-chip" data-f="src">מקורות ופלייליסטים <i>9</i></button><button class="af-chip" data-f="live">שידור חי <i>13</i></button><button class="af-chip" data-f="epg">מדריך שידורים (EPG) <i>4</i></button><button class="af-chip" data-f="catch">צפייה לאחור ו-Timeshift <i>4</i></button><button class="af-chip" data-f="vod">סרטים וסדרות <i>14</i></button><button class="af-chip" data-f="sub">כתוביות ושמע <i>8</i></button><button class="af-chip" data-f="pic">תמונה ווידאו <i>5</i></button><button class="af-chip" data-f="net">ניגון ורשת <i>5</i></button><button class="af-chip" data-f="rec">הקלטות <i>4</i></button><button class="af-chip" data-f="multi">Multiview – כמה ערוצים במקביל <i>2</i></button><button class="af-chip" data-f="prof">פרופילים <i>4</i></button><button class="af-chip" data-f="pin">נעילת הורים וניהול קבוצות <i>4</i></button><button class="af-chip" data-f="remote">שלט חכם מהטלפון <i>9</i></button><button class="af-chip" data-f="atv">שילוב עם Android TV <i>2</i></button><button class="af-chip" data-f="gen">כללי ועדכונים <i>4</i></button></div>
+    </div>
+    <div class="af-grid" id="afGrid">
+      <article class="card af-card rv" data-cat="src" style="--c:#3b82f6">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><h3>מקורות ופלייליסטים</h3><span class="af-n">9</span></header>
+        <ul><li><b>ארבעה סוגי מקורות</b> <span>M3U, Xtream Codes, פורטל Stalker/MAG (כתובת + MAC) ופלייליסט ממוזג מכמה מקורות</span></li><li><b>הוספת פלייליסט מהטלפון</b> <span>סורקים QR מהטלוויזיה ומזינים הכל בנוחות בדפדפן הטלפון</span></li><li><b>ניהול מלא מהטלפון</b> <span>הוספה, עריכה, הפעלה, רענון ומחיקה של פלייליסטים</span></li><li><b>EPG ו-User-Agent לכל פלייליסט</b> <span>כתובת מדריך שידורים ו-User-Agent נפרדים לכל מקור</span></li><li><b>פלייליסט הדגמה</b> <span>כפתור לניסיון מיידי עם ערוצים ישראליים פתוחים</span></li><li><b>ייבוא עם התקדמות</b> <span>מונה ערוצים, סרטים וסדרות בזמן הטעינה</span></li><li><b>תמיכה מלאה בתגיות M3U</b> <span>tvg-id, tvg-logo, tvg-chno, catchup, timeshift, url-tvg, EXTVLCOPT ועוד</span></li><li><b>סנכרון אוטומטי ברקע</b> <span>כל יום, יומיים, שבוע, חודש או ידני</span></li><li><b>פרטי התחברות מוצפנים</b> <span>שם משתמש וסיסמה נשמרים מוצפנים במכשיר</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="live" style="--c:#22d3ee">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3"/></svg></div><h3>שידור חי</h3><span class="af-n">13</span></header>
+        <ul><li><b>תפריט ערוצים חכם</b> <span>כל הערוצים, מועדפים, נצפו לאחרונה וכל קבוצה בנפרד</span></li><li><b>מספור מ-1 בכל קטגוריה</b> <span>כולל במועדפים</span></li><li><b>הקשת מספר ערוץ</b> <span>ספרות בשלט קופצות בדיוק לערוץ, ו-OK קופץ מיד</span></li><li><b>זיפזופ מעגלי</b> <span>ערוץ למעלה/למטה, מקש ערוץ אחרון, השהיה, הרצה קדימה ואחורה</span></li><li><b>פס מידע על המסך</b> <span>התוכנית הנוכחית והבאה, דקות שנותרו וסרגל התקדמות</span></li><li><b>חיבור מחדש אוטומטי</b> <span>בעת נפילת שידור, עם OK לניסיון חוזר</span></li><li><b>מועדפים בלחיצה ארוכה</b> <span>לחיצה ארוכה על OK מוסיפה או מסירה מהמועדפים</span></li><li><b>סידור מועדפים</b> <span>הזזה למעלה/למטה או קביעת מיקום מספרי מדויק</span></li><li><b>המשך מאיפה שעצרתם</b> <span>נפתח בערוץ ובקטגוריה האחרונים</span></li><li><b>חיפוש ערוצים</b> <span>מקלדת על המסך, חיפוש קולי והצעות</span></li><li><b>מסך ספורט</b> <span>משחקים בשידור חי, היום והקרובים, ערוצי ספורט והקלטה בלחיצה ארוכה</span></li><li><b>תמונה בתוך תמונה (PiP)</b></li><li><b>יציאה מוגנת</b> <span>10 לחיצות Back עם מונה על המסך, כדי שלא תצאו בטעות</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="epg" style="--c:#a78bfa">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div><h3>מדריך שידורים (EPG)</h3><span class="af-n">4</span></header>
+        <ul><li><b>תמיכה ב-XMLTV</b> <span>טעינה בהזרמה ורענון אוטומטי כל 12 שעות</span></li><li><b>לוח שידורים מלא</b> <span>רשת תוכניות עם פרטי כל תוכנית</span></li><li><b>צפייה מההתחלה</b> <span>OK על תוכנית שעברה מנגן אותה מהארכיון</span></li><li><b>הקלטה מהמדריך</b> <span>לחיצה ארוכה מתזמנת הקלטה</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="catch" style="--c:#f97316">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19 2 12l9-7zM22 19l-9-7 9-7z"/></svg></div><h3>צפייה לאחור ו-Timeshift</h3><span class="af-n">4</span></header>
+        <ul><li><b>Catch-up מלא</b> <span>ארכיון Xtream ותבניות catchup של M3U (בסגנון Kodi/TiviMate), כולל אזור זמן של השרת</span></li><li><b>התחלה מחדש</b> <span>המקש הירוק מתחיל את התוכנית הנוכחית מההתחלה</span></li><li><b>קפיצות של 30 שניות</b> <span>וחזרה לשידור החי בלחיצה</span></li><li><b>השהיית שידור חי</b> <span>עצירה והרצה אחורה בשידור חי בעזרת זיכרון מקומי, עם חיווי &quot;X מאחורי החי&quot;</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="vod" style="--c:#ec4899">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></div><h3>סרטים וסדרות</h3><span class="af-n">14</span></header>
+        <ul><li><b>מסך גילוי</b> <span>המשך צפייה, רשימת צפייה, פרקים חדשים, נוספו לאחרונה ודירוג גבוה</span></li><li><b>מיון וניווט</b> <span>לפי א-ב, שנה, דירוג או תאריך הוספה, וקפיצה לאות</span></li><li><b>דף פרטים עשיר</b> <span>תקציר, שחקנים, במאי, תמונת רקע וטריילר</span></li><li><b>המלצות</b> <span>סרטים דומים, אוסף, עוד עם אותו שחקן וגרסאות נוספות</span></li><li><b>השלמת מידע מ-TMDB</b> <span>תקצירים, תמונות וטריילרים חסרים מתמלאים אוטומטית</span></li><li><b>עונות ופרקים</b> <span>התקדמות לכל עונה, סימון עונה כנצפתה ופרק אקראי</span></li><li><b>המשך צפייה</b> <span>המשך מאיפה שעצרתם או מההתחלה, וסימון נצפה/לא נצפה</span></li><li><b>דילוג על פתיח</b> <span>זוכר את אורך הפתיח בכל סדרה</span></li><li><b>פרק הבא אוטומטי</b> <span>ספירה לאחור לפרק הבא</span></li><li><b>התראה על פרקים חדשים</b> <span>בדיקה ברקע לסדרות שאתם עוקבים אחריהן</span></li><li><b>חיפוש סרטים וסדרות</b> <span>חיפושים אחרונים, סינון וחיפוש קולי</span></li><li><b>סרגל נגן מלא</b> <span>±10 שניות, גלילה בציר הזמן, פרק קודם/הבא, מהירות ושעת סיום</span></li><li><b>טיימר שינה</b> <span>בדקות או &quot;בסוף הפרק/הסרט&quot;</span></li><li><b>פס קול חיצוני</b> <span>הוספת ערוץ שמע בקישור מהטלפון</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="sub" style="--c:#22c55e">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 10.5a2 2 0 1 0 0 3M17 10.5a2 2 0 1 0 0 3"/></svg></div><h3>כתוביות ושמע</h3><span class="af-n">8</span></header>
+        <ul><li><b>בחירת רצועות</b> <span>שמע, איכות וידאו וכתוביות</span></li><li><b>סדר שפות מועדף</b> <span>בחירה אוטומטית של שפת השמע והכתוביות</span></li><li><b>עיצוב כתוביות</b> <span>גודל, רקע וצבע</span></li><li><b>הורדת כתוביות מ-OpenSubtitles</b> <span>חיפוש והורדה ישירות מהנגן</span></li><li><b>תיקון ג׳יבריש בכתוביות</b> <span>עברית ורוסית מקולקלות מתוקנות אוטומטית</span></li><li><b>סנכרון שמע (Lip-Sync)</b> <span>השהיית שמע מול התמונה</span></li><li><b>סראונד מקורי</b> <span>העברת AC-3, E-AC-3, DTS ו-TrueHD לרסיבר</span></li><li><b>פענוח שמע בתוכנה</b> <span>פתרון לשקט או רעשים במכשירים בעייתיים</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="pic" style="--c:#f59e0b">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><h3>תמונה ווידאו</h3><span class="af-n">5</span></header>
+        <ul><li><b>יחס תצוגה</b> <span>מקורי, 4:3, זום או מתיחה</span></li><li><b>התאמת קצב רענון (AFR)</b> <span>המסך עובר ל-24/50/60Hz לפי התוכן, בלי קרטועים</span></li><li><b>Dolby Vision</b> <span>מצב אוטומטי שמתקן גוון סגול/ירוק, המרת פרופיל 7 ל-HDR10 או מקורי</span></li><li><b>פענוח חומרה ו-Tunneled</b> <span>שליטה מלאה במצב הפענוח</span></li><li><b>מידע ניגון</b> <span>מפענח, רזולוציה, FPS, פריימים שנפלו ומצב באפר</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="net" style="--c:#38bdf8">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0M12 20h.01"/></svg></div><h3>ניגון ורשת</h3><span class="af-n">5</span></header>
+        <ul><li><b>מנוע Media3 / ExoPlayer</b> <span>עם FFmpeg מובנה ותמיכה ב-HLS, MPEG-TS ו-DASH</span></li><li><b>פרופיל באפר</b> <span>קל, מאוזן או יציב</span></li><li><b>פורמט שידור ל-Xtream</b> <span>לפי הפלייליסט, HLS או MPEG-TS, עם מעבר אוטומטי אם השרת דוחה</span></li><li><b>DNS מוצפן (DoH)</b> <span>Cloudflare, Google או Quad9 לכל השידורים והחיבורים</span></li><li><b>פלייליסטים ענקיים בלי קריסות</b> <span>טעינה בהזרמה ישירה למסד הנתונים</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="rec" style="--c:#ef4444">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div><h3>הקלטות</h3><span class="af-n">4</span></header>
+        <ul><li><b>הקלטה עכשיו</b> <span>מקש REC או לחיצה ארוכה במדריך ובמסך הספורט</span></li><li><b>הקלטות מתוזמנות</b> <span>פועלות ברקע עם התראה</span></li><li><b>בחירת אחסון</b> <span>פנימי או חיצוני, עם בדיקת מקום פנוי</span></li><li><b>ההקלטות שלי</b> <span>ניגון, עצירה, ביטול ומחיקה</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="multi" style="--c:#14b8a6">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div><h3>Multiview – כמה ערוצים במקביל</h3><span class="af-n">2</span></header>
+        <ul><li><b>ארבע פריסות</b> <span>2 ערוצים, 4 ערוצים, ראשי + 3 קטנים, או 6 ערוצים</span></li><li><b>שליטה בכל חלון</b> <span>החלפת ערוץ, ניקוי חלון ומסך מלא בלחיצה ארוכה</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="prof" style="--c:#8b5cf6">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>פרופילים</h3><span class="af-n">4</span></header>
+        <ul><li><b>עד 4 פרופילים</b> <span>אבא, אמא, ילדים, נוער, סבא וסבתא, אורחים</span></li><li><b>פרופיל ילדים</b> <span>רק הקבוצות שאישרתם, ויציאה ממנו בקוד PIN</span></li><li><b>&quot;מי צופה?&quot;</b> <span>בחירת פרופיל בכל הפעלה (אופציונלי)</span></li><li><b>היסטוריה נפרדת</b> <span>כל פרופיל עם התקדמות צפייה משלו</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="pin" style="--c:#f43f5e">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>נעילת הורים וניהול קבוצות</h3><span class="af-n">4</span></header>
+        <ul><li><b>נעילה אוטומטית</b> <span>קבוצות למבוגרים ננעלות בקוד PIN בן 4 ספרות</span></li><li><b>הגנה מניחושים</b> <span>טיימר נעילה אחרי ניסיונות שגויים</span></li><li><b>שינוי קוד מהטלפון</b></li><li><b>הסתרת קבוצות</b> <span>בנפרד לשידור חי, סרטים וסדרות</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="remote" style="--c:#0ea5e9">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>שלט חכם מהטלפון</h3><span class="af-n">9</span></header>
+        <ul><li><b>בלי להתקין כלום</b> <span>סורקים QR ומתחברים דרך הדפדפן, עם קוד אבטחה</span></li><li><b>כל מקשי השלט</b> <span>חיצים, OK, חזור, תפריט, מידע, מדריך, חיפוש וערוץ אחרון</span></li><li><b>ווליום והשתקה</b></li><li><b>שליטה בניגון</b> <span>זיפזופ, השהיה וגלילה בזמן</span></li><li><b>בחירת שמע, וידאו וכתוביות</b> <span>מהטלפון</span></li><li><b>דפדוף בערוצים</b> <span>ניגון ערוץ, ניהול וסידור מועדפים</span></li><li><b>דפדוף בסרטים וסדרות</b> <span>ניגון סרט או פרק ורשימת צפייה</span></li><li><b>החלפת פלייליסט</b> <span>והגדרות OpenSubtitles מהטלפון</span></li><li><b>קוד חדש</b> <span>ניתוק כל הטלפונים המחוברים בלחיצה</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="atv" style="--c:#10b981">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>שילוב עם Android TV</h3><span class="af-n">2</span></header>
+        <ul><li><b>מועדפים במסך הבית</b> <span>שורת ערוצים במסך הבית של הטלוויזיה</span></li><li><b>הפעלה עם הדלקת המסך</b> <span>או עם הפעלת המכשיר (אופציונלי)</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="gen" style="--c:#94a3b8">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><h3>כללי ועדכונים</h3><span class="af-n">4</span></header>
+        <ul><li><b>עברית ואנגלית</b> <span>ממשק מלא מימין לשמאל</span></li><li><b>אפקט פריזמה</b> <span>מסגרת צבעונית מונפשת, ניתנת לכיבוי</span></li><li><b>עדכונים מהאוויר</b> <span>בדיקה, רשימת שינויים, הורדה והתקנה ישירות מהטלוויזיה</span></li><li><b>תזכורת לעדכון</b> <span>ותג &quot;חדש&quot; בהגדרות</span></li></ul>
+      </article>
+    </div>
+    <p class="af-empty" id="afEmpty" hidden>לא נמצא פיצ'ר שמתאים לחיפוש. נסו מילה אחרת.</p>
+    <p class="af-note">חלק מהפיצ'רים (הקלטות, Multiview, פרופילים ו-Timeshift) כבויים כברירת מחדל ומופעלים בהגדרות ← פיצ'רים מתקדמים.</p>
+  </div>
+</section>
+
 <!-- ============ LANGUAGE ============ -->
 <section class="sec" id="lang" style="padding-top:20px">
   <div class="wrap">
@@ -940,8 +1047,8 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <h2>כל הפרטים, <span class="grad">בקצרה</span></h2>
     </div>
     <div class="specs rv">
-      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.4 (Build 22)</b></div>
-      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-10.0MB</b></div>
+      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.5 (Build 23)</b></div>
+      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-10.2MB</b></div>
       <div class="spec"><small>Android מינימלי</small><b>Android 8.0 Oreo (API 26)</b></div>
       <div class="spec"><small>מומלץ</small><b>Android 11 / 12 / 14</b></div>
       <div class="spec"><small>ארכיטקטורה</small><b>Universal: ARMv7, ARM64, x86, x86_64</b></div>
@@ -957,17 +1064,16 @@ adb install -r -d LuminaTV.apk</div></div></li>
     <div class="changelog rv">
       <div class="cl-head">
         <div><b>מה חדש</b><br><span id="clDate">עודכן לאחרונה</span></div>
-        <span class="ver" id="clVer">גרסה 1.4.4</span>
+        <span class="ver" id="clVer">גרסה 1.4.5</span>
       </div>
       <ul id="clList">
-        <li>💎 עיצוב פריזם יוקרתי (Prism Glow & Glassmorphism) עם מתג הפעלה/כיבוי בהגדרות</li>
-        <li>🔄 מנגנון שרתים חלופיים (Server Failover) למעבר אוטומטי במקרה של עומס או ניתוק</li>
-        <li>💬 כתוביות בעברית מושלמות: תיקון כיווניות פיסוק RTL, פענוח קידודים (Mojibake) והורדה מ-OpenSubtitles</li>
-        <li>🎧 סנכרון אודיו חי בנגן (Audio Delay) מ-2000ms- עד 2000ms+ לערוצים וסרטים</li>
-        <li>🎬 העשרת VOD חכמה מ-TMDB: זיהוי שמות משופר, תמונות רקע (Backdrops) ודירוגים</li>
-        <li>🛡️ עקיפת חסימות ספקים עם DNS חכם (Cloudflare / Google DoH)</li>
-        <li>🔔 מעקב פרקים חדשים בסדרות (Series Tracker) ברקע</li>
-        <li>📱 שלט רחוק משודרג מהדפדפן עם משטח מגע ומקלדת מלאה</li>
+        <li>🎉 כרטיס תודה וקהילת טלגרם רשמית (t.me/LuminaTViptv) בהפעלה ראשונה</li>
+        <li>🏠 אפשרות להסרת שורת המועדפים ממסך הבית של Android TV דרך ההגדרות</li>
+        <li>🎬 תצוגת VOD במסך מלא: קיפול אוטומטי של רשימת הקטגוריות בעת מעבר לפוסטרים</li>
+        <li>🔍 חיפוש וסינון פיצ'רים באתר ההורדה הרשמי</li>
+        <li>💎 עיצוב פריזם יוקרתי (Prism Glow) עם מתג הפעלה/כיבוי בהגדרות</li>
+        <li>🔄 מנגנון שרתים חלופיים (Server Failover) למעבר אוטומטי במקרה של עומס</li>
+        <li>💬 כתוביות בעברית מושלמות עם תיקון RTL וסנכרון אודיו חי בנגן (Audio Delay)</li>
       </ul>
     </div>
   </div>
@@ -1143,7 +1249,7 @@ var T={
   qrT:'Control from your phone',qrS:['Scan the code with your phone camera','The remote opens in your browser','Control it all: arrows, volume, keyboard'],net:'Network: Home-WiFi',
   connected:'📱 Phone connected',muted:'🔇 Muted',unmuted:'🔊 Sound on',play:'▶ Starting playback',backN:function(n){return 'Press '+n+' more times to exit'}}
 };
-var CHANGELOG=null, VERSION='1.4.4', SIZE='10.0MB';
+var CHANGELOG=null, VERSION='1.4.5', SIZE='10.2MB';
 
 function progInfo(c){
   var now=new Date(), mins=now.getHours()*60+now.getMinutes();
@@ -1436,6 +1542,31 @@ fetch('https://api.github.com/repos/Hero-Ghost/Lumina-TV-Releases/releases?per_p
   if(size){SIZE=(size/1048576).toFixed(1)+'MB';$('#sizeStat').textContent='~'+SIZE;$('#specSize').textContent='כ-'+SIZE}
   if(total>=500)countUp($('#dlCount'),total);else throw 0;
 }).catch(function(){$('#dlCount').textContent='OTA';$('#dlLabel').textContent='עדכונים ישר מהטלוויזיה'});
+})();
+
+/* all-features filter + search */
+(function(){
+  var grid=document.getElementById('afGrid');if(!grid)return;
+  var q=document.getElementById('afQ'),chips=document.querySelectorAll('#afChips .af-chip'),empty=document.getElementById('afEmpty'),cat='all';
+  var cards=grid.querySelectorAll('.af-card');
+  cards.forEach(function(c){c.querySelectorAll('li').forEach(function(li){li._h=li.innerHTML;li._t=li.textContent.toLowerCase()})});
+  function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+  function run(){
+    var term=(q.value||'').trim().toLowerCase(),re=term?new RegExp('('+esc(term)+')','gi'):null,shown=0;
+    cards.forEach(function(c){
+      var okCat=cat==='all'||c.getAttribute('data-cat')===cat,hits=0,titleHit=term&&c.querySelector('h3').textContent.toLowerCase().indexOf(term)>-1;
+      c.querySelectorAll('li').forEach(function(li){
+        var hit=!term||titleHit||li._t.indexOf(term)>-1;
+        li.hidden=!hit;
+        li.innerHTML=(re&&hit&&!titleHit)?li._h.replace(/>([^<]+)</g,function(m,t){return '>'+t.replace(re,'<mark>$1</mark>')+'<'}):li._h;
+        if(hit)hits++;
+      });
+      var vis=okCat&&hits>0;c.hidden=!vis;if(vis){shown++;c.classList.add('in')}
+    });
+    empty.hidden=shown>0;
+  }
+  chips.forEach(function(b){b.addEventListener('click',function(){cat=b.getAttribute('data-f');chips.forEach(function(x){x.classList.toggle('on',x===b)});run()})});
+  q.addEventListener('input',run);
 })();
 </script>
 </body>
