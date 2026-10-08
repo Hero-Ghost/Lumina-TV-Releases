@@ -56,6 +56,8 @@ section{position:relative}
 .btn-ghost:hover{background:rgba(255,255,255,.09)}
 .btn-glow{position:relative;isolation:isolate}
 .btn-glow::before{content:"";position:absolute;inset:-2px;border-radius:16px;background:var(--prism);background-size:200% 100%;z-index:-1;filter:blur(14px);opacity:.55;animation:prismShift 6s linear infinite}
+.btn-telegram{background:linear-gradient(135deg,#0088cc,#0ea5e9);color:#fff;box-shadow:0 10px 30px -8px rgba(14,165,233,.6),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-telegram:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(14,165,233,.8),inset 0 1px 0 rgba(255,255,255,.25)}
 
 /* ---------- nav ---------- */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
@@ -467,6 +469,20 @@ section{position:relative}
 .faq details[open] summary::after{transform:rotate(45deg)}
 .faq details p{padding:0 22px 20px;color:var(--muted);font-size:15.5px}
 
+/* ---------- community banner ---------- */
+.community-banner{position:relative;background:linear-gradient(135deg,#0c1427,#0a1020 60%,#080f1d);border:1px solid rgba(56,189,248,.25);border-radius:24px;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:36px;overflow:hidden;box-shadow:0 20px 50px -15px rgba(2,132,199,.25)}
+.community-banner::before{content:"";position:absolute;inset:-1px;border-radius:25px;background:radial-gradient(600px circle at top left,rgba(56,189,248,.18),transparent 70%);pointer-events:none}
+.comm-glow{position:absolute;inset-inline-end:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:rgba(14,165,233,.18);filter:blur(80px);pointer-events:none}
+.comm-content{max-width:640px;position:relative;z-index:1}
+.comm-content h2{font-family:var(--display);font-size:clamp(26px,3.2vw,38px);font-weight:800;margin:12px 0 10px;line-height:1.2}
+.comm-content p{color:var(--muted);font-size:16px;line-height:1.6}
+.comm-actions{display:flex;align-items:center;gap:14px;margin-top:24px;flex-wrap:wrap}
+.comm-icon-box{width:130px;height:130px;border-radius:30px;background:linear-gradient(135deg,rgba(2,132,199,.25),rgba(56,189,248,.08));border:1px solid rgba(56,189,248,.35);display:grid;place-items:center;color:#38bdf8;flex:none;position:relative;z-index:1;box-shadow:0 12px 36px rgba(2,132,199,.25);animation:float 6s ease-in-out infinite}
+@media (max-width:860px){
+  .community-banner{flex-direction:column;align-items:flex-start;padding:32px 24px}
+  .comm-icon-box{display:none}
+}
+
 /* ---------- final cta ---------- */
 .final{text-align:center;padding:120px 0;overflow:hidden}
 .final::before{content:"";position:absolute;inset:0;background:url(assets/banner.jpg) center/cover;opacity:.18;filter:blur(3px)}
@@ -511,6 +527,8 @@ footer small{color:var(--dim);font-size:13px}
   .code-chip{flex:1 1 100%;justify-content:space-between}
   .code-hero{padding:26px 18px}
   .card{padding:24px}
+  .nav-actions .btn-telegram{padding:10px 12px}
+  .nav-actions .btn-telegram span{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -529,9 +547,16 @@ footer small{color:var(--dim);font-size:13px}
       <li><a href="#features">תכונות</a></li>
       <li><a href="#remote">שלט מהטלפון</a></li>
       <li><a href="#install">התקנה</a></li>
+      <li><a href="#community">קהילה</a></li>
       <li><a href="#faq">שאלות</a></li>
     </ul>
-    <a class="btn btn-primary" href="#install">להורדה</a>
+    <div class="nav-actions" style="display:flex;align-items:center;gap:10px">
+      <a class="btn btn-telegram" href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="padding:10px 16px;font-size:14.5px;border-radius:12px;gap:7px" title="הצטרפות לקבוצת הטלגרם">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+        <span>קבוצת טלגרם</span>
+      </a>
+      <a class="btn btn-primary" href="#install">להורדה</a>
+    </div>
   </div>
 </header>
 
@@ -554,11 +579,16 @@ footer small{color:var(--dim);font-size:13px}
           <div><small>קוד Downloader</small><strong>4933886</strong></div>
           <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
         </div>
+        <a class="btn btn-telegram" href="https://t.me/LuminaTViptv" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+          קבוצת טלגרם
+        </a>
       </div>
       <div class="trust rv d3">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Android TV · Google TV · Fire TV</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עברית מלאה + English</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עדכונים אוטומטיים מהטלוויזיה</span>
+        <a href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:600"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>קהילת טלגרם פעילה</a>
       </div>
     </div>
     <div class="tv-stage rv d2">
@@ -842,6 +872,10 @@ footer small{color:var(--dim);font-size:13px}
             <div style="min-width:0"><small>קישור ישיר מלא</small><code>https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk</code></div>
             <span class="cp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></span>
           </div>
+          <a class="linkrow" href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="text-decoration:none">
+            <div style="min-width:0"><small>קבוצת תמיכה ועדכונים בטלגרם</small><code style="color:#38bdf8">t.me/LuminaTViptv</code></div>
+            <span class="cp" style="background:rgba(2,132,199,.25);color:#38bdf8"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg></span>
+          </a>
         </div>
       </div>
 
@@ -954,6 +988,34 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <details><summary>Downloader לא מוריד את הקובץ. מה עושים?</summary><p>ודאו שאישרתם ל-Downloader "התקנת אפליקציות לא מוכרות" בהגדרות הטלוויזיה. אם הקוד 4933886 לא עובד, הקלידו את הקישור המקוצר aftv.news/4933886 או את הקישור הישיר המלא שמופיע למעלה.</p></details>
       <details><summary>על אילו מכשירים זה עובד?</summary><p>כל מכשיר Android TV או Google TV עם Android 8.0 ומעלה: Sony BRAVIA, TCL, Hisense, Xiaomi Box, Chromecast with Google TV, וגם Amazon Fire TV. הקובץ אוניברסלי ומתאים לכל סוגי המעבדים.</p></details>
       <details><summary>יש נעילת הורים?</summary><p>כן. אפשר לנעול ערוצים בקוד PIN, שנשמר בצורה מוצפנת במכשיר. אחרי כמה ניסיונות שגויים הנעילה נחסמת זמנית.</p></details>
+      <details><summary>איפה אפשר לקבל תמיכה, לשאול שאלות או להציע שיפורים?</summary><p>יש לנו קבוצת טלגרם פעילה! מוזמנים להצטרף לקהילה שלנו בקישור <a href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:underline;font-weight:600">t.me/LuminaTViptv</a>. שם תוכלו לקבל תמיכה טכנית, לשאול שאלות, להציע רעיונות ולהתעדכן ראשונים בכל גרסה חדשה.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="sec" id="community" style="padding-top:20px;padding-bottom:30px">
+  <div class="wrap">
+    <div class="community-banner rv">
+      <div class="comm-glow"></div>
+      <div class="comm-content">
+        <div class="eyebrow" style="background:rgba(0,136,204,.15);border-color:rgba(0,136,204,.35);color:#7dd3fc">
+          <span class="dot" style="background:#38bdf8;box-shadow:0 0 0 0 rgba(56,189,248,.6)"></span>
+          קהילה ותמיכה
+        </div>
+        <h2>הצטרפו לקבוצת הטלגרם הרשמית</h2>
+        <p>צריכים עזרה בהגדרה? רוצים לדווח על באג, להציע רעיונות לתכונות חדשות, או לקבל עדכונים ראשונים על שחרור גרסאות? הקהילה שלנו מחכה לכם בטלגרם!</p>
+        <div class="comm-actions">
+          <a class="btn btn-telegram btn-glow" href="https://t.me/LuminaTViptv" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+            הצטרפות לקבוצה בטלגרם
+          </a>
+          <span class="mono" style="font-size:14px;padding:8px 14px;color:#93c5fd">t.me/LuminaTViptv</span>
+        </div>
+      </div>
+      <div class="comm-icon-box">
+        <svg viewBox="0 0 24 24" width="76" height="76" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+      </div>
     </div>
   </div>
 </section>
@@ -968,6 +1030,10 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <a class="btn btn-primary btn-glow" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
         להורדת Lumina TV
+      </a>
+      <a class="btn btn-telegram" href="https://t.me/LuminaTViptv" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+        קבוצת טלגרם
       </a>
       <div class="code-chip" data-copy="4933886" role="button" tabindex="0">
         <div><small>קוד Downloader</small><strong>4933886</strong></div>
@@ -984,6 +1050,10 @@ adb install -r -d LuminaTV.apk</div></div></li>
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/mark.png" alt="">Lumina TV</a>
     <nav>
+      <a href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="color:#38bdf8;font-weight:700;display:inline-flex;align-items:center;gap:6px">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>
+        קבוצת טלגרם
+      </a>
       <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases">GitHub</a>
       <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases">כל הגרסאות</a>
       <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">דיווח על תקלה</a>

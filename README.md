@@ -11,11 +11,16 @@
 [![Version](https://img.shields.io/github/v/release/Hero-Ghost/Lumina-TV-Releases?style=flat-square&label=version&color=3b82f6)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/Hero-Ghost/Lumina-TV-Releases/total?style=flat-square&label=downloads&color=10b981)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
 [![Android TV](https://img.shields.io/badge/Android%20TV%208.0+-3ddc84?style=flat-square&logo=android&logoColor=white)](#דרישות-מערכת)
+[![Telegram](https://img.shields.io/badge/Telegram-%D7%A7%D7%91%D7%95%D7%A6%D7%AA_%D7%98%D7%9C%D7%92%D7%A8%D7%9D-229ED9?style=flat-square&logo=telegram&logoColor=white)](https://t.me/LuminaTViptv)
 
 <br>
 
 <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
   <img src="https://img.shields.io/badge/להורדת_האפליקציה-LuminaTV.apk-2563eb?style=for-the-badge&logo=android&logoColor=white" alt="הורדה">
+</a>
+&nbsp;
+<a href="https://t.me/LuminaTViptv">
+  <img src="https://img.shields.io/badge/קבוצת_טלגרם-t.me/LuminaTViptv-0088cc?style=for-the-badge&logo=telegram&logoColor=white" alt="קבוצת טלגרם">
 </a>
 
 </div>
@@ -30,6 +35,7 @@
 |---|---|
 | **קוד Downloader** | `4933886` |
 | **קישור מקוצר** | `aftv.news/4933886` |
+| **קבוצת טלגרם לתמיכה** | [t.me/LuminaTViptv](https://t.me/LuminaTViptv) |
 
 <details>
 <summary><b>צעד אחר צעד</b></summary>
@@ -129,9 +135,9 @@ adb install -r LuminaTV.apk
 </details>
 
 <details>
-<summary><b>מצאתי באג / יש לי רעיון</b></summary>
+<summary><b>מצאתי באג / יש לי רעיון / שאלות ותמיכה</b></summary>
 <br>
-מעולה. פתחו <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">Issue</a> וספרו לנו. כל משוב עוזר לשפר את האפליקציה.
+מעולה! מוזמנים להצטרף ל**[קבוצת הטלגרם הרשמית שלנו](https://t.me/LuminaTViptv)** לשאלות, תמיכה ועדכונים, או לפתוח <a href="https://github.com/Hero-Ghost/Lumina-TV-Releases/issues">Issue</a> ב-GitHub.
 </details>
 
 ---
