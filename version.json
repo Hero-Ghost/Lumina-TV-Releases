@@ -11,6 +11,13 @@
   "status": "active",
   "active": true,
   "message": "",
+  "blockedVersions": [],
+  "blockedVersionCodes": [],
+  "minVersion": "",
+  "minVersionCode": 0,
+  "forceUpdate": false,
+  "blockedTitle": "",
+  "blockedMessage": "",
   "changelog": [
     "🔊 סנכרון שמע ווידאו (A/V Sync) מדויק והשהיית קול פר-ערוץ עם שמירה אוטומטית",
     "⚡ נעילת מהירות שידור 1.0x ומניעת סטיות בסנכרון בשידורים חיים",
