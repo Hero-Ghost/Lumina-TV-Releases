@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumina TV | נגן IPTV בעברית ל-Android TV</title>
-<meta name="description" content="Lumina TV – נגן IPTV פרימיום ל-Android TV ו-Google TV. ממשק בעברית מלאה וגם באנגלית, זיפזופ מתחת ל-300ms, סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון. התקנה בקוד Downloader 4933886.">
+<title>Lumina TV | נגן IPTV בעברית ל-Android TV, עם AirPlay מובנה</title>
+<meta name="description" content="Lumina TV – נגן IPTV פרימיום ל-Android TV ו-Google TV בעברית מלאה. כולל AirPlay מובנה: שיקוף מסך ווידאו מ-iPhone, iPad ו-Mac גם לטלוויזיה בלי AirPlay. פרופילים, שלט מהטלפון וזיפזופ מתחת ל-300ms. קוד Downloader 4933886.">
 <meta name="theme-color" content="#07080d">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Lumina TV – הטלוויזיה שלך, במהירות האור">
-<meta property="og:description" content="נגן IPTV בעברית מלאה ל-Android TV. מתקינים בדקה עם קוד Downloader 4933886.">
+<meta property="og:description" content="נגן IPTV בעברית ל-Android TV, עם AirPlay מובנה לשיקוף מ-iPhone גם לטלוויזיה בלי AirPlay. קוד Downloader 4933886.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1593784991251-92ded75ea290?auto=format&fit=crop&w=1200&h=630&q=80">
 <meta property="og:url" content="https://hero-ghost.github.io/Lumina-TV-Releases/">
 <meta name="twitter:card" content="summary_large_image">
@@ -459,6 +459,24 @@ section{position:relative}
 .changelog ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .changelog li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:15.5px}
 
+
+/* ---------- airplay ---------- */
+.ap-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;margin-bottom:28px;background:linear-gradient(135deg,rgba(14,165,233,.10),rgba(139,92,246,.12));border:1px solid var(--line2);border-radius:28px;padding:40px;position:relative;overflow:hidden}
+.ap-hero::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#0ea5e9;filter:blur(130px);opacity:.14;top:-180px;inset-inline-start:-120px;pointer-events:none}
+.ap-hero h3{font-family:var(--display);font-size:clamp(24px,3vw,34px);font-weight:800;line-height:1.2;margin-bottom:12px}
+.ap-hero p{color:#cbd5e1;font-size:17px;margin-bottom:12px}
+.ap-hero p b{color:#fff}
+.ap-tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(34,197,94,.14);border:1px solid rgba(34,197,94,.35);color:#86efac;margin-bottom:14px}
+.ap-viz{position:relative;z-index:1}
+.ap-viz svg{width:100%;height:auto;display:block}
+.ap-devs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.ap-devs span{padding:7px 14px;border-radius:999px;font-size:13.5px;font-weight:600;background:rgba(255,255,255,.06);border:1px solid var(--line2)}
+.ap-devs span.no::before{content:"✕ ";color:#f87171;font-weight:800}
+.ap-devs span.yes::before{content:"✓ ";color:#4ade80;font-weight:800}
+.ap-steps{margin:0 0 28px}
+.ap-note{text-align:center;color:var(--dim);font-size:14px;margin-top:22px;max-width:760px;margin-inline:auto}
+.ap-new{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.4px;background:linear-gradient(135deg,#0ea5e9,#8b5cf6);color:#fff;border-radius:6px;padding:1px 7px;margin-inline-start:8px;vertical-align:middle}
+@media (max-width:900px){.ap-hero{grid-template-columns:1fr;padding:26px}}
 /* ---------- faq ---------- */
 .faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 .faq details{background:var(--surface);border:1px solid var(--line);border-radius:18px;transition:border-color .2s}
@@ -571,6 +589,7 @@ footer small{color:var(--dim);font-size:13px}
     <a class="brand" href="#top"><img src="data:image/webp;base64,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" alt="">Lumina TV</a>
     <ul class="nav-links">
       <li><a href="#tour">הצצה לאפליקציה</a></li>
+      <li><a href="#airplay">AirPlay</a></li>
       <li><a href="#features">תכונות</a></li>
       <li><a href="#all-features">כל הפיצ'רים</a></li>
       <li><a href="#remote">שלט מהטלפון</a></li>
@@ -595,9 +614,9 @@ footer small{color:var(--dim);font-size:13px}
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1593784991251-92ded75ea290?auto=format&fit=crop&w=1800&q=60" alt="" fetchpriority="high"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.4.4 זמינה עכשיו</span></span>
+      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.4.7 זמינה עכשיו</span></span>
       <h1 class="rv d1">הטלוויזיה שלך,<br><span class="grad">במהירות האור.</span></h1>
-      <p class="lead rv d2"><b>Lumina TV</b> הוא נגן IPTV פרימיום ל-Android&nbsp;TV ו-Google&nbsp;TV. <b>ממשק בעברית מלאה</b> (וגם באנגלית), מעבר ערוצים <b>מתחת ל-300ms</b>, ספריית סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון, בלי להתקין שום דבר.</p>
+      <p class="lead rv d2"><b>Lumina TV</b> הוא נגן IPTV פרימיום ל-Android&nbsp;TV ו-Google&nbsp;TV. <b>ממשק בעברית מלאה</b> (וגם באנגלית), מעבר ערוצים <b>מתחת ל-300ms</b>, ספריית סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון, בלי להתקין שום דבר. <b>ועכשיו גם AirPlay מובנה</b>: שיקוף מה-iPhone גם לטלוויזיה בלי AirPlay.</p>
       <div class="cta-row rv d3">
         <a class="btn btn-primary btn-glow" href="https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
@@ -615,6 +634,7 @@ footer small{color:var(--dim);font-size:13px}
       <div class="trust rv d3">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Android TV · Google TV · Fire TV</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עברית מלאה + English</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><a href="#airplay" style="text-decoration:none;font-weight:700">AirPlay מובנה גם בלי AirPlay בטלוויזיה</a></span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>עדכונים אוטומטיים מהטלוויזיה</span>
         <a href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:none;display:inline-flex;align-items:center;gap:6px;font-weight:600"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18.895-.968 4.542-1.362 6.444-.167.805-.463 1.074-.75 1.1-.624.057-1.1-.354-1.705-.75-1.002-.656-1.568-1.065-2.541-1.706-1.125-.742-.395-1.15.246-1.817.168-.174 3.08-2.824 3.136-3.063.007-.03.013-.142-.054-.201-.067-.06-.165-.039-.237-.023-.101.023-1.716 1.09-4.843 3.203-.458.315-.873.47-1.245.461-.41-.009-1.2-.232-1.787-.423-.72-.235-1.292-.36-1.242-.76.026-.208.312-.421.858-.64 3.359-1.463 5.599-2.428 6.72-2.895 3.199-1.334 3.864-1.566 4.3-1.574.096-.002.311.023.45.136.118.096.151.226.166.319-.002.099.012.399-.007.57z"/></svg>קהילת טלגרם פעילה</a>
       </div>
@@ -638,7 +658,7 @@ footer small{color:var(--dim);font-size:13px}
     <div class="stat"><b>&lt;300ms</b><span>מעבר בין ערוצים</span></div>
     <div class="stat"><b id="dlCount">OTA</b><span id="dlLabel">עדכונים ישר מהטלוויזיה</span></div>
     <div class="stat"><b>עב · EN</b><span>עברית מלאה (RTL) + אנגלית</span></div>
-    <div class="stat"><b id="sizeStat">~9.6MB</b><span>קל, מהיר, Android 8.0+</span></div>
+    <div class="stat"><b id="sizeStat">~19MB</b><span>קל, מהיר, Android 8.0+</span></div>
   </div>
 </div>
 
@@ -687,6 +707,104 @@ footer small{color:var(--dim);font-size:13px}
         <div><b class="grad">512MB</b><span>ספריות ענק בלי קריסות</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ AIRPLAY ============ -->
+<section class="sec" id="airplay" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>חדש בגרסה 1.4.7</span>
+      <h2>אין AirPlay בטלוויזיה?<br><span class="grad">עכשיו יש.</span></h2>
+      <p>רוב הטלוויזיות והסטרימרים עם Android TV, Google TV ו-Fire TV לא כוללים AirPlay מובנה. Lumina TV הופכת אותם למקלט AirPlay, ישר מתוך האפליקציה: בלי Apple TV, בלי קופסה נוספת ובלי אפליקציית שיקוף של צד שלישי.</p>
+    </div>
+
+    <div class="ap-hero rv">
+      <div>
+        <span class="ap-tag"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>מובנה באפליקציה, ללא חומרה נוספת</span>
+        <h3>האייפון שלכם מזהה את הטלוויזיה כמקלט AirPlay רגיל</h3>
+        <p>מפעילים את <b>AirPlay</b> בהגדרות, ובאייפון, באייפד או במק <b>הטלוויזיה מופיעה ברשימת המכשירים</b> בשם שבחרתם. לחיצה, קוד בן 4 ספרות על המסך, וזה מחובר. הכל דרך <b>אותה רשת Wi-Fi</b>.</p>
+        <p>מיועד בדיוק למכשירים <b>שאין בהם AirPlay מובנה</b>. אם יש לכם טלוויזיה עם AirPlay מובנה (כמו Apple TV או דגמים מסוימים של Samsung ו-LG), אתם לא צריכים את זה.</p>
+        <div class="ap-devs">
+          <span class="yes">Android TV</span><span class="yes">Google TV</span><span class="yes">Fire TV</span><span class="yes">Xiaomi Box</span><span class="yes">Sony BRAVIA</span><span class="yes">TCL</span><span class="yes">Hisense</span><span class="yes">Chromecast with Google TV</span>
+        </div>
+      </div>
+      <div class="ap-viz" aria-hidden="true"><svg viewBox="0 0 520 330" xmlns="http://www.w3.org/2000/svg">
+<defs><linearGradient id="apg" x1="0" x2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+<rect x="196" y="28" width="300" height="190" rx="16" fill="#0b0d14" stroke="#2a3042" stroke-width="3"/>
+<rect x="206" y="38" width="280" height="170" rx="8" fill="#10131d"/>
+<rect x="206" y="38" width="280" height="170" rx="8" fill="url(#apg)" opacity=".16"/>
+<polygon points="320,92 320,152 372,122" fill="url(#apg)"/>
+<rect x="326" y="218" width="40" height="22" fill="#1a1f2e"/><rect x="290" y="238" width="112" height="9" rx="4.5" fill="#1a1f2e"/>
+<text x="346" y="190" text-anchor="middle" font-size="13" font-weight="700" fill="#cbd5e1" font-family="Heebo,sans-serif">Lumina TV</text>
+<rect x="30" y="86" width="96" height="190" rx="18" fill="#0b0d14" stroke="#2a3042" stroke-width="3"/>
+<rect x="38" y="104" width="80" height="154" rx="6" fill="#10131d"/>
+<rect x="38" y="104" width="80" height="154" rx="6" fill="url(#apg)" opacity=".22"/>
+<rect x="64" y="94" width="28" height="5" rx="2.5" fill="#2a3042"/>
+<polygon points="68,160 68,200 100,180" fill="#fff" opacity=".9"/>
+<path d="M140 150 C 160 150, 170 135, 192 125" stroke="url(#apg)" stroke-width="3" fill="none" stroke-dasharray="6 6"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+<path d="M140 190 C 160 190, 170 175, 192 165" stroke="url(#apg)" stroke-width="3" fill="none" stroke-dasharray="6 6" opacity=".6"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.2s" repeatCount="indefinite"/></path>
+<g transform="translate(300 270)"><circle cx="46" cy="0" r="22" fill="url(#apg)"/><path d="M46 -11 L56 7 L36 7 Z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M38 12 h16" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></g>
+<text x="360" y="276" font-size="14" font-weight="700" fill="#e2e8f0" font-family="Heebo,sans-serif">AirPlay</text>
+</svg></div>
+    </div>
+
+    <ol class="steps ap-steps rv">
+      <li><div><b>מפעילים בטלוויזיה</b><p>הגדרות ← <b>שיקוף מסך ו-AirPlay</b> ← מפעילים. אפשר לשנות את שם הטלוויזיה שיופיע באייפון.</p></div></li>
+      <li><div><b>בוחרים את הטלוויזיה בטלפון</b><p>באייפון: מרכז הבקרה ← <b>שיקוף מסך</b>, או לחצן AirPlay בכל סרטון, תמונה או שיר. במק: מרכז הבקרה ← <b>שיקוף מסך</b>.</p></div></li>
+      <li><div><b>מזינים את הקוד שעל המסך</b><p>קוד בן 4 ספרות מופיע על הטלוויזיה בפעם הראשונה בלבד. אחרי הזיווג, המכשיר נזכר.</p></div></li>
+    </ol>
+
+    <div class="bento">
+      <article class="card c-3 rv" style="--c:#0ea5e9">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>שיקוף מסך מלא</h3>
+        <p>כל מה שעל המסך של האייפון, האייפד או המק, מוצג בגדול על הטלוויזיה.</p>
+        <ul>
+          <li><b>iPhone, iPad ו-Mac</b> בשיקוף מסך מלא, כולל שמע</li>
+          <li><b>סיבוב אוטומטי</b> בין תצוגה לאורך ולרוחב</li>
+          <li><b>מילוי מסך או התאמה</b> בתצוגה לרוחב, לבחירתכם</li>
+          <li>הגדלה אוטומטית של סרטונים עם <b>פסים שחורים</b></li>
+        </ul>
+      </article>
+      <article class="card c-3 rv d1" style="--c:#ef4444">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.8 12 4.8 12 4.8s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2C1.1 8.9 1.1 12 1.1 12s0 3.1.4 4.8a2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2c.4-1.7.4-4.8.4-4.8s0-3.1-.4-4.8z"/><path d="m10 15 5-3-5-3z"/></svg></div>
+        <h3>שידור סרטונים בלחיצה</h3>
+        <p>לוחצים על לחצן AirPlay בסרטון, והטלוויזיה מנגנת אותו בעצמה באיכות מלאה, בלי לרוקן את הסוללה.</p>
+        <ul>
+          <li><b>יוטיוב</b> מהאייפון, עם יציבות משופרת במעבר בין סרטונים</li>
+          <li><b>פייסבוק, אינסטגרם ו-Safari</b> ושאר סרטוני רשת</li>
+          <li>הטלפון נשאר חופשי לשימוש בזמן הצפייה</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv" style="--c:#ec4899">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>מוזיקה ותמונות</h3>
+        <ul>
+          <li><b>שמע בלבד</b> עם כרטיס "מתנגן כעת"</li>
+          <li><b>תמונות</b> מהגלריה, על מסך הטלוויזיה</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv d1" style="--c:#22c55e">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>מאובטח כברירת מחדל</h3>
+        <ul>
+          <li><b>קוד PIN</b> בן 4 ספרות להתחברות</li>
+          <li>הגנה מפני ניחושים עם נעילה זמנית</li>
+          <li><b>איפוס זיווגים</b> בלחיצה</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv d2" style="--c:#8b5cf6">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+        <h3>שליטה מלאה בהגדרות</h3>
+        <ul>
+          <li><b>שם מותאם</b> לטלוויזיה</li>
+          <li>כיוון תמונה וצורת תצוגה לרוחב</li>
+          <li><b>פרופיל תאימות</b> ל-iPhone או ל-Mac</li>
+        </ul>
+      </article>
+    </div>
+    <p class="ap-note">AirPlay כבוי כברירת מחדל ומופעל בהגדרות ← שיקוף מסך ו-AirPlay. הטלפון והטלוויזיה צריכים להיות מחוברים לאותה רשת Wi-Fi. תוכן שמוגן בהגנת העתקה (DRM) באפליקציות מסוימות עשוי שלא להיות מוצג בשיקוף.</p>
   </div>
 </section>
 
@@ -754,11 +872,12 @@ footer small{color:var(--dim);font-size:13px}
       <article class="card c-4 rv" style="--c:#8b5cf6">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
         <h3>הגדרות חכמות לטלוויזיה</h3>
-        <p>ממשק מרווח ומסודר לפי קטגוריות: שמע, וידאו, תצוגה, הפעלה ועדכונים.</p>
+        <p>תפריט הגדרות חדש ב-10 קטגוריות ברורות: וידאו, שמע, כתוביות, ניגון, פיצ'רים מתקדמים, תוכן, שלט, AirPlay, כללי ואבחון.</p>
         <ul>
           <li><b>סנכרון פלייליסט אוטומטי</b> ברקע: יומי, שבועי, חודשי או ידני</li>
           <li><b>הפעלה בהדלקת מסך</b>: האפליקציה נפתחת לבד כשהטלוויזיה מתעוררת</li>
           <li><b>ניהול קבוצות</b>: הסתרת קטגוריות ערוצים ו-VOD לא רצויות</li>
+          <li><b>פרופילים עם קוד PIN</b> אישי, ובחירת ערוצים ותכנים לכל פרופיל</li>
           <li><b>נעילת הורים בקוד PIN</b> וטיימר שינה (15–90 דק')</li>
           <li><b>יציאה מוגנת</b>: 10 לחיצות Back עם מונה על המסך, כדי שלא תצאו בטעות</li>
         </ul>
@@ -787,12 +906,12 @@ footer small{color:var(--dim);font-size:13px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">הרשימה המלאה</span>
-      <h2>כל הפיצ'רים.<br><span class="grad">91 סיבות לבחור ב-Lumina TV.</span></h2>
+      <h2>כל הפיצ'רים.<br><span class="grad">119 סיבות לבחור ב-Lumina TV.</span></h2>
       <p>כל מה שהאפליקציה יודעת לעשות, במקום אחד. סננו לפי קטגוריה או חפשו פיצ'ר מסוים.</p>
     </div>
     <div class="af-tools rv">
       <label class="af-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="afQ" type="search" placeholder="חיפוש פיצ'ר… (למשל: כתוביות, הקלטה, ספורט)" aria-label="חיפוש פיצ'ר"></label>
-      <div class="af-chips" id="afChips"><button class="af-chip on" data-f="all">הכל <i>91</i></button><button class="af-chip" data-f="src">מקורות ופלייליסטים <i>9</i></button><button class="af-chip" data-f="live">שידור חי <i>13</i></button><button class="af-chip" data-f="epg">מדריך שידורים (EPG) <i>4</i></button><button class="af-chip" data-f="catch">צפייה לאחור ו-Timeshift <i>4</i></button><button class="af-chip" data-f="vod">סרטים וסדרות <i>14</i></button><button class="af-chip" data-f="sub">כתוביות ושמע <i>8</i></button><button class="af-chip" data-f="pic">תמונה ווידאו <i>5</i></button><button class="af-chip" data-f="net">ניגון ורשת <i>5</i></button><button class="af-chip" data-f="rec">הקלטות <i>4</i></button><button class="af-chip" data-f="multi">Multiview – כמה ערוצים במקביל <i>2</i></button><button class="af-chip" data-f="prof">פרופילים <i>4</i></button><button class="af-chip" data-f="pin">נעילת הורים וניהול קבוצות <i>4</i></button><button class="af-chip" data-f="remote">שלט חכם מהטלפון <i>9</i></button><button class="af-chip" data-f="atv">שילוב עם Android TV <i>2</i></button><button class="af-chip" data-f="gen">כללי ועדכונים <i>4</i></button></div>
+      <div class="af-chips" id="afChips"><button class="af-chip on" data-f="all">הכל <i>119</i></button><button class="af-chip" data-f="src">מקורות ופלייליסטים <i>9</i></button><button class="af-chip" data-f="live">שידור חי <i>16</i></button><button class="af-chip" data-f="epg">מדריך שידורים (EPG) <i>4</i></button><button class="af-chip" data-f="catch">צפייה לאחור ו-Timeshift <i>4</i></button><button class="af-chip" data-f="vod">סרטים וסדרות <i>16</i></button><button class="af-chip" data-f="sub">כתוביות ושמע <i>10</i></button><button class="af-chip" data-f="pic">תמונה ווידאו <i>8</i></button><button class="af-chip" data-f="net">ניגון ורשת <i>5</i></button><button class="af-chip" data-f="rec">הקלטות <i>4</i></button><button class="af-chip" data-f="multi">Multiview – כמה ערוצים במקביל <i>3</i></button><button class="af-chip" data-f="airplay">AirPlay ושיקוף מסך <i>10</i></button><button class="af-chip" data-f="prof">פרופילים <i>7</i></button><button class="af-chip" data-f="pin">נעילת הורים וניהול קבוצות <i>4</i></button><button class="af-chip" data-f="remote">שלט חכם מהטלפון <i>12</i></button><button class="af-chip" data-f="atv">שילוב עם Android TV <i>3</i></button><button class="af-chip" data-f="gen">כללי ועדכונים <i>4</i></button></div>
     </div>
     <div class="af-grid" id="afGrid">
       <article class="card af-card rv" data-cat="src" style="--c:#3b82f6">
@@ -800,8 +919,8 @@ footer small{color:var(--dim);font-size:13px}
         <ul><li><b>ארבעה סוגי מקורות</b> <span>M3U, Xtream Codes, פורטל Stalker/MAG (כתובת + MAC) ופלייליסט ממוזג מכמה מקורות</span></li><li><b>הוספת פלייליסט מהטלפון</b> <span>סורקים QR מהטלוויזיה ומזינים הכל בנוחות בדפדפן הטלפון</span></li><li><b>ניהול מלא מהטלפון</b> <span>הוספה, עריכה, הפעלה, רענון ומחיקה של פלייליסטים</span></li><li><b>EPG ו-User-Agent לכל פלייליסט</b> <span>כתובת מדריך שידורים ו-User-Agent נפרדים לכל מקור</span></li><li><b>פלייליסט הדגמה</b> <span>כפתור לניסיון מיידי עם ערוצים ישראליים פתוחים</span></li><li><b>ייבוא עם התקדמות</b> <span>מונה ערוצים, סרטים וסדרות בזמן הטעינה</span></li><li><b>תמיכה מלאה בתגיות M3U</b> <span>tvg-id, tvg-logo, tvg-chno, catchup, timeshift, url-tvg, EXTVLCOPT ועוד</span></li><li><b>סנכרון אוטומטי ברקע</b> <span>כל יום, יומיים, שבוע, חודש או ידני</span></li><li><b>פרטי התחברות מוצפנים</b> <span>שם משתמש וסיסמה נשמרים מוצפנים במכשיר</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="live" style="--c:#22d3ee">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3"/></svg></div><h3>שידור חי</h3><span class="af-n">13</span></header>
-        <ul><li><b>תפריט ערוצים חכם</b> <span>כל הערוצים, מועדפים, נצפו לאחרונה וכל קבוצה בנפרד</span></li><li><b>מספור מ-1 בכל קטגוריה</b> <span>כולל במועדפים</span></li><li><b>הקשת מספר ערוץ</b> <span>ספרות בשלט קופצות בדיוק לערוץ, ו-OK קופץ מיד</span></li><li><b>זיפזופ מעגלי</b> <span>ערוץ למעלה/למטה, מקש ערוץ אחרון, השהיה, הרצה קדימה ואחורה</span></li><li><b>פס מידע על המסך</b> <span>התוכנית הנוכחית והבאה, דקות שנותרו וסרגל התקדמות</span></li><li><b>חיבור מחדש אוטומטי</b> <span>בעת נפילת שידור, עם OK לניסיון חוזר</span></li><li><b>מועדפים בלחיצה ארוכה</b> <span>לחיצה ארוכה על OK מוסיפה או מסירה מהמועדפים</span></li><li><b>סידור מועדפים</b> <span>הזזה למעלה/למטה או קביעת מיקום מספרי מדויק</span></li><li><b>המשך מאיפה שעצרתם</b> <span>נפתח בערוץ ובקטגוריה האחרונים</span></li><li><b>חיפוש ערוצים</b> <span>מקלדת על המסך, חיפוש קולי והצעות</span></li><li><b>מסך ספורט</b> <span>משחקים בשידור חי, היום והקרובים, ערוצי ספורט והקלטה בלחיצה ארוכה</span></li><li><b>תמונה בתוך תמונה (PiP)</b></li><li><b>יציאה מוגנת</b> <span>10 לחיצות Back עם מונה על המסך, כדי שלא תצאו בטעות</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3"/></svg></div><h3>שידור חי</h3><span class="af-n">16</span></header>
+        <ul><li><b>תפריט ערוצים חכם</b> <span>כל הערוצים, מועדפים, נצפו לאחרונה וכל קבוצה בנפרד</span></li><li><b>מספור מ-1 בכל קטגוריה</b> <span>כולל במועדפים</span></li><li><b>הקשת מספר ערוץ</b> <span>ספרות בשלט קופצות בדיוק לערוץ, ו-OK קופץ מיד</span></li><li><b>זיפזופ מעגלי</b> <span>ערוץ למעלה/למטה, מקש ערוץ אחרון, השהיה, הרצה קדימה ואחורה</span></li><li><b>פס מידע על המסך</b> <span>התוכנית הנוכחית והבאה, דקות שנותרו וסרגל התקדמות</span></li><li><b>חיבור מחדש אוטומטי</b> <span>בעת נפילת שידור, עם OK לניסיון חוזר</span></li><li><b>מועדפים בלחיצה ארוכה</b> <span>לחיצה ארוכה על OK מוסיפה או מסירה מהמועדפים</span></li><li><b>סידור מועדפים</b> <span>הזזה למעלה/למטה או קביעת מיקום מספרי מדויק</span></li><li><b>המשך מאיפה שעצרתם</b> <span>נפתח בערוץ ובקטגוריה האחרונים</span></li><li><b>חיפוש ערוצים</b> <span>מקלדת על המסך, חיפוש קולי והצעות</span></li><li><b>מסך ספורט</b> <span>משחקים בשידור חי, היום והקרובים, ערוצי ספורט והקלטה בלחיצה ארוכה</span></li><li><b>תמונה בתוך תמונה (PiP)</b></li><li><b>יציאה מוגנת</b> <span>10 לחיצות Back עם מונה על המסך, כדי שלא תצאו בטעות</span></li><li><b>פס ערוצים אחרונים</b> <span>חץ ימינה בשלט, אופציונלי בהגדרות</span></li><li><b>החלפה בין שני ערוצים</b> <span>לחיצה כפולה על Play/Pause חוזרת לערוץ הקודם</span></li><li><b>הגברת עוצמת שמע</b> <span>Volume Boost לשידורים שקטים</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="epg" style="--c:#a78bfa">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div><h3>מדריך שידורים (EPG)</h3><span class="af-n">4</span></header>
@@ -812,16 +931,16 @@ footer small{color:var(--dim);font-size:13px}
         <ul><li><b>Catch-up מלא</b> <span>ארכיון Xtream ותבניות catchup של M3U (בסגנון Kodi/TiviMate), כולל אזור זמן של השרת</span></li><li><b>התחלה מחדש</b> <span>המקש הירוק מתחיל את התוכנית הנוכחית מההתחלה</span></li><li><b>קפיצות של 30 שניות</b> <span>וחזרה לשידור החי בלחיצה</span></li><li><b>השהיית שידור חי</b> <span>עצירה והרצה אחורה בשידור חי בעזרת זיכרון מקומי, עם חיווי &quot;X מאחורי החי&quot;</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="vod" style="--c:#ec4899">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></div><h3>סרטים וסדרות</h3><span class="af-n">14</span></header>
-        <ul><li><b>מסך גילוי</b> <span>המשך צפייה, רשימת צפייה, פרקים חדשים, נוספו לאחרונה ודירוג גבוה</span></li><li><b>מיון וניווט</b> <span>לפי א-ב, שנה, דירוג או תאריך הוספה, וקפיצה לאות</span></li><li><b>דף פרטים עשיר</b> <span>תקציר, שחקנים, במאי, תמונת רקע וטריילר</span></li><li><b>המלצות</b> <span>סרטים דומים, אוסף, עוד עם אותו שחקן וגרסאות נוספות</span></li><li><b>השלמת מידע מ-TMDB</b> <span>תקצירים, תמונות וטריילרים חסרים מתמלאים אוטומטית</span></li><li><b>עונות ופרקים</b> <span>התקדמות לכל עונה, סימון עונה כנצפתה ופרק אקראי</span></li><li><b>המשך צפייה</b> <span>המשך מאיפה שעצרתם או מההתחלה, וסימון נצפה/לא נצפה</span></li><li><b>דילוג על פתיח</b> <span>זוכר את אורך הפתיח בכל סדרה</span></li><li><b>פרק הבא אוטומטי</b> <span>ספירה לאחור לפרק הבא</span></li><li><b>התראה על פרקים חדשים</b> <span>בדיקה ברקע לסדרות שאתם עוקבים אחריהן</span></li><li><b>חיפוש סרטים וסדרות</b> <span>חיפושים אחרונים, סינון וחיפוש קולי</span></li><li><b>סרגל נגן מלא</b> <span>±10 שניות, גלילה בציר הזמן, פרק קודם/הבא, מהירות ושעת סיום</span></li><li><b>טיימר שינה</b> <span>בדקות או &quot;בסוף הפרק/הסרט&quot;</span></li><li><b>פס קול חיצוני</b> <span>הוספת ערוץ שמע בקישור מהטלפון</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></div><h3>סרטים וסדרות</h3><span class="af-n">16</span></header>
+        <ul><li><b>מסך גילוי</b> <span>המשך צפייה, רשימת צפייה, פרקים חדשים, נוספו לאחרונה ודירוג גבוה</span></li><li><b>מיון וניווט</b> <span>לפי א-ב, שנה, דירוג או תאריך הוספה, וקפיצה לאות</span></li><li><b>דף פרטים עשיר</b> <span>תקציר, שחקנים, במאי, תמונת רקע וטריילר</span></li><li><b>המלצות</b> <span>סרטים דומים, אוסף, עוד עם אותו שחקן וגרסאות נוספות</span></li><li><b>השלמת מידע מ-TMDB</b> <span>תקצירים, תמונות וטריילרים חסרים מתמלאים אוטומטית</span></li><li><b>עונות ופרקים</b> <span>התקדמות לכל עונה, סימון עונה כנצפתה ופרק אקראי</span></li><li><b>המשך צפייה</b> <span>המשך מאיפה שעצרתם או מההתחלה, וסימון נצפה/לא נצפה</span></li><li><b>דילוג על פתיח</b> <span>זוכר את אורך הפתיח בכל סדרה</span></li><li><b>פרק הבא אוטומטי</b> <span>ספירה לאחור לפרק הבא</span></li><li><b>התראה על פרקים חדשים</b> <span>בדיקה ברקע לסדרות שאתם עוקבים אחריהן</span></li><li><b>חיפוש סרטים וסדרות</b> <span>חיפושים אחרונים, סינון וחיפוש קולי</span></li><li><b>סרגל נגן מלא</b> <span>±10 שניות, גלילה בציר הזמן, פרק קודם/הבא, מהירות ושעת סיום</span></li><li><b>טיימר שינה</b> <span>בדקות או &quot;בסוף הפרק/הסרט&quot;</span></li><li><b>פס קול חיצוני</b> <span>הוספת ערוץ שמע בקישור מהטלפון</span></li><li><b>קפיצת זמן מותאמת</b> <span>בחירת אורך הקפיצה בשלט בהגדרות</span></li><li><b>טעינת ערוץ מחדש בלחיצה</b> <span>כשהשידור נתקע</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="sub" style="--c:#22c55e">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 10.5a2 2 0 1 0 0 3M17 10.5a2 2 0 1 0 0 3"/></svg></div><h3>כתוביות ושמע</h3><span class="af-n">8</span></header>
-        <ul><li><b>בחירת רצועות</b> <span>שמע, איכות וידאו וכתוביות</span></li><li><b>סדר שפות מועדף</b> <span>בחירה אוטומטית של שפת השמע והכתוביות</span></li><li><b>עיצוב כתוביות</b> <span>גודל, רקע וצבע</span></li><li><b>הורדת כתוביות מ-OpenSubtitles</b> <span>חיפוש והורדה ישירות מהנגן</span></li><li><b>תיקון ג׳יבריש בכתוביות</b> <span>עברית ורוסית מקולקלות מתוקנות אוטומטית</span></li><li><b>סנכרון שמע (Lip-Sync)</b> <span>השהיית שמע מול התמונה</span></li><li><b>סראונד מקורי</b> <span>העברת AC-3, E-AC-3, DTS ו-TrueHD לרסיבר</span></li><li><b>פענוח שמע בתוכנה</b> <span>פתרון לשקט או רעשים במכשירים בעייתיים</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 10.5a2 2 0 1 0 0 3M17 10.5a2 2 0 1 0 0 3"/></svg></div><h3>כתוביות ושמע</h3><span class="af-n">10</span></header>
+        <ul><li><b>בחירת רצועות</b> <span>שמע, איכות וידאו וכתוביות</span></li><li><b>סדר שפות מועדף</b> <span>בחירה אוטומטית של שפת השמע והכתוביות</span></li><li><b>עיצוב כתוביות</b> <span>גודל, רקע וצבע</span></li><li><b>הורדת כתוביות מ-OpenSubtitles</b> <span>חיפוש והורדה ישירות מהנגן</span></li><li><b>תיקון ג׳יבריש בכתוביות</b> <span>עברית ורוסית מקולקלות מתוקנות אוטומטית</span></li><li><b>סנכרון שמע (Lip-Sync)</b> <span>השהיית שמע מול התמונה</span></li><li><b>סראונד מקורי</b> <span>העברת AC-3, E-AC-3, DTS ו-TrueHD לרסיבר</span></li><li><b>פענוח שמע בתוכנה</b> <span>פתרון לשקט או רעשים במכשירים בעייתיים</span></li><li><b>זיכרון השהיית שמע לכל ערוץ</b> <span>Lip-Sync שנשמר לכל ערוץ בנפרד</span></li><li><b>זיכרון שפת שמע</b> <span>בחירה אוטומטית לפי השפה האחרונה שנבחרה</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="pic" style="--c:#f59e0b">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><h3>תמונה ווידאו</h3><span class="af-n">5</span></header>
-        <ul><li><b>יחס תצוגה</b> <span>מקורי, 4:3, זום או מתיחה</span></li><li><b>התאמת קצב רענון (AFR)</b> <span>המסך עובר ל-24/50/60Hz לפי התוכן, בלי קרטועים</span></li><li><b>Dolby Vision</b> <span>מצב אוטומטי שמתקן גוון סגול/ירוק, המרת פרופיל 7 ל-HDR10 או מקורי</span></li><li><b>פענוח חומרה ו-Tunneled</b> <span>שליטה מלאה במצב הפענוח</span></li><li><b>מידע ניגון</b> <span>מפענח, רזולוציה, FPS, פריימים שנפלו ומצב באפר</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg></div><h3>תמונה ווידאו</h3><span class="af-n">8</span></header>
+        <ul><li><b>יחס תצוגה</b> <span>מקורי, 4:3, זום או מתיחה</span></li><li><b>התאמת קצב רענון (AFR)</b> <span>המסך עובר ל-24/50/60Hz לפי התוכן, בלי קרטועים</span></li><li><b>Dolby Vision</b> <span>מצב אוטומטי שמתקן גוון סגול/ירוק, המרת פרופיל 7 ל-HDR10 או מקורי</span></li><li><b>פענוח חומרה ו-Tunneled</b> <span>שליטה מלאה במצב הפענוח</span></li><li><b>מידע ניגון</b> <span>מפענח, רזולוציה, FPS, פריימים שנפלו ומצב באפר</span></li><li><b>זיכרון יחס תצוגה וכתוביות לכל ערוץ</b> <span>כל ערוץ זוכר את ההגדרות שלו</span></li><li><b>מד קצב פריימים</b> <span>שבב FPS על המסך</span></li><li><b>מגבלת 4K בפרופיל יציב</b> <span>יציבות מרבית בחיבורים חלשים</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="net" style="--c:#38bdf8">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M2 9a15 15 0 0 1 20 0M12 20h.01"/></svg></div><h3>ניגון ורשת</h3><span class="af-n">5</span></header>
@@ -832,24 +951,28 @@ footer small{color:var(--dim);font-size:13px}
         <ul><li><b>הקלטה עכשיו</b> <span>מקש REC או לחיצה ארוכה במדריך ובמסך הספורט</span></li><li><b>הקלטות מתוזמנות</b> <span>פועלות ברקע עם התראה</span></li><li><b>בחירת אחסון</b> <span>פנימי או חיצוני, עם בדיקת מקום פנוי</span></li><li><b>ההקלטות שלי</b> <span>ניגון, עצירה, ביטול ומחיקה</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="multi" style="--c:#14b8a6">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div><h3>Multiview – כמה ערוצים במקביל</h3><span class="af-n">2</span></header>
-        <ul><li><b>ארבע פריסות</b> <span>2 ערוצים, 4 ערוצים, ראשי + 3 קטנים, או 6 ערוצים</span></li><li><b>שליטה בכל חלון</b> <span>החלפת ערוץ, ניקוי חלון ומסך מלא בלחיצה ארוכה</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div><h3>Multiview – כמה ערוצים במקביל</h3><span class="af-n">3</span></header>
+        <ul><li><b>ארבע פריסות</b> <span>2 ערוצים, 4 ערוצים, ראשי + 3 קטנים, או 6 ערוצים</span></li><li><b>שליטה בכל חלון</b> <span>החלפת ערוץ, ניקוי חלון ומסך מלא בלחיצה ארוכה</span></li><li><b>ניסיון חוזר אוטומטי</b> <span>חלון שנפל מתחבר מחדש לבד</span></li></ul>
+      </article>
+      <article class="card af-card rv" data-cat="airplay" style="--c:#0ea5e9">
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"/><path d="m12 15 5 6H7z"/></svg></div><h3>AirPlay ושיקוף מסך <span class="ap-new">חדש</span></h3><span class="af-n">10</span></header>
+        <ul><li><b>מקלט AirPlay מובנה</b> <span>הופך כל Android TV, Google TV ו-Fire TV למקלט AirPlay, גם בלי AirPlay בטלוויזיה</span></li><li><b>שיקוף מסך מלא</b> <span>מ-iPhone, iPad ו-Mac, כולל שמע</span></li><li><b>וידאו בלחיצה</b> <span>יוטיוב, פייסבוק, אינסטגרם ו-Safari</span></li><li><b>מוזיקה ותמונות</b> <span>כרטיס "מתנגן כעת" ותצוגת תמונות מהגלריה</span></li><li><b>סיבוב אוטומטי</b> <span>מעבר חלק בין אורך לרוחב</span></li><li><b>מילוי מסך או התאמה</b> <span>בחירת תצוגה לרוחב והגדלת פסים שחורים</span></li><li><b>זיווג בקוד PIN</b> <span>קוד בן 4 ספרות ונעילה אחרי ניסיונות שגויים</span></li><li><b>שם טלוויזיה מותאם</b> <span>השם שמופיע באייפון</span></li><li><b>פרופיל תאימות</b> <span>אופטימיזציה ל-iPhone (יוטיוב) או ל-Mac</span></li><li><b>איפוס זיווגים</b> <span>מחיקת המכשירים המזווגים בלחיצה</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="prof" style="--c:#8b5cf6">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>פרופילים</h3><span class="af-n">4</span></header>
-        <ul><li><b>עד 4 פרופילים</b> <span>אבא, אמא, ילדים, נוער, סבא וסבתא, אורחים</span></li><li><b>פרופיל ילדים</b> <span>רק הקבוצות שאישרתם, ויציאה ממנו בקוד PIN</span></li><li><b>&quot;מי צופה?&quot;</b> <span>בחירת פרופיל בכל הפעלה (אופציונלי)</span></li><li><b>היסטוריה נפרדת</b> <span>כל פרופיל עם התקדמות צפייה משלו</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>פרופילים</h3><span class="af-n">7</span></header>
+        <ul><li><b>עד 6 פרופילים</b> <span>אבא, אמא, ילדים, נוער, סבא וסבתא, אורחים</span></li><li><b>פרופיל ילדים</b> <span>רק הקבוצות שאישרתם, ויציאה ממנו בקוד PIN</span></li><li><b>&quot;מי צופה?&quot;</b> <span>בחירת פרופיל בכל הפעלה (אופציונלי)</span></li><li><b>היסטוריה נפרדת</b> <span>כל פרופיל עם התקדמות צפייה משלו</span></li><li><b>קוד PIN לכל פרופיל</b> <span>הגדרה, שינוי והסרה, עם נעילה אחרי ניסיונות שגויים</span></li><li><b>הגבלת ערוצים ותכנים לכל פרופיל</b> <span>בחירת קבוצות נפרדת לשידור חי, סרטים וסדרות, עם חיפוש ו"בחר הכל"</span></li><li><b>שם וצבע לכל פרופיל</b> <span>הקלדה במקלדת שעל המסך</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="pin" style="--c:#f43f5e">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>נעילת הורים וניהול קבוצות</h3><span class="af-n">4</span></header>
         <ul><li><b>נעילה אוטומטית</b> <span>קבוצות למבוגרים ננעלות בקוד PIN בן 4 ספרות</span></li><li><b>הגנה מניחושים</b> <span>טיימר נעילה אחרי ניסיונות שגויים</span></li><li><b>שינוי קוד מהטלפון</b></li><li><b>הסתרת קבוצות</b> <span>בנפרד לשידור חי, סרטים וסדרות</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="remote" style="--c:#0ea5e9">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>שלט חכם מהטלפון</h3><span class="af-n">9</span></header>
-        <ul><li><b>בלי להתקין כלום</b> <span>סורקים QR ומתחברים דרך הדפדפן, עם קוד אבטחה</span></li><li><b>כל מקשי השלט</b> <span>חיצים, OK, חזור, תפריט, מידע, מדריך, חיפוש וערוץ אחרון</span></li><li><b>ווליום והשתקה</b></li><li><b>שליטה בניגון</b> <span>זיפזופ, השהיה וגלילה בזמן</span></li><li><b>בחירת שמע, וידאו וכתוביות</b> <span>מהטלפון</span></li><li><b>דפדוף בערוצים</b> <span>ניגון ערוץ, ניהול וסידור מועדפים</span></li><li><b>דפדוף בסרטים וסדרות</b> <span>ניגון סרט או פרק ורשימת צפייה</span></li><li><b>החלפת פלייליסט</b> <span>והגדרות OpenSubtitles מהטלפון</span></li><li><b>קוד חדש</b> <span>ניתוק כל הטלפונים המחוברים בלחיצה</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>שלט חכם מהטלפון</h3><span class="af-n">12</span></header>
+        <ul><li><b>בלי להתקין כלום</b> <span>סורקים QR ומתחברים דרך הדפדפן, עם קוד אבטחה</span></li><li><b>כל מקשי השלט</b> <span>חיצים, OK, חזור, תפריט, מידע, מדריך, חיפוש וערוץ אחרון</span></li><li><b>ווליום והשתקה</b></li><li><b>שליטה בניגון</b> <span>זיפזופ, השהיה וגלילה בזמן</span></li><li><b>בחירת שמע, וידאו וכתוביות</b> <span>מהטלפון</span></li><li><b>דפדוף בערוצים</b> <span>ניגון ערוץ, ניהול וסידור מועדפים</span></li><li><b>דפדוף בסרטים וסדרות</b> <span>ניגון סרט או פרק ורשימת צפייה</span></li><li><b>החלפת פלייליסט</b> <span>והגדרות OpenSubtitles מהטלפון</span></li><li><b>קוד חדש</b> <span>ניתוק כל הטלפונים המחוברים בלחיצה</span></li><li><b>הגדרות מהטלפון</b> <span>לשונית הגדרות מלאה בשלט: וידאו, שמע, כתוביות, ניגון ו-AirPlay</span></li><li><b>נעילת הגדרות בקוד PIN</b> <span>הגנה על הגדרות הטלוויזיה מהטלפון, עם נעילה אחרי ניסיונות שגויים</span></li><li><b>הוספת רשימות וסידור קטגוריות מהנייד</b></li></ul>
       </article>
       <article class="card af-card rv" data-cat="atv" style="--c:#10b981">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>שילוב עם Android TV</h3><span class="af-n">2</span></header>
-        <ul><li><b>מועדפים במסך הבית</b> <span>שורת ערוצים במסך הבית של הטלוויזיה</span></li><li><b>הפעלה עם הדלקת המסך</b> <span>או עם הפעלת המכשיר (אופציונלי)</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div><h3>שילוב עם Android TV</h3><span class="af-n">3</span></header>
+        <ul><li><b>מועדפים במסך הבית</b> <span>שורת ערוצים במסך הבית של הטלוויזיה</span></li><li><b>הפעלה עם הדלקת המסך</b> <span>או עם הפעלת המכשיר (אופציונלי)</span></li><li><b>עדכון חובה מרחוק</b> <span>אפשרות לדרוש עדכון גרסה במקרה הצורך</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="gen" style="--c:#94a3b8">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><h3>כללי ועדכונים</h3><span class="af-n">4</span></header>
@@ -1035,6 +1158,7 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <div class="devices">
         <span>Android TV</span><span>Google TV</span><span>Sony BRAVIA</span><span>TCL</span><span>Hisense</span><span>Xiaomi Box</span><span>Chromecast with Google TV</span><span>Amazon Fire TV</span>
       </div>
+      <p style="text-align:center;color:var(--muted);margin-top:18px;font-size:15.5px">ובכולם, גם בלי AirPlay מובנה: <a href="#airplay" style="color:#38bdf8;font-weight:700;text-decoration:none">שיקוף מהאייפון ישירות לאפליקציה</a></p>
     </div>
   </div>
 </section>
@@ -1048,7 +1172,7 @@ adb install -r -d LuminaTV.apk</div></div></li>
     </div>
     <div class="specs rv">
       <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.4.7 (Build 25)</b></div>
-      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-10.2MB</b></div>
+      <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-19MB</b></div>
       <div class="spec"><small>Android מינימלי</small><b>Android 8.0 Oreo (API 26)</b></div>
       <div class="spec"><small>מומלץ</small><b>Android 11 / 12 / 14</b></div>
       <div class="spec"><small>ארכיטקטורה</small><b>Universal: ARMv7, ARM64, x86, x86_64</b></div>
@@ -1067,9 +1191,11 @@ adb install -r -d LuminaTV.apk</div></div></li>
         <span class="ver" id="clVer">גרסה 1.4.7</span>
       </div>
       <ul id="clList">
-        <li>⚡ שיפורי ביצועים ויציבות כללית</li>
-        <li>🛠️ תיקוני באגים ושיפור מהירות התגובה</li>
-        <li>✨ אופטימיזציה לחוויית צפייה חלקה ונוחה יותר</li>
+        <li>📺 חדש – AirPlay מובנה: שיקוף מסך וסרטונים (יוטיוב ועוד) מ-iPhone, iPad ו-Mac, גם לטלוויזיות ולסטרימרים בלי AirPlay</li>
+        <li>👤 פרופילים וקוד אישי: PIN לכל פרופיל ובחירת ערוצים ותכנים לכל אחד</li>
+        <li>📱 שלט מהטלפון: הוספת רשימות, סידור קטגוריות ושינוי הגדרות מהנייד</li>
+        <li>⚙️ תפריט הגדרות חדש ומסודר ב-10 קטגוריות</li>
+        <li>⚡ תיקוני באגים ושיפורי מהירות כלליים</li>
       </ul>
     </div>
   </div>
@@ -1088,8 +1214,11 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <details><summary>איך מחברים את שלט הטלפון?</summary><p>פותחים את האפליקציה בטלוויזיה, נכנסים להגדרות ← "שלט בטלפון", וסורקים את קוד ה-QR שמופיע. הטלפון פותח את השלט ישירות בדפדפן. חשוב שהטלפון והטלוויזיה יהיו מחוברים לאותה רשת Wi-Fi.</p></details>
       <details><summary>איך מתעדכנים לגרסה חדשה?</summary><p>כשיוצאת גרסה חדשה, האפליקציה מודיעה על כך במסך הטלוויזיה ומאפשרת להוריד ולהתקין את העדכון בלחיצת כפתור, ישירות מהטלוויזיה.</p></details>
       <details><summary>Downloader לא מוריד את הקובץ. מה עושים?</summary><p>ודאו שאישרתם ל-Downloader "התקנת אפליקציות לא מוכרות" בהגדרות הטלוויזיה. אם הקוד 4933886 לא עובד, הקלידו את הקישור המקוצר aftv.news/4933886 או את הקישור הישיר המלא שמופיע למעלה.</p></details>
+            <details><summary>אין לטלוויזיה שלי AirPlay. אפשר לשקף אליה מהאייפון?</summary><p>כן, זה בדיוק מה ש-AirPlay ב-Lumina TV בא לפתור. האפליקציה פועלת כמקלט AirPlay, כך שגם טלוויזיה או סטרימר עם Android TV, Google TV או Fire TV בלי AirPlay מובנה מופיעים באייפון, באייפד ובמק כיעד שיקוף. נכנסים להגדרות ← שיקוף מסך ו-AirPlay ומפעילים, ואז בוחרים את הטלוויזיה במרכז הבקרה. בלי Apple TV ובלי חומרה נוספת.</p></details>
+      <details><summary>איך מחברים אייפון בשיקוף מסך או AirPlay?</summary><p>מפעילים את AirPlay בהגדרות האפליקציה, ומוודאים שהאייפון והטלוויזיה על אותה רשת Wi-Fi. באייפון פותחים את מרכז הבקרה, לוחצים על שיקוף מסך ובוחרים את שם הטלוויזיה. בחיבור הראשון יופיע על המסך קוד בן 4 ספרות שמקלידים באייפון. כדי לשדר סרטון בלבד (למשל מיוטיוב), לוחצים על לחצן AirPlay בתוך הסרטון.</p></details>
+      <details><summary>אילו מכשירים אפשר לשקף מהם, ומה אפשר לשדר?</summary><p>iPhone, iPad ו-Mac. אפשר לשקף את המסך כולו, לשדר סרטונים מיוטיוב, פייסבוק, אינסטגרם ו-Safari, לנגן מוזיקה ולהציג תמונות מהגלריה. התצוגה מסתובבת אוטומטית בין אורך לרוחב, ואפשר לבחור אם בתצוגה לרוחב התמונה תמלא את המסך או תותאם אליו.</p></details>
       <details><summary>על אילו מכשירים זה עובד?</summary><p>כל מכשיר Android TV או Google TV עם Android 8.0 ומעלה: Sony BRAVIA, TCL, Hisense, Xiaomi Box, Chromecast with Google TV, וגם Amazon Fire TV. הקובץ אוניברסלי ומתאים לכל סוגי המעבדים.</p></details>
-      <details><summary>יש נעילת הורים?</summary><p>כן. אפשר לנעול ערוצים בקוד PIN, שנשמר בצורה מוצפנת במכשיר. אחרי כמה ניסיונות שגויים הנעילה נחסמת זמנית.</p></details>
+      <details><summary>יש נעילת הורים ופרופילים?</summary><p>כן. אפשר לנעול ערוצים בקוד PIN, שנשמר בצורה מוצפנת במכשיר, ואחרי כמה ניסיונות שגויים הנעילה נחסמת זמנית. בנוסף אפשר ליצור עד 6 פרופילים, לתת לכל אחד קוד PIN משלו ולבחור אילו ערוצים, סרטים וסדרות יוצגו בו, כולל פרופיל ילדים.</p></details>
       <details><summary>איפה אפשר לקבל תמיכה, לשאול שאלות או להציע שיפורים?</summary><p>יש לנו קבוצת טלגרם פעילה! מוזמנים להצטרף לקהילה שלנו בקישור <a href="https://t.me/LuminaTViptv" target="_blank" rel="noopener" style="color:#38bdf8;text-decoration:underline;font-weight:600">t.me/LuminaTViptv</a>. שם תוכלו לקבל תמיכה טכנית, לשאול שאלות, להציע רעיונות ולהתעדכן ראשונים בכל גרסה חדשה.</p></details>
     </div>
   </div>
@@ -1492,7 +1621,7 @@ $$('[data-r]').forEach(function(b){b.addEventListener('click',function(){
 })});
 
 /* compare table */
-var CMP=[['זיפזופ בין ערוצים','מיידי, פחות מ-300ms','2–5 שניות טעינה'],['ממשק ועיצוב','Jetpack Compose TV מודרני, בעברית מלאה ובאנגלית','תפריטי אנדרואיד מיושנים ועמוסים'],['סידור מועדפים','בטלוויזיה ובטלפון, עם שמירה קבועה','סדר קבוע שלא ניתן לשינוי'],['שלט מהטלפון','מובנה, בדפדפן ובסריקת QR, בלי התקנה','דורש אפליקציות צד-שלישי'],['התאמת תדר מסך (AFR)','אוטומטית, בלי קרטועים','תנועה מקרטעת בספורט'],['ספריות ענק (VOD)','טעינה בהזרמה, בלי קריסות זיכרון','קריסות בפלייליסטים גדולים'],['עדכונים','OTA אוטומטי מתוך הטלוויזיה','הורדה ידנית מחדש בכל גרסה']];
+var CMP=[['זיפזופ בין ערוצים','מיידי, פחות מ-300ms','2–5 שניות טעינה'],['ממשק ועיצוב','Jetpack Compose TV מודרני, בעברית מלאה ובאנגלית','תפריטי אנדרואיד מיושנים ועמוסים'],['סידור מועדפים','בטלוויזיה ובטלפון, עם שמירה קבועה','סדר קבוע שלא ניתן לשינוי'],['שלט מהטלפון','מובנה, בדפדפן ובסריקת QR, בלי התקנה','דורש אפליקציות צד-שלישי'],['התאמת תדר מסך (AFR)','אוטומטית, בלי קרטועים','תנועה מקרטעת בספורט'],['ספריות ענק (VOD)','טעינה בהזרמה, בלי קריסות זיכרון','קריסות בפלייליסטים גדולים'],['עדכונים','OTA אוטומטי מתוך הטלוויזיה','הורדה ידנית מחדש בכל גרסה'],['AirPlay ושיקוף מסך','מקלט AirPlay מובנה: שיקוף מ-iPhone, iPad ו-Mac גם לטלוויזיה בלי AirPlay','אין, צריך Apple TV או אפליקציית שיקוף נוספת'],['פרופילים','עד 6 פרופילים, PIN וערוצים נפרדים לכל אחד','פרופיל יחיד לכולם']];
 $('#cmpBody').innerHTML=CMP.map(function(r){return '<tr><td>'+r[0]+'</td><td><span>'+IC.check+r[1]+'</span></td><td>'+r[2]+'</td></tr>'}).join('');
 
 /* downloader digits */
