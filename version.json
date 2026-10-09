@@ -1,13 +1,13 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 24,
-  "versionName": "1.4.6",
+  "versionCode": 25,
+  "versionName": "1.4.7",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-08T21:48:00Z",
+  "publishedAt": "2026-10-09T19:35:00Z",
   "status": "active",
   "active": true,
   "message": "",
@@ -19,9 +19,10 @@
   "blockedTitle": "",
   "blockedMessage": "",
   "changelog": [
-    "🔊 סנכרון שמע ווידאו (A/V Sync) מדויק והשהיית קול פר-ערוץ עם שמירה אוטומטית",
-    "⚡ נעילת מהירות שידור 1.0x ומניעת סטיות בסנכרון בשידורים חיים",
-    "🛠️ כיוונון מהיר של שמע בהגדרות מהירות (Quick Settings)",
-    "✨ שיפורי ביצועים, יציבות זיפזופ ואיכות ניגון כללית"
+    "📺 חדש – תמיכה ב-AirPlay: אפשרות לשדר סרטונים (יוטיוב ועוד) ולשתף מסך ישירות מהאייפון והמק לטלוויזיה",
+    "👤 פרופילים וקוד אישי: נעילת פרופיל בקוד PIN ובחירה אישית של ערוצים ותכנים לכל פרופיל (כולל מצב ילדים)",
+    "📱 שלט מהטלפון: הוספת רשימות, סידור קטגוריות ושינוי הגדרות ישירות ממסך הנייד",
+    "⚙️ סדר בהגדרות: תפריט הגדרות חדש ומסודר לניווט קל ומהיר בשלט",
+    "⚡ תיקוני באגים ושיפורי מהירות כלליים"
   ]
 }
