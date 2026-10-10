@@ -8,8 +8,8 @@
 
 ממשק נקי שנבנה לשלט רחוק, מעבר ערוצים מהיר, ספריית סרטים וסדרות, ושלט מהטלפון בלי להתקין כלום.
 
-[![Version](https://img.shields.io/github/v/release/Hero-Ghost/Lumina-TV-Releases?style=flat-square&label=version&color=3b82f6)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest)
-[![Downloads](https://img.shields.io/badge/downloads-70%2B-10b981?style=flat-square)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
+[![Downloads v1.4.8](https://img.shields.io/github/downloads/Hero-Ghost/Lumina-TV-Releases/total?style=flat-square&label=v1.4.8%20downloads&color=2563eb)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
+[![Total Downloads](https://img.shields.io/badge/total-50%2B-10b981?style=flat-square)](https://github.com/Hero-Ghost/Lumina-TV-Releases/releases)
 [![Android TV](https://img.shields.io/badge/Android%20TV%208.0+-3ddc84?style=flat-square&logo=android&logoColor=white)](#דרישות-מערכת)
 [![Telegram](https://img.shields.io/badge/Telegram-%D7%A7%D7%91%D7%95%D7%A6%D7%AA_%D7%98%D7%9C%D7%92%D7%A8%D7%9D-229ED9?style=flat-square&logo=telegram&logoColor=white)](https://t.me/LuminaTViptv)
 
