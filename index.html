@@ -657,7 +657,7 @@ footer small{color:var(--dim);font-size:13px}
 <div class="wrap">
   <div class="stats rv">
     <div class="stat"><b>&lt;300ms</b><span>מעבר בין ערוצים</span></div>
-    <div class="stat"><b id="dlCount">OTA</b><span id="dlLabel">עדכונים ישר מהטלוויזיה</span></div>
+    <div class="stat"><b id="dlCount">70+</b><span id="dlLabel">הורדות ישירות</span></div>
     <div class="stat"><b>עב · EN</b><span>עברית מלאה (RTL) + אנגלית</span></div>
     <div class="stat"><b id="sizeStat">~24MB</b><span>קל, מהיר, Android 8.0+</span></div>
   </div>
@@ -1738,9 +1738,11 @@ else $$('.rv').forEach(function(el){el.classList.add('in')});
 $$('.band > img, .hero-bg img').forEach(function(im){im.addEventListener('error',function(){im.style.display='none'})});
 
 /* live data: version.json + GitHub downloads */
-function countUp(el,to){if(REDUCE){el.textContent=to.toLocaleString('he-IL');return}var t0=null,d=1600;function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/d),e=1-Math.pow(1-k,3);el.textContent=Math.floor(to*e).toLocaleString('he-IL');if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+var baseDownloads = 50;
+function countUp(el,to){if(REDUCE){el.textContent=to.toLocaleString('he-IL')+'+';return}var t0=null,d=1600;function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/d),e=1-Math.pow(1-k,3);el.textContent=Math.floor(to*e).toLocaleString('he-IL')+'+';if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
 fetch('version.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(v){
   if(!v)return;VERSION=v.versionName||VERSION;
+  if(v.baseDownloads)baseDownloads=v.baseDownloads;
   $('#heroVer').textContent='גרסה '+VERSION+' זמינה עכשיו';
   $('#specVer').textContent=VERSION+(v.versionCode?' (Build '+v.versionCode+')':'');
   $('#clVer').textContent='גרסה '+VERSION;
@@ -1752,8 +1754,12 @@ fetch('https://api.github.com/repos/Hero-Ghost/Lumina-TV-Releases/releases?per_p
   if(!rel||!rel.length)throw 0;var total=0,size=0;
   rel.forEach(function(x,i){(x.assets||[]).forEach(function(a){total+=a.download_count||0;if(i===0&&/\.apk$/i.test(a.name)&&!size)size=a.size})});
   if(size){SIZE=(size/1048576).toFixed(1)+'MB';$('#sizeStat').textContent='~'+SIZE;$('#specSize').textContent='כ-'+SIZE}
-  if(total>=500)countUp($('#dlCount'),total);else throw 0;
-}).catch(function(){$('#dlCount').textContent='OTA';$('#dlLabel').textContent='עדכונים ישר מהטלוויזיה'});
+  var combined = baseDownloads + total;
+  if(combined>0){
+    countUp($('#dlCount'),combined);
+    $('#dlLabel').textContent='הורדות ישירות';
+  }else throw 0;
+}).catch(function(){$('#dlCount').textContent=(baseDownloads?baseDownloads+'+':'70+');$('#dlLabel').textContent='הורדות ישירות';});
 })();
 
 /* all-features filter + search */
