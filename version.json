@@ -24,5 +24,16 @@
     "📱 שלט מהטלפון: הוספת רשימות, סידור קטגוריות ושינוי הגדרות ישירות ממסך הנייד",
     "⚙️ סדר בהגדרות: תפריט הגדרות חדש ומסודר לניווט קל ומהיר בשלט",
     "⚡ תיקוני באגים ושיפורי מהירות כלליים"
-  ]
+  ],
+  "announcement": {
+    "enabled": false,
+    "id": "",
+    "title": "",
+    "message": "",
+    "type": "info",
+    "showMode": "once",
+    "targetVersions": [],
+    "expiresAt": ""
+  },
+  "demoPlaylistEnabled": false
 }
