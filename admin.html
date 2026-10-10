@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumina TV – פאנל ניהול</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f5f8;--card:#fff;--text:#1b1f2a;--muted:#667085;--border:#e2e5ec;
+  --primary:#4f46e5;--primary-t:#fff;--danger:#dc2626;--ok:#16a34a;--warn:#d97706;
+  --chip:#eef0f6;--input:#fff;--shadow:0 1px 3px rgba(16,24,40,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1117;--card:#181b24;--text:#e8eaf0;--muted:#98a0b3;--border:#2a2f3c;
+  --primary:#7c83ff;--primary-t:#0f1117;--danger:#f87171;--ok:#4ade80;--warn:#fbbf24;
+  --chip:#252a38;--input:#11141b;--shadow:none}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Heebo,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:1.3rem;margin:0}
+h2{font-size:1.1rem;margin:0 0 4px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:var(--shadow)}
+.card p.hint,.hint{color:var(--muted);font-size:.88rem;margin:2px 0 12px}
+label{display:block;font-weight:500;font-size:.9rem;margin:12px 0 4px}
+input[type=text],input[type=password],input[type=number],input[type=datetime-local],select,textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--input);color:var(--text);font:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--primary);outline-offset:1px}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);padding:9px 14px}
+button:hover{border-color:var(--primary)}
+button.primary{background:var(--primary);color:var(--primary-t);border-color:var(--primary);font-weight:700}
+button.danger{background:var(--danger);color:#fff;border-color:var(--danger)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid2{grid-template-columns:1fr}}
+.topbar{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:10px}
+.stat{background:var(--chip);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:1.05rem}
+.stat span{color:var(--muted);font-size:.8rem}
+.badge{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.85rem;font-weight:700}
+.badge.ok{background:color-mix(in srgb,var(--ok) 20%,transparent);color:var(--ok)}
+.badge.bad{background:color-mix(in srgb,var(--danger) 20%,transparent);color:var(--danger)}
+.dirty{color:var(--warn);font-weight:700;font-size:.9rem}
+.switch{display:flex;align-items:center;gap:12px;cursor:pointer;margin:6px 0}
+.switch input{position:absolute;opacity:0;width:0;height:0}
+.track{width:56px;height:30px;border-radius:99px;background:var(--border);position:relative;flex:none;transition:.2s}
+.track::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
+.switch input:checked+.track{background:var(--ok)}
+.switch input:checked+.track::after{inset-inline-start:29px}
+.switch input:focus-visible+.track{outline:2px solid var(--primary);outline-offset:2px}
+.switch.big .track{width:76px;height:40px}
+.switch.big .track::after{width:34px;height:34px}
+.switch.big input:checked+.track::after{inset-inline-start:39px}
+.switch.big .lbl{font-size:1.1rem;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{background:var(--chip);border-radius:99px;padding:3px 6px 3px 12px;display:inline-flex;gap:6px;align-items:center;direction:ltr}
+.chip button{border:0;background:transparent;padding:0 6px;font-size:1.1rem;line-height:1;color:var(--danger)}
+.chip.pick{cursor:pointer;padding:3px 12px;border:1px dashed var(--border);background:transparent;color:var(--text)}
+.summary{background:var(--chip);border-radius:10px;padding:10px 12px;margin-top:12px;font-size:.92rem}
+.note{border-inline-start:4px solid var(--primary);background:var(--chip);padding:8px 12px;border-radius:8px;font-size:.88rem;margin-bottom:16px}
+.killed-card{border-color:var(--danger)}
+pre{background:var(--input);border:1px solid var(--border);border-radius:10px;padding:12px;overflow:auto;direction:ltr;text-align:left;font-size:.8rem;max-height:340px;margin:8px 0}
+.json-edit{direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;min-height:240px}
+.diff{direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.82rem}
+.diff div{padding:2px 8px;white-space:pre-wrap;word-break:break-word}
+.diff .del{background:color-mix(in srgb,var(--danger) 18%,transparent)}
+.diff .add{background:color-mix(in srgb,var(--ok) 18%,transparent)}
+.diff .key{font-weight:700;margin-top:6px}
+/* TV preview */
+.tv{background:#0b0d14;border-radius:14px;padding:24px;display:flex;justify-content:center}
+.tvcard{background:#1b2030;color:#fff;border-radius:16px;padding:22px 26px;max-width:420px;width:100%;border:2px solid #4f7cff;text-align:right}
+.tvcard.warning{border-color:#f59e0b}.tvcard.success{border-color:#22c55e}
+.tvcard h3{margin:0 0 8px;font-size:1.15rem}
+.tvcard p{margin:0 0 16px;white-space:pre-wrap;color:#d3d8e8}
+.tvcard .ok{display:inline-block;background:#4f7cff;color:#fff;padding:6px 22px;border-radius:8px;font-weight:700}
+.tvcard.warning .ok{background:#f59e0b}.tvcard.success .ok{background:#22c55e}
+dialog{border:1px solid var(--border);border-radius:14px;background:var(--card);color:var(--text);max-width:640px;width:calc(100% - 32px);padding:20px}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+#toasts{position:fixed;bottom:16px;inset-inline:16px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:100;pointer-events:none}
+.toast{background:#222;color:#fff;padding:10px 18px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.3);max-width:520px;pointer-events:auto}
+.toast.ok{background:#15803d}.toast.err{background:#b91c1c}
+.hidden{display:none!important}
+.ltr{direction:ltr;text-align:left}
+details summary{cursor:pointer;font-weight:500}
+ol{padding-inline-start:20px;margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- Settings / login -->
+<section id="settingsView" class="card hidden">
+  <h2>⚙️ הגדרות חיבור ל-GitHub</h2>
+  <p class="hint">הפאנל קורא וכותב את הקובץ version.json דרך GitHub. הטוקן נשמר רק בדפדפן שלך (localStorage).</p>
+  <details open>
+    <summary>איך יוצרים טוקן?</summary>
+    <ol>
+      <li>היכנסו ל-GitHub ← Settings ← Developer settings ← Personal access tokens ← Fine-grained tokens ← Generate new token.</li>
+      <li>ב-Repository access בחרו "Only select repositories" ובחרו את מאגר ה-Releases.</li>
+      <li>ב-Permissions ← Repository permissions הגדירו <b>Contents: Read and write</b>.</li>
+      <li>צרו את הטוקן, העתיקו אותו (מתחיל ב-<span class="ltr">github_pat_</span>) והדביקו כאן.</li>
+    </ol>
+  </details>
+  <label for="sToken">טוקן (Personal Access Token)</label>
+  <input id="sToken" type="password" class="ltr" autocomplete="off" placeholder="github_pat_...">
+  <div class="grid2">
+    <div><label for="sOwner">Owner</label><input id="sOwner" type="text" class="ltr"></div>
+    <div><label for="sRepo">Repository</label><input id="sRepo" type="text" class="ltr"></div>
+  </div>
+  <label for="sBranch">Branch</label>
+  <input id="sBranch" type="text" class="ltr">
+  <div class="row" style="margin-top:14px">
+    <button class="primary" id="sSave">שמור והתחבר</button>
+    <button id="sForget">שכח טוקן</button>
+    <button id="sCancel" class="hidden">סגור</button>
+  </div>
+</section>
+
+<main id="mainView" class="hidden">
+  <div class="topbar">
+    <h1>📺 Lumina TV – ניהול</h1>
+    <div class="row">
+      <span id="dirtyInd" class="dirty hidden">● יש שינויים שלא נשמרו</span>
+      <button id="btnSettings" title="הגדרות">⚙️ הגדרות</button>
+      <button id="btnReload">🔄 טען מחדש</button>
+      <button id="btnSave" class="primary">שמור ופרסם</button>
+    </div>
+  </div>
+
+  <div class="note">שינויים מגיעים למכשירים בהפעלה הבאה של האפליקציה, ובדרך כלל תוך מספר דקות (מטמון של raw.githubusercontent יכול להחזיק עד כ-5 דקות).</div>
+
+  <!-- 1 status -->
+  <section class="card">
+    <h2>סטטוס נוכחי</h2>
+    <div class="stats">
+      <div class="stat"><span>גרסה אחרונה</span><b id="stVer" class="ltr">-</b></div>
+      <div class="stat"><span>קוד גרסה</span><b id="stCode">-</b></div>
+      <div class="stat"><span>מצב האפליקציה</span><b id="stState">-</b></div>
+      <div class="stat"><span>נטען לאחרונה</span><b id="stLoaded">-</b></div>
+    </div>
+  </section>
+
+  <!-- 2 kill -->
+  <section class="card" id="killCard">
+    <h2>🔴 מתג חירום (Kill Switch)</h2>
+    <p class="hint">כשהאפליקציה סגורה – כל המשתמשים רואים את ההודעה למטה ולא יכולים להשתמש בה.</p>
+    <label class="switch big"><input type="checkbox" id="kActive"><span class="track"></span><span class="lbl" id="kLbl"></span></label>
+    <label for="kTitle">כותרת (כשהאפליקציה סגורה)</label>
+    <input id="kTitle" type="text">
+    <label for="kMsg">הודעה (כשהאפליקציה סגורה)</label>
+    <textarea id="kMsg"></textarea>
+  </section>
+
+  <!-- 3 versions -->
+  <section class="card">
+    <h2>🚫 חסימת גרסאות</h2>
+    <p class="hint">משתמשים בגרסה חסומה יראו מסך חסימה עם קישור לעדכון.</p>
+    <label for="vInput">גרסאות חסומות</label>
+    <div class="row">
+      <input id="vInput" type="text" class="ltr" placeholder="1.4.5" style="flex:1;min-width:140px">
+      <button id="vAdd">הוסף</button>
+    </div>
+    <div class="chips" id="vChips"></div>
+    <div class="hint">בחירה מהירה:</div>
+    <div class="chips" id="vQuick"></div>
+    <div class="grid2">
+      <div><label for="vMin">גרסה מינימלית (גרסאות ישנות ממנה ייחסמו)</label><input id="vMin" type="text" class="ltr" placeholder="1.4.0"></div>
+      <div><label for="vMinCode">קוד גרסה מינימלי (0 = ללא)</label><input id="vMinCode" type="number" min="0"></div>
+    </div>
+    <label class="switch" style="margin-top:14px"><input type="checkbox" id="vForce"><span class="track"></span><span>עדכון חובה (חוסם את כל מי שמתחת לגרסה האחרונה)</span></label>
+    <label for="bTitle">כותרת מסך החסימה (ריק = ברירת מחדל)</label>
+    <input id="bTitle" type="text">
+    <label for="bMsg">הודעת מסך החסימה (ריק = ברירת מחדל)</label>
+    <textarea id="bMsg"></textarea>
+    <div class="summary" id="vSummary"></div>
+  </section>
+
+  <!-- 4 demo -->
+  <section class="card">
+    <h2>🎬 פלייליסט הדגמה</h2>
+    <p class="hint">כשהמתג כבוי, פלייליסט ההדגמה המובנה יוסתר/יוסר מהאפליקציה.</p>
+    <label class="switch"><input type="checkbox" id="dDemo"><span class="track"></span><span id="dLbl"></span></label>
+  </section>
+
+  <!-- 5 announcement -->
+  <section class="card">
+    <h2>📢 הודעה למשתמשים</h2>
+    <p class="hint">חלון הודעה שיוצג למשתמשים באפליקציה. כל שינוי בכותרת או בטקסט יוצר מזהה חדש, כך שההודעה תוצג שוב.</p>
+    <label class="switch"><input type="checkbox" id="aEnabled"><span class="track"></span><span>הודעה פעילה</span></label>
+    <label for="aTitle">כותרת</label>
+    <input id="aTitle" type="text">
+    <label for="aMsg">הודעה</label>
+    <textarea id="aMsg"></textarea>
+    <div class="grid2">
+      <div><label for="aType">סוג</label>
+        <select id="aType"><option value="info">מידע (info)</option><option value="warning">אזהרה (warning)</option><option value="success">הצלחה (success)</option></select></div>
+      <div><label for="aMode">תדירות הצגה</label>
+        <select id="aMode"><option value="once">פעם אחת לכל הודעה (once)</option><option value="every_launch">בכל הפעלה (every_launch)</option></select></div>
+    </div>
+    <label for="aTarget">גרסאות יעד (ריק = כל הגרסאות)</label>
+    <div class="row">
+      <input id="aTarget" type="text" class="ltr" placeholder="1.4.7, 1.4.6" style="flex:1;min-width:140px">
+      <button id="aTargetAdd">הוסף</button>
+    </div>
+    <div class="chips" id="aChips"></div>
+    <label for="aExp">תוקף עד (ריק = ללא הגבלה)</label>
+    <input id="aExp" type="datetime-local">
+    <div class="row" style="margin-top:12px">
+      <button id="aResend">🔁 שלח שוב לכולם (מזהה חדש)</button>
+      <span class="hint ltr" id="aId" style="margin:0"></span>
+    </div>
+    <label>תצוגה מקדימה (הדמיה)</label>
+    <div class="tv"><div class="tvcard info" id="pv"><h3 id="pvT"></h3><p id="pvM"></p><span class="ok">אישור</span></div></div>
+  </section>
+
+  <!-- 6 advanced -->
+  <section class="card">
+    <h2>🛠 מתקדם</h2>
+    <details><summary>הבדלים מול הגרסה המפורסמת</summary><div class="diff" id="diffBox"></div></details>
+    <details style="margin-top:10px"><summary>JSON גולמי (עריכה)</summary>
+      <p class="hint">אפשר לערוך ישירות. לחצו "החל" כדי לאמת ולטעון את השינויים לטפסים. שדות לא מוכרים נשמרים.</p>
+      <textarea id="rawEdit" class="json-edit" spellcheck="false"></textarea>
+      <div class="row" style="margin-top:8px"><button id="rawApply">החל JSON</button><button id="rawRefresh">רענן מהטפסים</button></div>
+    </details>
+  </section>
+</main>
+</div>
+
+<dialog id="dlg">
+  <h2 id="dlgTitle"></h2>
+  <div id="dlgBody"></div>
+  <div class="row" style="margin-top:16px;justify-content:flex-start">
+    <button id="dlgOk" class="primary">אישור</button>
+    <button id="dlgCancel">ביטול</button>
+  </div>
+</dialog>
+<div id="toasts" aria-live="polite"></div>
+
+<script>
+'use strict';
+// <helpers>
+function b64encodeUtf8(str){
+  const bytes = new TextEncoder().encode(str);
+  let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+function b64decodeUtf8(b64){
+  const bin = atob(String(b64).replace(/\s/g, ''));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder('utf-8').decode(bytes);
+}
+function serialize(obj){ return JSON.stringify(obj, null, 2) + '\n'; }
+// </helpers>
+
+const $ = id => document.getElementById(id);
+const DEFAULT_ANN = {enabled:false,id:'',title:'',message:'',type:'info',showMode:'once',targetVersions:[],expiresAt:''};
+const LS = 'luminaAdminSettings';
+let cfg = {token:'',owner:'Hero-Ghost',repo:'Lumina-TV-Releases',branch:'main'};
+let remote = null;     // last loaded object
+let remoteSha = null;
+let data = null;       // working copy
+let loadedAt = null;
+let origAnn = null;
+
+function lsGet(){ try{ const s = localStorage.getItem(LS); if(s) Object.assign(cfg, JSON.parse(s)); }catch(e){} }
+function lsSet(){ try{ localStorage.setItem(LS, JSON.stringify(cfg)); }catch(e){ toast('לא ניתן לשמור בדפדפן (localStorage חסום)','err'); } }
+
+function toast(msg, kind){
+  const t = document.createElement('div');
+  t.className = 'toast ' + (kind||'');
+  t.textContent = msg;
+  $('toasts').appendChild(t);
+  setTimeout(()=>t.remove(), kind==='err' ? 7000 : 3500);
+}
+
+function confirmDlg(title, bodyNode, okText, danger){
+  return new Promise(res=>{
+    $('dlgTitle').textContent = title;
+    const b = $('dlgBody'); b.innerHTML = '';
+    if (typeof bodyNode === 'string'){ const p = document.createElement('p'); p.textContent = bodyNode; b.appendChild(p); } else b.appendChild(bodyNode);
+    const ok = $('dlgOk'); ok.textContent = okText || 'אישור';
+    ok.className = danger ? 'danger' : 'primary';
+    const dlg = $('dlg');
+    const done = v => { ok.onclick = null; $('dlgCancel').onclick = null; dlg.onclose = null; dlg.close(); res(v); };
+    ok.onclick = () => done(true);
+    $('dlgCancel').onclick = () => done(false);
+    dlg.onclose = () => res(false);
+    dlg.showModal();
+  });
+}
+
+/* ---------- GitHub API ---------- */
+function apiUrl(){
+  return `https://api.github.com/repos/${encodeURIComponent(cfg.owner)}/${encodeURIComponent(cfg.repo)}/contents/version.json`;
+}
+function headers(){
+  return {'Accept':'application/vnd.github+json','Authorization':'Bearer '+cfg.token,'X-GitHub-Api-Version':'2022-11-28'};
+}
+async function ghError(r){
+  let m = ''; try{ m = (await r.json()).message || ''; }catch(e){}
+  if (r.status===401) return 'הטוקן לא תקין או פג תוקף (401)';
+  if (r.status===403) return 'אין הרשאה או חריגה ממגבלת קריאות (403): ' + m;
+  if (r.status===404) return 'הקובץ/המאגר לא נמצא, או שלטוקן אין גישה למאגר (404)';
+  if (r.status===409 || r.status===422 && /sha/i.test(m)) return 'CONFLICT';
+  return `שגיאה ${r.status}: ${m}`;
+}
+async function loadRemote(){
+  const r = await fetch(`${apiUrl()}?ref=${encodeURIComponent(cfg.branch)}`, {headers:headers(), cache:'no-store'});
+  if (!r.ok){ const e = await ghError(r); throw new Error(e); }
+  const j = await r.json();
+  const text = b64decodeUtf8(j.content);
+  remote = JSON.parse(text);
+  remoteSha = j.sha;
+  data = JSON.parse(text);
+  loadedAt = new Date();
+  origAnn = Object.assign({}, DEFAULT_ANN, remote.announcement || {});
+  ensureAnn();
+}
+function ensureAnn(){
+  data.announcement = Object.assign({}, DEFAULT_ANN, data.announcement || {});
+  if (!Array.isArray(data.announcement.targetVersions)) data.announcement.targetVersions = [];
+}
+
+async function doLoad(quiet){
+  try{
+    await loadRemote();
+    renderAll();
+    if(!quiet) toast('נטען בהצלחה','ok');
+    return true;
+  }catch(e){
+    toast(e.message === 'CONFLICT' ? 'שגיאה בטעינה' : ('שגיאת טעינה: ' + e.message + (e instanceof TypeError ? ' (בדקו חיבור לאינטרנט)' : '')),'err');
+    return false;
+  }
+}
+
+/* ---------- derived ---------- */
+function isKilled(d){
+  return d.active === false || ['closed','killed','shutdown','disabled','blocked','inactive'].includes(String(d.status||'').toLowerCase().trim());
+}
+function isDirty(){ return serialize(data) !== serialize(remote); }
+function cleanV(v){ return String(v).trim().replace(/^[vV]/,''); }
+function newId(){
+  const d = new Date(), p = n => String(n).padStart(2,'0');
+  return `a-${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}${p(d.getSeconds())}`;
+}
+function setOrDelete(key, val, emptyVals){
+  if (emptyVals.includes(val)) { if (key in data || (remote && key in remote)) data[key] = val; }
+  else data[key] = val;
+}
+function versionsBelow(v){
+  const m = /^(\d+)\.(\d+)\.(\d+)$/.exec(cleanV(v||''));
+  if(!m) return [];
+  const out = [], [a,b,c] = [+m[1],+m[2],+m[3]];
+  for (let p=c-1; p>=0 && out.length<6; p--) out.push(`${a}.${b}.${p}`);
+  return out;
+}
+function fmtDate(d){ return d.toLocaleString('he-IL'); }
+function isoToLocalInput(iso){
+  if(!iso) return '';
+  const d = new Date(iso); if (isNaN(d)) return '';
+  const p = n => String(n).padStart(2,'0');
+  return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+/* ---------- render ---------- */
+function chips(container, arr, onRemove){
+  container.innerHTML = '';
+  arr.forEach((v,i)=>{
+    const c = document.createElement('span'); c.className='chip';
+    c.append(document.createTextNode(String(v)));
+    const b = document.createElement('button'); b.type='button'; b.textContent='×'; b.setAttribute('aria-label','הסר '+v);
+    b.onclick = () => onRemove(i);
+    c.append(b); container.appendChild(c);
+  });
+}
+function renderAll(){
+  $('settingsView').classList.add('hidden');
+  $('mainView').classList.remove('hidden');
+  const killed = isKilled(data);
+  $('kActive').checked = !killed;
+  $('kTitle').value = data.title || '';
+  $('kMsg').value = data.message || '';
+  $('vMin').value = data.minVersion || '';
+  $('vMinCode').value = data.minVersionCode || 0;
+  $('vForce').checked = !!data.forceUpdate;
+  $('bTitle').value = data.blockedTitle || '';
+  $('bMsg').value = data.blockedMessage || '';
+  $('dDemo').checked = data.demoPlaylistEnabled !== false;
+  const a = data.announcement;
+  $('aEnabled').checked = !!a.enabled;
+  $('aTitle').value = a.title; $('aMsg').value = a.message;
+  $('aType').value = ['info','warning','success'].includes(a.type) ? a.type : 'info';
+  $('aMode').value = a.showMode === 'every_launch' ? 'every_launch' : 'once';
+  $('aExp').value = isoToLocalInput(a.expiresAt);
+  renderDerived();
+}
+function renderDerived(){
+  const killed = isKilled(data);
+  $('stVer').textContent = remote.versionName || '-';
+  $('stCode').textContent = remote.versionCode ?? '-';
+  $('stState').innerHTML = isKilled(remote) ? '<span class="badge bad">סגורה</span>' : '<span class="badge ok">פעילה</span>';
+  $('stLoaded').textContent = loadedAt ? fmtDate(loadedAt) : '-';
+  $('kLbl').textContent = killed ? 'האפליקציה סגורה לכולם' : 'האפליקציה פתוחה';
+  $('killCard').classList.toggle('killed-card', killed);
+  $('dLbl').textContent = data.demoPlaylistEnabled !== false ? 'פלייליסט הדגמה מופעל' : 'פלייליסט הדגמה מושבת';
+  // versions
+  const bv = Array.isArray(data.blockedVersions) ? data.blockedVersions : [];
+  chips($('vChips'), bv, i => { data.blockedVersions.splice(i,1); renderDerived(); });
+  const q = $('vQuick'); q.innerHTML = '';
+  const cands = [remote.versionName].concat(versionsBelow(remote.versionName)).filter(v=>v && !bv.includes(v));
+  cands.forEach(v=>{
+    const b = document.createElement('button'); b.type='button'; b.className='chip pick'; b.textContent = v;
+    b.onclick = () => addBlocked(v); q.appendChild(b);
+  });
+  const parts = [];
+  if (bv.length) parts.push('גרסאות שייחסמו: ' + bv.join(', '));
+  if (data.minVersion) parts.push('כל גרסה ישנה מ-' + data.minVersion + ' תיחסם');
+  if (data.minVersionCode > 0) parts.push('כל גרסה עם קוד נמוך מ-' + data.minVersionCode + ' תיחסם');
+  if (data.forceUpdate) parts.push('עדכון חובה: כל מי שמתחת ל-' + (remote.versionName||'?') + ' ייחסם');
+  $('vSummary').textContent = parts.length ? parts.join(' • ') : 'לא נחסמת אף גרסה כרגע.';
+  // announcement
+  const a = data.announcement;
+  chips($('aChips'), a.targetVersions, i => { a.targetVersions.splice(i,1); renderDerived(); });
+  $('aId').textContent = a.id ? 'id: ' + a.id : '';
+  const pv = $('pv'); pv.className = 'tvcard ' + a.type;
+  const icon = {info:'ℹ️ ',warning:'⚠️ ',success:'✅ '}[a.type] || '';
+  $('pvT').textContent = icon + (a.title || '(ללא כותרת)');
+  $('pvM').textContent = a.message || '(ללא הודעה)';
+  pv.style.opacity = a.enabled ? 1 : .5;
+  // dirty + advanced
+  $('dirtyInd').classList.toggle('hidden', !isDirty());
+  renderDiff();
+  if (document.activeElement !== $('rawEdit')) $('rawEdit').value = serialize(data);
+}
+function renderDiff(){
+  const box = $('diffBox'); box.innerHTML = '';
+  const lines = diffLines();
+  if (!lines.length){ box.textContent = 'אין שינויים.'; return; }
+  box.appendChild(diffNode(lines));
+}
+function diffLines(){
+  const keys = Array.from(new Set(Object.keys(remote).concat(Object.keys(data))));
+  const out = [];
+  keys.forEach(k=>{
+    const a = k in remote ? JSON.stringify(remote[k], null, 2) : undefined;
+    const b = k in data ? JSON.stringify(data[k], null, 2) : undefined;
+    if (a !== b) out.push({k, a, b});
+  });
+  return out;
+}
+function diffNode(lines){
+  const w = document.createElement('div'); w.className='diff';
+  lines.forEach(({k,a,b})=>{
+    const h = document.createElement('div'); h.className='key'; h.textContent = k; w.appendChild(h);
+    if (a !== undefined){ const d = document.createElement('div'); d.className='del'; d.textContent = '- ' + a; w.appendChild(d); }
+    if (b !== undefined){ const d = document.createElement('div'); d.className='add'; d.textContent = '+ ' + b; w.appendChild(d); }
+  });
+  return w;
+}
+
+/* ---------- handlers ---------- */
+function addBlocked(v){
+  v = cleanV(v); if(!v) return;
+  if (!Array.isArray(data.blockedVersions)) data.blockedVersions = [];
+  if (!data.blockedVersions.includes(v)) data.blockedVersions.push(v);
+  $('vInput').value = ''; renderDerived();
+}
+function syncAnnId(){
+  const a = data.announcement;
+  if (a.title === origAnn.title && a.message === origAnn.message) a.id = origAnn.id;
+  else if (a.id === origAnn.id || !a.id) a.id = newId();
+}
+function bind(){
+  $('kActive').onchange = async e => {
+    const open = e.target.checked;
+    if (!open){
+      const ok = await confirmDlg('לסגור את האפליקציה לכולם?', 'כל המשתמשים לא יוכלו להשתמש באפליקציה עד שתפתחו אותה שוב. הפעולה תיכנס לתוקף רק לאחר "שמור ופרסם".', 'כן, סגור לכולם', true);
+      if (!ok){ e.target.checked = true; return; }
+      data.active = false; data.status = 'closed';
+    } else { data.active = true; data.status = 'active'; }
+    renderDerived();
+  };
+  $('kTitle').oninput = e => { setOrDelete('title', e.target.value, ['']); renderDerived(); };
+  $('kMsg').oninput = e => { data.message = e.target.value; renderDerived(); };
+  $('vAdd').onclick = () => addBlocked($('vInput').value);
+  $('vInput').onkeydown = e => { if(e.key==='Enter'){ e.preventDefault(); addBlocked(e.target.value);} };
+  $('vMin').oninput = e => { data.minVersion = cleanV(e.target.value); renderDerived(); };
+  $('vMinCode').oninput = e => { data.minVersionCode = Math.max(0, parseInt(e.target.value,10) || 0); renderDerived(); };
+  $('vForce').onchange = e => { data.forceUpdate = e.target.checked; renderDerived(); };
+  $('bTitle').oninput = e => { data.blockedTitle = e.target.value; renderDerived(); };
+  $('bMsg').oninput = e => { data.blockedMessage = e.target.value; renderDerived(); };
+  $('dDemo').onchange = e => { data.demoPlaylistEnabled = e.target.checked; renderDerived(); };
+  const a = () => data.announcement;
+  $('aEnabled').onchange = e => { a().enabled = e.target.checked; if(e.target.checked && !a().id) a().id = newId(); renderDerived(); };
+  $('aTitle').oninput = e => { a().title = e.target.value; syncAnnId(); renderDerived(); };
+  $('aMsg').oninput = e => { a().message = e.target.value; syncAnnId(); renderDerived(); };
+  $('aType').onchange = e => { a().type = e.target.value; renderDerived(); };
+  $('aMode').onchange = e => { a().showMode = e.target.value; renderDerived(); };
+  const addT = () => {
+    $('aTarget').value.split(/[,\s;]+/).map(cleanV).filter(Boolean).forEach(v=>{ if(!a().targetVersions.includes(v)) a().targetVersions.push(v); });
+    $('aTarget').value=''; renderDerived();
+  };
+  $('aTargetAdd').onclick = addT;
+  $('aTarget').onkeydown = e => { if(e.key==='Enter'){ e.preventDefault(); addT(); } };
+  $('aExp').onchange = e => {
+    const v = e.target.value;
+    a().expiresAt = v ? new Date(v).toISOString().replace(/\.\d{3}Z$/,'Z') : '';
+    renderDerived();
+  };
+  $('aResend').onclick = () => { a().id = newId(); renderDerived(); toast('נוצר מזהה חדש – ההודעה תוצג שוב לכולם לאחר הפרסום','ok'); };
+  $('rawApply').onclick = () => {
+    try{
+      const o = JSON.parse($('rawEdit').value);
+      if (!o || typeof o !== 'object' || Array.isArray(o)) throw new Error('חייב להיות אובייקט JSON');
+      data = o; ensureAnn(); renderAll(); toast('ה-JSON הוחל על הטפסים','ok');
+    }catch(e){ toast('JSON לא תקין: ' + e.message,'err'); }
+  };
+  $('rawRefresh').onclick = () => { $('rawEdit').value = serialize(data); };
+  $('btnReload').onclick = async () => {
+    if (isDirty() && !(await confirmDlg('לטעון מחדש?','יש שינויים שלא נשמרו. טעינה מחדש תמחק אותם.','טען מחדש',true))) return;
+    doLoad();
+  };
+  $('btnSettings').onclick = showSettings;
+  $('btnSave').onclick = save;
+  window.addEventListener('beforeunload', e => { if (remote && data && isDirty()){ e.preventDefault(); e.returnValue=''; } });
+}
+
+async function save(){
+  // validate
+  if (data.announcement.enabled && !data.announcement.message.trim()) return toast('הודעה פעילה חייבת לכלול טקסט','err');
+  const lines = diffLines();
+  if (!lines.length) return toast('אין שינויים לפרסום');
+  const body = document.createElement('div');
+  if (isKilled(data) && !isKilled(remote)){
+    const w = document.createElement('p'); w.style.color='var(--danger)'; w.style.fontWeight='700';
+    w.textContent = '⚠️ שימו לב: האפליקציה תיסגר לכל המשתמשים!'; body.appendChild(w);
+  }
+  body.appendChild(diffNode(lines));
+  if (!(await confirmDlg('אישור פרסום', body, 'שמור ופרסם', isKilled(data) && !isKilled(remote)))) return;
+  const btn = $('btnSave'); btn.disabled = true;
+  try{
+    const msg = 'Update version.json: ' + lines.map(l=>l.k).join(', ');
+    const r = await fetch(apiUrl(), {
+      method:'PUT', headers:Object.assign({'Content-Type':'application/json'}, headers()),
+      body: JSON.stringify({message: msg, content: b64encodeUtf8(serialize(data)), sha: remoteSha, branch: cfg.branch})
+    });
+    if (!r.ok){
+      const e = await ghError(r);
+      if (e === 'CONFLICT') toast('התנגשות: הקובץ השתנה בגיטהאב מאז הטעינה. לחצו "טען מחדש" ונסו שוב.','err');
+      else toast(e,'err');
+      return;
+    }
+    const j = await r.json();
+    remoteSha = j.content.sha;
+    remote = JSON.parse(JSON.stringify(data));
+    origAnn = Object.assign({}, DEFAULT_ANN, remote.announcement);
+    loadedAt = new Date();
+    renderDerived();
+    toast('פורסם בהצלחה! המכשירים יקלטו בהפעלה הבאה / תוך כמה דקות.','ok');
+  }catch(e){
+    toast('שגיאת רשת: ' + e.message,'err');
+  }finally{ btn.disabled = false; }
+}
+
+/* ---------- settings ---------- */
+function showSettings(){
+  $('sToken').value = cfg.token; $('sOwner').value = cfg.owner; $('sRepo').value = cfg.repo; $('sBranch').value = cfg.branch;
+  $('settingsView').classList.remove('hidden');
+  $('sCancel').classList.toggle('hidden', !remote);
+  if (!remote) $('mainView').classList.add('hidden');
+  $('settingsView').scrollIntoView();
+}
+function bindSettings(){
+  $('sSave').onclick = async () => {
+    cfg.token = $('sToken').value.trim(); cfg.owner = $('sOwner').value.trim() || 'Hero-Ghost';
+    cfg.repo = $('sRepo').value.trim() || 'Lumina-TV-Releases'; cfg.branch = $('sBranch').value.trim() || 'main';
+    if (!cfg.token) return toast('יש להזין טוקן','err');
+    lsSet();
+    if (await doLoad()) { $('settingsView').classList.add('hidden'); }
+  };
+  $('sForget').onclick = () => {
+    cfg.token = ''; $('sToken').value = ''; lsSet(); remote = data = null;
+    $('mainView').classList.add('hidden'); showSettings(); toast('הטוקן נמחק מהדפדפן');
+  };
+  $('sCancel').onclick = () => $('settingsView').classList.add('hidden');
+}
+
+lsGet(); bind(); bindSettings();
+if (cfg.token) doLoad(true).then(ok => { if(!ok) showSettings(); }); else showSettings();
+</script>
+</body>
+</html>

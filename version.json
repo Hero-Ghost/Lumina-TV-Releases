@@ -1,13 +1,13 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 25,
-  "versionName": "1.4.7",
+  "versionCode": 26,
+  "versionName": "1.4.8",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-09T19:35:00Z",
+  "publishedAt": "2026-10-10T21:25:00Z",
   "status": "active",
   "active": true,
   "message": "",
@@ -18,13 +18,6 @@
   "forceUpdate": false,
   "blockedTitle": "",
   "blockedMessage": "",
-  "changelog": [
-    "📺 חדש – תמיכה ב-AirPlay: אפשרות לשדר סרטונים (יוטיוב ועוד) ולשתף מסך ישירות מהאייפון והמק לטלוויזיה",
-    "👤 פרופילים וקוד אישי: נעילת פרופיל בקוד PIN ובחירה אישית של ערוצים ותכנים לכל פרופיל (כולל מצב ילדים)",
-    "📱 שלט מהטלפון: הוספת רשימות, סידור קטגוריות ושינוי הגדרות ישירות ממסך הנייד",
-    "⚙️ סדר בהגדרות: תפריט הגדרות חדש ומסודר לניווט קל ומהיר בשלט",
-    "⚡ תיקוני באגים ושיפורי מהירות כלליים"
-  ],
   "announcement": {
     "enabled": false,
     "id": "",
@@ -35,5 +28,12 @@
     "targetVersions": [],
     "expiresAt": ""
   },
-  "demoPlaylistEnabled": false
+  "demoPlaylistEnabled": false,
+  "changelog": [
+    "💬 כתוביות בעברית וסנכרון: חיפוש כתוביות אונליין ממספר מקורות (כתובית, ויזדום, סקרוזירה) וסנכרון חכם של כתוביות וסאונד.",
+    "⏭️ דילוג על פתיח: אפשרות דילוג על פתיחים וסיומות בסדרות (Skip Intro / Credits).",
+    "📱 מדריך שמירת השלט: סרטוני הדרכה במסך הבית להתקנת השלט כאפליקציה באייפון ובאנדרואיד.",
+    "🔍 דפדפן TMDB משודרג: חיפוש, קטלוג והעשרת מידע על סרטים וסדרות.",
+    "⚡ הודעות מערכת ושיפורי יציבות: מנגנון הודעות מרחוק ותיקוני ניווט בשלט."
+  ]
 }
