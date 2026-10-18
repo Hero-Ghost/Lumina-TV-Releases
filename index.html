@@ -614,7 +614,7 @@ footer small{color:var(--dim);font-size:13px}
   <div class="hero-bg"><img src="https://images.unsplash.com/photo-1593784991251-92ded75ea290?auto=format&fit=crop&w=1800&q=60" alt="" fetchpriority="high"></div>
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.5.2 זמינה עכשיו</span></span>
+      <span class="eyebrow rv"><span class="dot"></span><span id="heroVer">גרסה 1.5.3 זמינה עכשיו</span></span>
       <h1 class="rv d1">הטלוויזיה שלך,<br><span class="grad">במהירות האור.</span></h1>
       <p class="lead rv d2"><b>Lumina TV</b> הוא נגן IPTV פרימיום ל-Android&nbsp;TV ו-Google&nbsp;TV. <b>ממשק בעברית מלאה</b> (וגם באנגלית), מעבר ערוצים <b>מתחת ל-300ms</b>, ספריית סרטים וסדרות, מדריך שידורים ושלט חכם מהטלפון, בלי להתקין שום דבר. <b>חדש ב-1.5.2</b>: מדריך שידורים חכם לפי הקטגוריה המנגנת, שלט טלפון משודרג עם פעולות מהירות (טיימר שינה, סנכרון שמע חי, יחסי תמונה ורענון סטרים), ובקרת קטגוריות מהסמארטפון.</p>
       <div class="cta-row rv d3">
@@ -1336,7 +1336,7 @@ adb install -r -d LuminaTV.apk</div></div></li>
       <h2>כל הפרטים, <span class="grad">בקצרה</span></h2>
     </div>
     <div class="specs rv">
-      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.5.2 (Build 30)</b></div>
+      <div class="spec"><small>גרסה רשמית</small><b id="specVer">1.5.3 (Build 31)</b></div>
       <div class="spec"><small>גודל הקובץ</small><b id="specSize">כ-28MB</b></div>
       <div class="spec"><small>Android מינימלי</small><b>Android 8.0 Oreo (API 26)</b></div>
       <div class="spec"><small>מומלץ</small><b>Android 11 / 12 / 14</b></div>
@@ -1353,19 +1353,10 @@ adb install -r -d LuminaTV.apk</div></div></li>
     <div class="changelog rv">
       <div class="cl-head">
         <div><b>מה חדש</b><br><span id="clDate">עודכן לאחרונה</span></div>
-        <span class="ver" id="clVer">גרסה 1.5.2</span>
+        <span class="ver" id="clVer">גרסה 1.5.3</span>
       </div>
       <ul id="clList">
-        <li>🔀 ניהול, מיזוג ופירוק קבוצות (ערוצים ו-VOD): איחוד מספר קבוצות לקבוצה משולבת אחת ושחזור מלא של כל התכנים לקבוצות המקוריות בעת פירוק</li>
-        <li>📺 לוח שידורים (EPG) במגירת הערוצים: הצגת תוכנית נוכחית והבאה (Now / Next) עם שעות מדויקות ומד התקדמות ישירות ברשימת הערוצים</li>
-        <li>🎮 שני מצבי נגן לבחירה (Player Mode): מצב סטנדרטי (Standard - סרגל בקרה תחתון ומידע) ומצב סימלס (Seamless - פתיחת הערוצים ישירות)</li>
-        <li>⚡ סרגל בקרה תחתון חדש בשידור חי (Live Control Bar): גישה מהירה לשמע, כתוביות, יחסי תמונה (Aspect Ratio), טיימר שינה, רענון סטרים וסטטיסטיקות שידור</li>
-        <li>🛡️ מניעת תקיעות וקפיאת תמונה (Frozen Video Fix): שחרור נקי של מפענח החומרה (MediaCodec) במעבר ערוצים וייצוב אות ה-HDMI לאחר שינה</li>
-        <li>📺 הגבלת רזולוציה מקסימלית (Max Resolution): אפשרות לקביעת רזולוציה מקסימלית (1080p / ללא הגבלה) למניעת קריסות בסטרימרים חלשים</li>
-        <li>🚀 שליטה מתקדמת בבאפר: פרופילי באפר מוגדרים מראש או התאמה אישית מלאה של זמני הטעינה (לפני הפעלה ולאחר תקיעה)</li>
-        <li>🔔 עדכונים שקטים וחיווי עדכון: מתג לביטול חלונות קופצים – כשיש גרסה חדשה מופיעה נקודת חיווי שקטה על גלגל השיניים</li>
-        <li>📱 הרחבת השלט בטלפון (Web Remote): תמיכה בשינוי הגדרות הנגן, הבאפר, הרזולוציה ומחיקת קבוצות ישירות מדפדפן הסמארטפון</li>
-        <li>🛑 מניעת יציאה בשוגג: סרגל אישור יציאה בלחיצה על Back במסך הראשי למניעת סגירת האפליקציה בטעות</li>
+        <li>⚡ עדכונים ושיפורים לנגן</li>
       </ul>
     </div>
   </div>
@@ -1545,7 +1536,7 @@ var T={
   qrT:'Control from your phone',qrS:['Scan the code with your phone camera','The remote opens in your browser','Control it all: arrows, volume, keyboard'],net:'Network: Home-WiFi',
   connected:'📱 Phone connected',muted:'🔇 Muted',unmuted:'🔊 Sound on',play:'▶ Starting playback',backN:function(n){return 'Press '+n+' more times to exit'}}
 };
-var CHANGELOG=null, VERSION='1.5.2', SIZE='28MB';
+var CHANGELOG=null, VERSION='1.5.3', SIZE='28MB';
 
 function progInfo(c){
   var now=new Date(), mins=now.getHours()*60+now.getMinutes();
