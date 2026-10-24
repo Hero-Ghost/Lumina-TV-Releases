@@ -124,11 +124,11 @@ adb install -r LuminaTV.apk
 
 | | |
 |---|---|
-| **גרסה נוכחית** | 1.5.3 |
+| **גרסה נוכחית** | 1.5.4 |
 | **מערכת** | Android 8.0 ומעלה |
 | **מכשירים** | Android TV, Google TV, Fire TV, Chromecast, Xiaomi Mi Box, וטלוויזיות Sony, TCL ו-Hisense |
 | **סוגי מנוי** | Xtream Codes, קישורי M3U / M3U8 |
-| **גודל** | כ-24MB |
+| **גודל** | כ-29MB |
 
 ---
 

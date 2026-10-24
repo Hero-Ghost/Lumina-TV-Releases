@@ -1,13 +1,13 @@
 {
   "appName": "Lumina TV",
   "packageName": "com.iptv.tv",
-  "versionCode": 31,
-  "versionName": "1.5.3",
+  "versionCode": 32,
+  "versionName": "1.5.4",
   "minSdk": 26,
   "targetSdk": 34,
   "downloadUrl": "https://github.com/Hero-Ghost/Lumina-TV-Releases/releases/latest/download/LuminaTV.apk",
   "rawDownloadUrl": "https://raw.githubusercontent.com/Hero-Ghost/Lumina-TV-Releases/main/LuminaTV.apk",
-  "publishedAt": "2026-10-18T17:30:00Z",
+  "publishedAt": "2026-10-24T18:30:00Z",
   "status": "active",
   "active": true,
   "message": "",
@@ -30,6 +30,9 @@
   },
   "demoPlaylistEnabled": false,
   "changelog": [
-    "⚡ עדכונים ושיפורים לנגן"
+    "🔄 גיבוי וסנכרון מקומי (LAN Local Sync Server) וייבוא/ייצוא הגדרות ורשימות",
+    "📱 שלט סמארטפון (Web Remote) משודרג עם מסך הגדרות שלט, פורט וקוד PIN",
+    "🎬 שדרוג נגן ומדיה: מנגנון למידה והתאוששות חכמה מטעויות ניגון (Playback Recovery)",
+    "⚡ שיפורי ביצועים, אופטימיזציית זיכרון ויציבות ממשק מלאה"
   ]
 }
