@@ -725,7 +725,7 @@ footer small{color:var(--dim);font-size:13px}
 .cc .ci{flex:1;min-width:0;display:flex;flex-direction:column;gap:.45cqw}
 .bdg{align-self:flex-start;display:inline-flex;align-items:center;gap:.5cqw;font-size:1.15cqw;font-weight:700;padding:.15cqw .8cqw;border-radius:.6cqw;white-space:nowrap}
 .bdg.lv{background:rgba(255,77,94,.25);color:var(--lv)}.bdg.lv::before{content:"";width:.6cqw;height:.6cqw;border-radius:50%;background:var(--lv)}
-.bdg.cu{background:var(--acs);color:var(--acb)}.bdg.up{background:rgba(255,255,255,.12)}
+.bdg.ar{background:var(--acs);color:var(--acb)}.bdg.up{background:rgba(255,255,255,.12)}
 .cc .tm{font-size:1.3cqw;color:var(--t2)}
 .cc b{font-size:1.7cqw;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cc p{font-size:1.2cqw;color:var(--t2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -1969,7 +1969,7 @@ var VIEWS={
     {s:S,e:E,ti:c.now,im:c.img,k:'live',d:c.d[L]},
     {s:E,e:E+60*M,ti:c.next,im:'1514565131-fce0801e5785',k:'up'},
     {s:E+60*M,e:E+150*M,ti:x.extra[1],im:'1629217855633-79a6925d6c47',k:'up'}];
-   var html=cards.map(function(cd){var b=cd.k==='past'?['cu',x.bCu,x.hPast]:cd.k==='live'?['lv',x.bLive,x.hLive]:['up',x.bUp,x.hUp];
+   var html=cards.map(function(cd){var b=cd.k==='past'?['ar',x.bCu,x.hPast]:cd.k==='live'?['lv',x.bLive,x.hLive]:['up',x.bUp,x.hUp];
      return '<div class="cc"><span class="iw cc-pw"><img src="'+IMG(cd.im,240)+'" alt=""></span><div class="ci"><span class="bdg '+b[0]+'">'+b[1]+'</span><span class="tm">'+x.today+' <bdi dir="ltr">'+hm(new Date(cd.s))+' - '+hm(new Date(cd.e))+'</bdi></span><b>'+cd.ti[L]+'</b>'+(cd.d?'<p>'+cd.d+'</p>':'')+'<span class="hint">'+b[2]+'</span></div></div>'}).join('');
    return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c.img)+'" alt=""></div><div class="cu-dim"></div><div class="cu">'+
    '<div class="cu-h">'+logo(c,L)+'<div style="min-width:0"><div class="r1">'+IC.history+'<b>'+c[L]+'</b><span class="pl ac">'+x.cuTitle+'</span></div><p>'+x.cuSub+'</p></div></div>'+
