@@ -579,6 +579,179 @@ footer small{color:var(--dim);font-size:13px}
 .af-card mark{background:rgba(250,204,21,.25);color:#fff;border-radius:3px;padding:0 2px}
 .af-empty{text-align:center;color:var(--muted);padding:30px 0}
 .af-note{text-align:center;color:var(--dim);font-size:14px;margin-top:10px}
+
+/* ---------- in-app design v1.5.7 (mirrors IptvColors / player bar / drawer / guide / timeline) ---------- */
+.screen{--ac:#5f6fff;--acd:#4651d6;--acv:#9d6bff;--acb:#aeb8ff;--acs:rgba(123,139,255,.2);--sf:#0d0f17;--sf2:#151927;--t2:#a7aec4;--t3:#6e768d;--lv:#ff4d5e;--ok:#3ddc97;--wn:#ffb74d;--agr:linear-gradient(90deg,#5f6fff,#9d6bff);--fb:.3cqw solid rgba(255,255,255,.92)}
+.screen bdi{direction:ltr;unicode-bidi:isolate}
+.pl{display:inline-block;font-size:1.2cqw;font-weight:700;letter-spacing:.08cqw;padding:.25cqw .8cqw;border-radius:.6cqw;background:rgba(255,255,255,.14);color:#f3f5fc;white-space:nowrap;line-height:1.5}
+.pl.ac{background:var(--acs);color:var(--acb)}
+.lbadge{display:inline-flex;align-items:center;gap:.6cqw;background:var(--lv);color:#fff;font-size:1.2cqw;font-weight:700;padding:.25cqw .8cqw;border-radius:.6cqw;white-space:nowrap;line-height:1.5}
+.lbadge::before{content:"";width:.6cqw;height:.6cqw;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
+/* live player bar */
+.lb-top{position:absolute;inset:0 0 auto;height:12.5cqw;background:linear-gradient(180deg,rgba(5,6,11,.8),transparent)}
+.lb-clock{position:absolute;top:2.8cqw;inset-inline-end:5cqw;font-family:inherit;font-weight:600;font-size:2.3cqw}
+.lb{position:absolute;inset:auto 0 0;padding:6.4cqw 5cqw 2.2cqw;background:linear-gradient(180deg,transparent,rgba(5,6,11,.82) 32%,rgba(5,6,11,.97))}
+.lb-id{display:flex;align-items:center;gap:1.7cqw}
+.lb .chlogo{width:6.6cqw;height:6.6cqw;border-radius:1.3cqw;font-size:2.8cqw;flex:none}
+.lb-r1{display:flex;align-items:center;gap:1.2cqw;min-width:0}
+.lb .chnum{font-family:inherit;font-size:2.2cqw;font-weight:600;min-width:0;padding:.2cqw 1.2cqw;border-radius:.8cqw;background:var(--agr);line-height:1.35}
+.lb .chname{font-size:2.8cqw;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.lb-r2{display:flex;gap:.8cqw;margin-top:.6cqw;align-items:center}
+.lb-fav{color:var(--wn);display:inline-flex}.lb-fav svg{width:1.9cqw;height:1.9cqw}
+.lb-now{display:flex;gap:1.7cqw;align-items:center;margin-top:1.4cqw}
+.iw{flex:none;overflow:hidden;background:var(--sf2)!important}.iw img{width:100%;height:100%;object-fit:cover;display:block}
+.lb-pw{width:6.4cqw;height:9.3cqw;border-radius:1cqw}
+.lb-nowc{flex:1;min-width:0}
+.lb-l1{display:flex;align-items:baseline;gap:1.45cqw}
+.lb-ov{font-size:1.2cqw;font-weight:700;letter-spacing:.1cqw;color:var(--acb)}
+.lb .ptitle{font-size:2.2cqw;font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb .pleft{font-size:1.35cqw;color:var(--t2);margin:0;white-space:nowrap}
+.lb-desc{font-size:1.35cqw;color:var(--t2);margin-top:.3cqw;line-height:1.45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb .pbar{height:.5cqw;margin:.8cqw 0 0;background:rgba(255,255,255,.18);direction:ltr}
+.lb .pbar i{background:var(--agr)}
+.lb-next{font-size:1.35cqw;color:var(--t2);margin-top:.6cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-btns{display:flex;justify-content:center;align-items:center;gap:1.05cqw;margin-top:1.4cqw;direction:ltr}
+.bb{display:grid;place-items:center;padding:1cqw 1.25cqw;border-radius:1.45cqw;background:rgba(13,15,23,.7);color:#f3f5fc;border:.15cqw solid transparent;transition:transform .2s,background .2s}
+.bb svg{width:2.6cqw;height:2.6cqw}
+.bb.pri{border-radius:5cqw;padding:1.2cqw 2.3cqw;background:rgba(95,111,255,.35);margin-right:1.9cqw}
+.bb.pri svg{width:3.2cqw;height:3.2cqw}
+.bb.hl{background:var(--acs);color:var(--ac)}
+.bb.focus{background:var(--ac);color:#fff;border:var(--fb);transform:scale(1.1)}
+.lb-lbl{text-align:center;font-size:1.5cqw;color:var(--t2);height:2.2cqw;margin-top:.8cqw;line-height:2.2cqw}
+.zapms{bottom:auto;top:2.6cqw;transform:none;inset-inline-end:12cqw}
+/* nav rail */
+.nr{width:10.8cqw;flex:none;display:flex;flex-direction:column;align-items:center;gap:.3cqw;padding:1.8cqw 0;background:linear-gradient(180deg,#151927,#0d0f17)}
+.nr .logo{width:5cqw;height:5cqw;border-radius:1.2cqw;border:1px solid rgba(255,255,255,.3);padding:.3cqw;margin-bottom:.9cqw}
+.nri{position:relative;width:100%;display:flex;justify-content:center}
+.nri>span{width:8.3cqw;height:4.6cqw;border-radius:1.6cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25cqw;color:var(--t2)}
+.nri svg{width:2.1cqw;height:2.1cqw}
+.nri em{font-style:normal;font-size:1.02cqw;line-height:1.1;white-space:nowrap}
+.nri.on>span{background:var(--acs);color:#f3f5fc}
+.nri.on::before{content:"";position:absolute;inset-inline-start:0;top:50%;transform:translateY(-50%);width:.42cqw;height:3.5cqw;border-radius:.4cqw;background:linear-gradient(180deg,#5f6fff,#9d6bff)}
+.nr hr{width:4.4cqw;border:0;height:1px;background:rgba(255,255,255,.12);margin:.6cqw 0}
+.ui>.nr{margin-block:-3cqw;margin-inline-start:-2.4cqw}
+/* channel drawer */
+.dr{position:absolute;inset-block:0;inset-inline-start:0;display:flex;background:rgba(13,15,23,.97);box-shadow:0 0 5cqw rgba(0,0,0,.55)}
+.dc{width:21cqw;background:rgba(6,7,12,.55);padding:3.4cqw 1.25cqw 2.8cqw;display:flex;flex-direction:column;gap:.15cqw}
+.ovl{font-size:1.25cqw;font-weight:700;letter-spacing:.1cqw;color:var(--t3);padding:0 .8cqw 1.1cqw;display:flex;justify-content:space-between;align-items:center}
+.ovl svg{width:2cqw;height:2cqw;color:var(--t2)}
+.dcat{display:flex;align-items:center;gap:1.05cqw;padding:1.1cqw 1.25cqw;border-radius:1cqw;font-size:1.55cqw;color:#f3f5fc}
+.dcat svg{width:2.1cqw;height:2.1cqw;flex:none}
+.dcat b{flex:1;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dcat small{font-size:1.35cqw;opacity:.8}
+.dcat.on{background:var(--acs)}
+.dl{width:35cqw;padding:3.4cqw 1.25cqw 0;display:flex;flex-direction:column;gap:.6cqw;overflow:hidden}
+.dl-h{padding:0 .8cqw .6cqw}
+.dl-h b{display:block;font-size:2.2cqw;font-weight:600;line-height:1.3}
+.dl-h span{font-size:1.35cqw;color:var(--t2)}
+.dr-row{display:flex;gap:.6cqw;align-items:center}
+.crow{flex:1;min-width:0;display:flex;align-items:center;height:9.2cqw;padding:0 1.05cqw;border-radius:1.25cqw;background:var(--sf2);border:.3cqw solid transparent;transition:background .2s}
+.crow .n{width:2.8cqw;font-size:1.55cqw;font-weight:500;flex:none}
+.crow .chlogo{width:4cqw;height:4cqw;font-size:1.7cqw;border-radius:.8cqw;flex:none;margin-inline-end:1.05cqw;box-shadow:none}
+.crow .t{flex:1;min-width:0}
+.crow .t b{display:block;font-size:1.75cqw;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+.crow .t span{display:block;font-size:1.35cqw;color:rgba(167,174,196,.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4}
+.crow .t span.s2{color:rgba(110,118,141,.95)}
+.crow .mini{height:.32cqw;border-radius:.2cqw;background:rgba(110,118,141,.35);margin-top:.35cqw;overflow:hidden}
+.crow .mini i{display:block;height:100%;background:var(--ac)}
+.crow .ics{display:flex;gap:.6cqw;align-items:center;margin-inline-start:.6cqw}
+.crow .fav{color:var(--lv);display:inline-flex}.crow .fav svg{width:1.9cqw;height:1.9cqw}
+.crow .eqc{background:var(--acs);border-radius:.6cqw;padding:.3cqw .8cqw;display:flex}
+.crow .eq i{background:var(--acb)}
+.crow.play{background:var(--acs)}
+.crow.focus{background:var(--ac);border:var(--fb);color:#fff}
+.crow.focus .t span{color:rgba(255,255,255,.9)}.crow.focus .t span.s2{color:rgba(255,255,255,.78)}
+.crow.focus .mini{background:rgba(255,255,255,.3)}.crow.focus .mini i{background:#fff}
+.crow.focus .eqc{background:#fff}.crow.focus .eq i{background:var(--acd)}.crow.focus .fav{color:#fff}
+.cub{width:4.2cqw;height:4.2cqw;border-radius:1cqw;background:var(--acs);color:var(--ac);display:grid;place-items:center;flex:none}
+.cub svg{width:2.1cqw;height:2.1cqw}
+/* guide */
+.eg{position:absolute;inset:0;background:linear-gradient(180deg,#0d0f17,#06070c);padding:2.8cqw 5cqw 0;display:flex;flex-direction:column;overflow:hidden}
+.eg-h{display:flex;align-items:flex-end;gap:1.7cqw}
+.eg-h h3{font-size:2.8cqw;font-weight:700;line-height:1.2;background:linear-gradient(90deg,#aeb8ff,#9d6bff,#ff8acb);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eg-h span{font-size:1.35cqw;color:var(--t3);padding-bottom:.3cqw}
+.eg-top{display:flex;gap:1.25cqw;height:9.6cqw;margin-top:1cqw}
+.eg-det{flex:1;min-width:0;display:flex;gap:1.45cqw;align-items:center;padding:1.1cqw 1.9cqw;border-radius:1.25cqw;background:rgba(21,25,39,.75)}
+.ed-pw{width:5cqw;height:7.2cqw;border-radius:.8cqw}
+.eg-det .l1{display:flex;gap:1cqw;align-items:center;min-width:0}
+.eg-det b{font-size:2.1cqw;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.eg-det p{font-size:1.3cqw;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:.3cqw}
+.eg-det .ed-h{color:var(--acb)}
+.eg-prev{width:17cqw;border-radius:1.25cqw;overflow:hidden;position:relative;background:#000;flex:none}
+.eg-prev img{width:100%;height:100%;object-fit:cover}
+.eg-ruler{display:flex;height:3.5cqw;margin-top:1.2cqw}
+.eg-ruler .cc0{width:20.8cqw;flex:none}
+.eg-ruler .tl{position:relative;flex:1}
+.eg-ruler .tl i{position:absolute;bottom:0;width:1px;height:.5cqw;background:rgba(255,255,255,.3)}
+.eg-ruler .tl i.h{height:1cqw}
+.eg-ruler .tl span{position:absolute;top:.2cqw;font-size:1.3cqw;color:var(--t2);padding-inline-start:.6cqw}
+.eg-ruler .tl .dot{position:absolute;bottom:0;width:.8cqw;height:.8cqw;border-radius:50%;background:var(--lv);margin-inline-start:-.4cqw}
+.eg-rows{display:flex;flex-direction:column;gap:.6cqw}
+.eg-row{display:flex;height:6.4cqw}
+.eg-ch{width:20cqw;flex:none;margin-inline-end:.8cqw;display:flex;align-items:center;gap:1cqw;padding:0 1cqw;border-radius:1cqw;background:rgba(21,25,39,.6);min-width:0}
+.eg-ch .chlogo{width:4cqw;height:4cqw;font-size:1.6cqw;border-radius:.8cqw;flex:none;box-shadow:none}
+.eg-ch div{min-width:0}
+.eg-ch b{display:block;font-size:1.5cqw;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eg-ch span{display:block;font-size:1.2cqw;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eg-tr{position:relative;flex:1}
+.gt{position:absolute;top:0;bottom:0;border-radius:1cqw;background:rgba(21,25,39,.95);padding:.6cqw 1.05cqw;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:.4cqw;border:.3cqw solid transparent;transition:background .2s}
+.gt b{font-size:1.4cqw;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gt span{font-size:1.15cqw;color:var(--t2);white-space:nowrap;overflow:hidden}
+.gt .pbar{height:.3cqw;margin:0;direction:ltr}
+.gt .pbar i{background:var(--agr)}
+.gt.past{opacity:.6}
+.gt.now{background:var(--acs)}
+.gt.focus{background:var(--ac);border:var(--fb)}.gt.focus span{color:rgba(255,255,255,.85)}.gt.focus .pbar i{background:#fff}
+.eg-now{position:absolute;top:-.3cqw;bottom:-.3cqw;width:.2cqw;background:rgba(255,77,94,.85);z-index:2}
+/* catch-up timeline */
+.cu-dim{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.cu{position:absolute;inset:auto 0 0;padding:3.6cqw 5cqw 2.4cqw;background:linear-gradient(180deg,rgba(5,6,11,.55),rgba(5,6,11,.97) 28%)}
+.cu-h{display:flex;align-items:center;gap:1.45cqw}
+.cu-h .chlogo{width:5.6cqw;height:5.6cqw;font-size:2.4cqw;border-radius:1.1cqw;flex:none}
+.cu-h .r1{display:flex;align-items:center;gap:1cqw}
+.cu-h .r1 svg{width:2.5cqw;height:2.5cqw;color:var(--ac);flex:none}
+.cu-h .r1 b{font-size:2.8cqw;font-weight:700;white-space:nowrap}
+.cu-h p{font-size:1.3cqw;color:var(--t2);margin-top:.3cqw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cu-chips,.cu-days{display:flex;gap:.8cqw;direction:ltr;overflow:hidden;align-items:center}
+.cu-chips{margin-top:1.4cqw}.cu-days{margin-top:1cqw;font-size:1.3cqw;color:var(--t2)}
+.chip{display:inline-flex;align-items:center;gap:.5cqw;padding:.75cqw 1.3cqw;border-radius:5cqw;background:rgba(21,25,39,.85);font-size:1.35cqw;unicode-bidi:plaintext;font-weight:500;white-space:nowrap;color:#f3f5fc;flex:none}
+.chip svg{width:1.6cqw;height:1.6cqw;color:var(--ac)}
+.cu-days .chip{padding:.55cqw 1.6cqw}
+.chip.so{background:var(--acs)}.chip.lv{background:rgba(255,77,94,.22)}.chip.rec{background:rgba(255,183,77,.2)}
+.cu-cards{margin-top:1.6cqw;direction:ltr;overflow:hidden;padding:.6cqw 0}
+.trk{display:flex;gap:1.45cqw;width:max-content;transition:transform .45s cubic-bezier(.3,.9,.3,1)}
+.cc{unicode-bidi:plaintext;width:33cqw;height:17.9cqw;flex:none;border-radius:1.65cqw;background:var(--sf2);display:flex;gap:1.25cqw;padding:1.25cqw 1.45cqw;border:.3cqw solid transparent;transition:background .2s}
+.cc-pw{width:6.4cqw;height:9.6cqw;border-radius:1cqw}
+.cc .ci{flex:1;min-width:0;display:flex;flex-direction:column;gap:.45cqw}
+.bdg{align-self:flex-start;display:inline-flex;align-items:center;gap:.5cqw;font-size:1.15cqw;font-weight:700;padding:.15cqw .8cqw;border-radius:.6cqw;white-space:nowrap}
+.bdg.lv{background:rgba(255,77,94,.25);color:var(--lv)}.bdg.lv::before{content:"";width:.6cqw;height:.6cqw;border-radius:50%;background:var(--lv)}
+.bdg.cu{background:var(--acs);color:var(--acb)}.bdg.up{background:rgba(255,255,255,.12)}
+.cc .tm{font-size:1.3cqw;color:var(--t2)}
+.cc b{font-size:1.7cqw;font-weight:600;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc p{font-size:1.2cqw;color:var(--t2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cc .hint{margin-top:auto;font-size:1.15cqw;color:var(--acb);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc.focus{background:var(--ac);border:var(--fb)}
+.cc.focus .tm,.cc.focus p,.cc.focus .hint{color:rgba(255,255,255,.88)}
+.cc.focus .bdg{background:#fff;color:var(--acd)}.cc.focus .bdg.lv::before{background:var(--lv)}
+.cu-foot{display:flex;justify-content:space-between;align-items:center;margin-top:1.1cqw;gap:2cqw}
+.cu-foot>span{flex:1;min-width:0;font-size:1.3cqw;color:var(--t3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kh{display:flex;gap:1.45cqw;flex:none}
+.kh span{display:flex;align-items:center;gap:.7cqw;font-size:1.3cqw;color:var(--t2);white-space:nowrap}
+.kh kbd{font-family:inherit;font-size:1.2cqw;font-weight:700;color:#f3f5fc;border:1px solid rgba(255,255,255,.3);border-radius:.6cqw;padding:0 .7cqw}
+/* recolour the remaining screens to the app palette */
+.screen .vod,.screen .settings,.screen .studio{background:radial-gradient(70cqw 45cqw at 85% -10%,rgba(95,111,255,.16),transparent 60%),#0a0c13}
+.screen .cat.on{background:var(--acs)}
+.screen .seg span.on{background:var(--ac);color:#fff}
+.screen .search .mic{color:var(--acb)}
+.screen .poster.focus{border-color:rgba(255,255,255,.92);box-shadow:0 1.4cqw 3.6cqw rgba(0,0,0,.6),0 0 0 .4cqw rgba(95,111,255,.75)}
+.screen .opt{background:var(--sf2)}
+.screen .opt.focus{background:var(--ac);border-color:rgba(255,255,255,.92)}
+.screen .opt.focus .ot span,.screen .opt.focus .val{color:rgba(255,255,255,.9)}
+.screen .opt .val{color:var(--acb)}
+.screen .tgl.on{background:var(--ok)}
+.screen .chrow.focus{background:var(--ac);border-color:rgba(255,255,255,.92);transform:none;box-shadow:none}
+.screen .sbtn.focus{background:var(--ac);color:#fff;border-color:rgba(255,255,255,.92)}
+.screen .chlogo{box-shadow:none}
 </style>
 </head>
 <body>
@@ -589,6 +762,7 @@ footer small{color:var(--dim);font-size:13px}
     <a class="brand" href="#top"><img src="data:image/webp;base64,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" alt="">Lumina TV</a>
     <ul class="nav-links">
       <li><a href="#tour">הצצה לאפליקציה</a></li>
+      <li><a href="#latest">מה חדש</a></li>
       <li><a href="#airplay">AirPlay</a></li>
       <li><a href="#features">תכונות</a></li>
       <li><a href="#all-features">כל הפיצ'רים</a></li>
@@ -712,13 +886,84 @@ footer small{color:var(--dim);font-size:13px}
 </section>
 
 <!-- ============ AIRPLAY ============ -->
-<!-- ============ NEW IN 1.5.2 ============ -->
+<!-- ============ NEW IN 1.5.2 - 1.5.7 ============ -->
+<section class="sec" id="latest" style="padding-bottom:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow"><span class="dot"></span>חדש בגרסאות 1.5.2 עד 1.5.7</span>
+      <h2>חוזרים אחורה בזמן.<br><span class="grad">והכל זז מהר יותר.</span></h2>
+      <p>סרגל זמן חדש לכל ערוץ עם ארכיון, נגן בעיצוב חדש, גיבוי מקומי וחיבור מהיר מ-GitHub. ובנוסף, הרבה עבודה מתחת למכסה המנוע כדי שגם סטרימר זול ירגיש מהיר.</p>
+    </div>
+    <div class="bento">
+      <article class="card c-3 rv" style="--c:#5f6fff">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></div>
+        <h3>סרגל זמן ו-Catch-up</h3>
+        <p>כפתור שעון ליד כל ערוץ שיש לו ארכיון. לוחצים, ורואים את התוכניות שכבר שודרו, מה רץ עכשיו ומה בהמשך.</p>
+        <ul>
+          <li>קפיצה מהירה אחורה: <b>5 דקות עד 4 שעות</b></li>
+          <li><b>התחל מחדש</b>, חזרה לשידור חי או <b>הקלטה מעכשיו</b></li>
+          <li>תוכנית עתידית? <b>תזכורת</b> או <b>הקלטה מתוזמנת</b></li>
+          <li>מעבר בין ימי הארכיון: היום, אתמול ושלשום</li>
+        </ul>
+      </article>
+      <article class="card c-3 rv d1" style="--c:#9d6bff">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M6 14h12M10 11l2-2 2 2"/></svg></div>
+        <h3>נגן בעיצוב חדש</h3>
+        <p>סרגל השליטה בשידור חי עוצב מחדש: כל המידע למעלה, כל הכפתורים בשורה אחת למטה.</p>
+        <ul>
+          <li><b>פוסטר ותקציר</b> לתוכנית שרצה עכשיו, עם שנה, ז׳אנר ודירוג</li>
+          <li>תגיות <b>4K / HDR / Dolby Vision</b> וקצב פריימים אמיתי</li>
+          <li><b>הגברת שמע</b> עד 150% לערוצים שקטים</li>
+          <li>שמע וכתוביות בחלון אחד, ומועדפים בלחיצה</li>
+        </ul>
+      </article>
+      <article class="card c-2 rv" style="--c:#22d3ee">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19 2 12l9-7zM22 19l-9-7 9-7z"/></svg></div>
+        <h3>עד 6 שעות אחורה בשידור חי</h3>
+        <p>בערוצים שמשדרים HLS עם DVR אפשר לגלול אחורה עד 6 שעות, בלי ארכיון מהספק.</p>
+      </article>
+      <article class="card c-2 rv d1" style="--c:#f59e0b">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1S18.7.7 16 2.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.4 3.3 6.6 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg></div>
+        <h3>פלייליסט מ-GitHub</h3>
+        <p>מקלידים <span class="mono">user/repo</span> או מדביקים קישור, והאפליקציה מוצאת את הפלייליסט לבד.</p>
+      </article>
+      <article class="card c-2 rv d2" style="--c:#22c55e">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></svg></div>
+        <h3>גיבוי וסנכרון ברשת הביתית</h3>
+        <p>מעבירים הגדרות, פלייליסטים ומועדפים בין טלוויזיות בבית, או שומרים קובץ גיבוי.</p>
+      </article>
+      <article class="card c-3 rv" style="--c:#ec4899">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></div>
+        <h3>מהיר גם בסטרימר זול</h3>
+        <p>עברנו על כל מסך כדי שהשלט יגיב מיד, גם במכשירים חלשים.</p>
+        <ul>
+          <li>עד <b>65% פחות זיכרון RAM</b> ופחות קפיאות של הנגן</li>
+          <li><b>מצב ממשק קל</b>: מכבה אפקטים כבדים במעבדים חלשים</li>
+          <li>בלי השהיות בלחיצות שלט, גם בגלילה מהירה בין ערוצים</li>
+          <li>כיוונון מיוחד ל-<b>Sony Bravia</b> ול-Android TV</li>
+        </ul>
+      </article>
+      <article class="card c-3 rv d1" style="--c:#38bdf8">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <h3>שלט טלפון בעיצוב חדש</h3>
+        <p>השלט בדפדפן קיבל עיצוב חדש ושורת פעולות מהירות.</p>
+        <ul>
+          <li><b>טיימר שינה</b> 15 עד 120 דקות, עם ספירה לאחור</li>
+          <li><b>סנכרון שמע</b> במילישניות (±1000ms) ויחסי תמונה</li>
+          <li>רענון סטרים, כיבוי, ובחירה אילו מסכים יופיעו בתפריט הצד</li>
+          <li>פורט וקוד <b>PIN</b> לשלט, ומנגנון התאוששות חכם מתקלות ניגון</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ============ NEW IN 1.5.1 ============ -->
 <section class="sec" id="new" style="padding-bottom:20px">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="eyebrow"><span class="dot"></span>חדש בגרסה 1.5.2</span>
+      <span class="eyebrow"><span class="dot"></span>חדש בגרסה 1.5.1</span>
       <h2>שליטה מהטלפון, מדריך שידורים חכם.<br><span class="grad">נוחות מקסימלית בכל רגע צפייה.</span></h2>
-      <p>עדכון חדש המרחיב את יכולות השלט מהטלפון (פעולות מהירות, טיימר שינה, סנכרון שמע חי, יחסי תמונה) ומשדרג את מדריך השידורים להתאמה מלאה לקטגוריה המנגנת.</p>
+      <p>סרגל בקרה בשידור חי, עכשיו/הבא בתוך רשימת הערוצים, מיזוג קבוצות ושליטה מלאה בבאפר וברזולוציה.</p>
     </div>
     <div class="bento">      <article class="card c-3 rv" style="--c:#22d3ee">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 17h2M12 17h2M16 17h1"/><rect x="2" y="3" width="20" height="9" rx="2"/></svg></div>
@@ -1071,17 +1316,17 @@ footer small{color:var(--dim);font-size:13px}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="eyebrow">הרשימה המלאה</span>
-      <h2>כל הפיצ'רים.<br><span class="grad">134 סיבות לבחור ב-Lumina TV.</span></h2>
+      <h2>כל הפיצ'רים.<br><span class="grad">139 סיבות לבחור ב-Lumina TV.</span></h2>
       <p>כל מה שהאפליקציה יודעת לעשות, במקום אחד. סננו לפי קטגוריה או חפשו פיצ'ר מסוים.</p>
     </div>
     <div class="af-tools rv">
       <label class="af-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="afQ" type="search" placeholder="חיפוש פיצ'ר… (למשל: כתוביות, הקלטה, ספורט)" aria-label="חיפוש פיצ'ר"></label>
-      <div class="af-chips" id="afChips"><button class="af-chip on" data-f="all">הכל <i>134</i></button><button class="af-chip" data-f="src">מקורות ופלייליסטים <i>8</i></button><button class="af-chip" data-f="live">שידור חי <i>19</i></button><button class="af-chip" data-f="epg">מדריך שידורים (EPG) <i>5</i></button><button class="af-chip" data-f="catch">צפייה לאחור ו-Timeshift <i>4</i></button><button class="af-chip" data-f="vod">סרטים וסדרות <i>18</i></button><button class="af-chip" data-f="sub">כתוביות ושמע <i>13</i></button><button class="af-chip" data-f="pic">תמונה ווידאו <i>9</i></button><button class="af-chip" data-f="net">ניגון ורשת <i>7</i></button><button class="af-chip" data-f="rec">הקלטות <i>4</i></button><button class="af-chip" data-f="multi">Multiview – כמה ערוצים במקביל <i>3</i></button><button class="af-chip" data-f="airplay">AirPlay ושיקוף מסך <i>10</i></button><button class="af-chip" data-f="prof">פרופילים <i>7</i></button><button class="af-chip" data-f="pin">נעילת הורים וניהול קבוצות <i>5</i></button><button class="af-chip" data-f="remote">שלט חכם מהטלפון <i>14</i></button><button class="af-chip" data-f="atv">שילוב עם Android TV <i>3</i></button><button class="af-chip" data-f="gen">כללי ועדכונים <i>5</i></button></div>
+      <div class="af-chips" id="afChips"><button class="af-chip on" data-f="all">הכל <i>139</i></button><button class="af-chip" data-f="src">מקורות ופלייליסטים <i>9</i></button><button class="af-chip" data-f="live">שידור חי <i>19</i></button><button class="af-chip" data-f="epg">מדריך שידורים (EPG) <i>5</i></button><button class="af-chip" data-f="catch">צפייה לאחור ו-Timeshift <i>6</i></button><button class="af-chip" data-f="vod">סרטים וסדרות <i>18</i></button><button class="af-chip" data-f="sub">כתוביות ושמע <i>13</i></button><button class="af-chip" data-f="pic">תמונה ווידאו <i>9</i></button><button class="af-chip" data-f="net">ניגון ורשת <i>7</i></button><button class="af-chip" data-f="rec">הקלטות <i>4</i></button><button class="af-chip" data-f="multi">Multiview – כמה ערוצים במקביל <i>3</i></button><button class="af-chip" data-f="airplay">AirPlay ושיקוף מסך <i>10</i></button><button class="af-chip" data-f="prof">פרופילים <i>7</i></button><button class="af-chip" data-f="pin">נעילת הורים וניהול קבוצות <i>5</i></button><button class="af-chip" data-f="remote">שלט חכם מהטלפון <i>14</i></button><button class="af-chip" data-f="atv">שילוב עם Android TV <i>3</i></button><button class="af-chip" data-f="gen">כללי ועדכונים <i>7</i></button></div>
     </div>
     <div class="af-grid" id="afGrid">
       <article class="card af-card rv" data-cat="src" style="--c:#3b82f6">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><h3>מקורות ופלייליסטים</h3><span class="af-n">8</span></header>
-        <ul><li><b>ארבעה סוגי מקורות</b> <span>M3U, Xtream Codes, פורטל Stalker/MAG (כתובת + MAC) ופלייליסט ממוזג מכמה מקורות</span></li><li><b>הוספת פלייליסט מהטלפון</b> <span>סורקים QR מהטלוויזיה ומזינים הכל בנוחות בדפדפן הטלפון</span></li><li><b>ניהול מלא מהטלפון</b> <span>הוספה, עריכה, הפעלה, רענון ומחיקה של פלייליסטים</span></li><li><b>EPG ו-User-Agent לכל פלייליסט</b> <span>כתובת מדריך שידורים ו-User-Agent נפרדים לכל מקור</span></li><li><b>ייבוא עם התקדמות</b> <span>מונה ערוצים, סרטים וסדרות בזמן הטעינה</span></li><li><b>תמיכה מלאה בתגיות M3U</b> <span>tvg-id, tvg-logo, tvg-chno, catchup, timeshift, url-tvg, EXTVLCOPT ועוד</span></li><li><b>סנכרון אוטומטי ברקע</b> <span>כל יום, יומיים, שבוע, חודש או ידני</span></li><li><b>פרטי התחברות מוצפנים</b> <span>שם משתמש וסיסמה נשמרים מוצפנים במכשיר</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div><h3>מקורות ופלייליסטים</h3><span class="af-n">9</span></header>
+        <ul><li><b>ארבעה סוגי מקורות</b> <span>M3U, Xtream Codes, פורטל Stalker/MAG (כתובת + MAC) ופלייליסט ממוזג מכמה מקורות</span></li><li><b>הוספת פלייליסט מהטלפון</b> <span>סורקים QR מהטלוויזיה ומזינים הכל בנוחות בדפדפן הטלפון</span></li><li><b>ניהול מלא מהטלפון</b> <span>הוספה, עריכה, הפעלה, רענון ומחיקה של פלייליסטים</span></li><li><b>EPG ו-User-Agent לכל פלייליסט</b> <span>כתובת מדריך שידורים ו-User-Agent נפרדים לכל מקור</span></li><li><b>ייבוא עם התקדמות</b> <span>מונה ערוצים, סרטים וסדרות בזמן הטעינה</span></li><li><b>תמיכה מלאה בתגיות M3U</b> <span>tvg-id, tvg-logo, tvg-chno, catchup, timeshift, url-tvg, EXTVLCOPT ועוד</span></li><li><b>סנכרון אוטומטי ברקע</b> <span>כל יום, יומיים, שבוע, חודש או ידני</span></li><li><b>פרטי התחברות מוצפנים</b> <span>שם משתמש וסיסמה נשמרים מוצפנים במכשיר</span></li><li><b>חיבור מהיר מ-GitHub</b> <span>מקלידים user/repo או מדביקים קישור, והפלייליסט נמצא לבד</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="live" style="--c:#22d3ee">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="13" rx="2"/><path d="m8 21 4-3 4 3"/></svg></div><h3>שידור חי</h3><span class="af-n">19</span></header>
@@ -1092,8 +1337,8 @@ footer small{color:var(--dim);font-size:13px}
         <ul><li><b>תמיכה ב-XMLTV</b> <span>טעינה בהזרמה ורענון אוטומטי כל 12 שעות</span></li><li><b>לוח שידורים מלא</b> <span>רשת תוכניות עם פרטי כל תוכנית</span></li><li><b>צפייה מההתחלה</b> <span>OK על תוכנית שעברה מנגן אותה מהארכיון</span></li><li><b>הקלטה מהמדריך</b> <span>לחיצה ארוכה מתזמנת הקלטה</span></li><li><b>עכשיו והבא ברשימת הערוצים</b> <span>תוכנית נוכחית והבאה עם שעות ומד התקדמות ישירות במגירת הערוצים, עם מתג בהגדרות</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="catch" style="--c:#f97316">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19 2 12l9-7zM22 19l-9-7 9-7z"/></svg></div><h3>צפייה לאחור ו-Timeshift</h3><span class="af-n">4</span></header>
-        <ul><li><b>Catch-up מלא</b> <span>ארכיון Xtream ותבניות catchup של M3U (בסגנון Kodi/TiviMate), כולל אזור זמן של השרת</span></li><li><b>התחלה מחדש</b> <span>המקש הירוק מתחיל את התוכנית הנוכחית מההתחלה</span></li><li><b>קפיצות של 30 שניות</b> <span>וחזרה לשידור החי בלחיצה</span></li><li><b>השהיית שידור חי</b> <span>עצירה והרצה אחורה בשידור חי בעזרת זיכרון מקומי, עם חיווי &quot;X מאחורי החי&quot;</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19 2 12l9-7zM22 19l-9-7 9-7z"/></svg></div><h3>צפייה לאחור ו-Timeshift</h3><span class="af-n">6</span></header>
+        <ul><li><b>Catch-up מלא</b> <span>ארכיון Xtream ותבניות catchup של M3U (בסגנון Kodi/TiviMate), כולל אזור זמן של השרת</span></li><li><b>התחלה מחדש</b> <span>המקש הירוק מתחיל את התוכנית הנוכחית מההתחלה</span></li><li><b>קפיצות של 30 שניות</b> <span>וחזרה לשידור החי בלחיצה</span></li><li><b>השהיית שידור חי</b> <span>עצירה והרצה אחורה בשידור חי בעזרת זיכרון מקומי, עם חיווי &quot;X מאחורי החי&quot;</span></li><li><b>סרגל זמן ו-Catch-up</b> <span>כפתור שעון בכל ערוץ: קפיצה אחורה 5 דק׳ עד 4 שעות, התחל מחדש, תזכורת והקלטה</span></li><li><b>DVR חי עד 6 שעות</b> <span>גלילה אחורה בערוצי HLS שתומכים ב-DVR</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="vod" style="--c:#ec4899">
         <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></div><h3>סרטים וסדרות</h3><span class="af-n">18</span></header>
@@ -1140,8 +1385,8 @@ footer small{color:var(--dim);font-size:13px}
         <ul><li><b>מועדפים במסך הבית</b> <span>שורת ערוצים במסך הבית של הטלוויזיה</span></li><li><b>הפעלה עם הדלקת המסך</b> <span>או עם הפעלת המכשיר (אופציונלי)</span></li><li><b>עדכון חובה מרחוק</b> <span>אפשרות לדרוש עדכון גרסה במקרה הצורך</span></li></ul>
       </article>
       <article class="card af-card rv" data-cat="gen" style="--c:#94a3b8">
-        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><h3>כללי ועדכונים</h3><span class="af-n">5</span></header>
-        <ul><li><b>עברית ואנגלית</b> <span>ממשק מלא מימין לשמאל</span></li><li><b>אפקט פריזמה</b> <span>מסגרת צבעונית מונפשת, ניתנת לכיבוי</span></li><li><b>עדכונים מהאוויר</b> <span>בדיקה, רשימת שינויים, הורדה והתקנה ישירות מהטלוויזיה</span></li><li><b>תזכורת לעדכון</b> <span>ותג &quot;חדש&quot; בהגדרות</span></li><li><b>עדכונים שקטים</b> <span>מתג לביטול חלונות קופצים, עם נקודת חיווי על גלגל השיניים כשיש גרסה חדשה</span></li></ul>
+        <header><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div><h3>כללי ועדכונים</h3><span class="af-n">7</span></header>
+        <ul><li><b>עברית ואנגלית</b> <span>ממשק מלא מימין לשמאל</span></li><li><b>אפקט פריזמה</b> <span>מסגרת צבעונית מונפשת, ניתנת לכיבוי</span></li><li><b>עדכונים מהאוויר</b> <span>בדיקה, רשימת שינויים, הורדה והתקנה ישירות מהטלוויזיה</span></li><li><b>תזכורת לעדכון</b> <span>ותג &quot;חדש&quot; בהגדרות</span></li><li><b>עדכונים שקטים</b> <span>מתג לביטול חלונות קופצים, עם נקודת חיווי על גלגל השיניים כשיש גרסה חדשה</span></li><li><b>גיבוי וסנכרון מקומי</b> <span>העברת הגדרות, פלייליסטים ומועדפים ברשת הביתית, וייבוא/ייצוא לקובץ</span></li><li><b>מצב ממשק קל</b> <span>מכבה אפקטים כבדים בסטרימרים חלשים, לתגובת שלט מיידית</span></li></ul>
       </article>
     </div>
     <p class="af-empty" id="afEmpty" hidden>לא נמצא פיצ'ר שמתאים לחיפוש. נסו מילה אחרת.</p>
@@ -1518,6 +1763,45 @@ var VOD=[
  {img:'1469474968028-56623f02e42e',he:'הדרך הביתה',en:'The Way Home',y:2023,r:'7.8'},
  {img:'1506905925346-21bda4d32df4',he:'פסגות',en:'Summits',y:2024,r:'8.2',s:1}
 ];
+/* ---- in-app design v1.5.7: icons, copy and demo data used by the screens ---- */
+IC.history=svg('<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>');
+IC.play=svg('<path d="M7 4v16l13-8z"/>',1);
+IC.pause=svg('<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>',1);
+IC.apps=svg('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>');
+IC.subs=svg('<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 12h4M14 12h4M6 15.5h8M16 15.5h2"/>');
+IC.vol=svg('<path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>');
+IC.more=svg('<circle cx="5" cy="12" r="1.7"/><circle cx="12" cy="12" r="1.7"/><circle cx="19" cy="12" r="1.7"/>',1);
+IC.heart=svg('<path d="M12 21s-7.5-4.6-9.5-9.3C1.2 8.4 3.4 5 6.9 5c2 0 3.6 1.1 5.1 3 1.5-1.9 3.1-3 5.1-3 3.5 0 5.7 3.4 4.4 6.7C19.5 16.4 12 21 12 21z"/>',1);
+IC.trophy=svg('<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4M12 13v4M8 21h8M9 17h6"/>');
+var DESC={
+ he:['הדרבי הגדול של העונה בשידור חי מהאצטדיון, עם אולפן לפני ואחרי המשחק.','מסע מצולם אל יערות הגשם הערפיליים ובעלי החיים שחיים בהם.','דרמה עירונית על לילה אחד שמשנה את חייהן של שלוש דמויות.','ההופעות הגדולות של פסטיבל הקיץ, ישר מהבמה הראשית.','מבט אל הערים שלא נרדמות לעולם ואל האנשים שמניעים אותן.','כל השערים והרגעים הגדולים של שלב הבתים.','צוות מטפסים יוצא אל הפסגות הגבוהות בעולם.','מתכונים מהירים לארוחת ערב, צעד אחר צעד.'],
+ en:["The season's biggest derby, live from the stadium with pre- and post-match studio.",'A filmed journey into misty rainforests and the animals that live there.','An urban drama about one night that changes three lives.','The biggest sets of the summer festival, straight from the main stage.','A look at cities that never sleep and the people who run them.','Every goal and big moment from the group stage.','A climbing crew heads for the highest peaks on earth.','Quick dinner recipes, step by step.']
+};
+CH.forEach(function(c,i){c.d={he:DESC.he[i],en:DESC.en[i]};c.cu=[1,1,1,0,1,1,0,0][i]});
+var X={
+ he:{nav:['שידור חי','סרטים','סדרות','מדריך','ספורט','חיפוש','פלייליסטים','הגדרות'],catsH:'קטגוריות',
+  catsX:[[IC.apps,'כל הערוצים',248],[IC.heart,'מועדפים',3],[IC.history,'נצפו לאחרונה',12],[IC.history,'צפייה לאחור',64],[IC.list,'ספורט',36],[IC.list,'סרטים',42],[IC.list,'דוקו וטבע',28],[IC.list,'מוזיקה',19]],
+  chs:function(n){return n+' ערוצים'},nextC:'הבא:',nextP:'הבא · ',live:'שידור חי',cuP:'↺ צפייה לאחור',now:'עכשיו',
+  btns:['השהה','סרגל זמן וארכיון','ערוצים','מדריך','שמע וכתוביות','הגברת שמע','הוסף למועדפים','עוד'],
+  guideT:'מדריך שידורים · ספורט',upd:function(h){return 'עודכן '+h},cuP2:'צפייה לאחור',hint:'לחיצה ארוכה על אישור – מתחילת התוכנית',
+  cuTitle:'סרגל זמן ו-Catch-up',cuSub:'◀ שמאלה: תוכניות ששודרו · אמצע: שידור חי · ימינה: תזכורת או הקלטה ▶',
+  chips:['-4 שעות','-שעתיים','-שעה',"-30 דק'","-15 דק'","-5 דק'"],so:'↺ התחל מחדש',lv:'🔴 שידור חי',rec:'● הקלט מעכשיו',arch:'ארכיון: 7 ימים',days:['שלשום','אתמול','היום'],
+  bLive:'עכשיו בשידור',bCu:'שודר · Catch-up',bUp:'בהמשך',today:'היום',
+  hPast:'▶ לחץ OK לצפייה מהארכיון',hLive:'↺ התחל מחדש · 🔴 חי · ● הקלט',hUp:'⏰ תזכורת · ● הקלטה עתידית',
+  tip:"טיפ: הכפתורים למעלה קופצים אחורה (-5 דק' עד -4 שעות) בכל רגע",keys:[['◀ ▶','עבר / עתיד'],['▲ ▼','קפיצה מהירה'],['OK','נגן / תזמן'],['BACK','סגור']],
+  extra:[{he:'מגזין ספורט',en:'Sports Magazine'},{he:'חדשות הספורט',en:'Sports News'}]},
+ en:{nav:['Live TV','Movies','Series','Guide','Sports','Search','Playlists','Settings'],catsH:'CATEGORIES',
+  catsX:[[IC.apps,'All channels',248],[IC.heart,'Favorites',3],[IC.history,'Recently watched',12],[IC.history,'Catch-up',64],[IC.list,'Sports',36],[IC.list,'Movies',42],[IC.list,'Docs & Nature',28],[IC.list,'Music',19]],
+  chs:function(n){return n+' channels'},nextC:'Next:',nextP:'Next · ',live:'LIVE',cuP:'↺ Catch-up',now:'NOW',
+  btns:['Pause','Catch-up / Timeline','Channels','Guide','Audio & subtitles','Volume boost','Add to favorites','More'],
+  guideT:'TV guide · Sports',upd:function(h){return 'Updated '+h},cuP2:'Catch-up',hint:'Long press OK – from the start of the program',
+  cuTitle:'Catch-up & Timeline',cuSub:'◀ Left: past programs · Center: live · Right: reminders & recording ▶',
+  chips:['-4h','-2h','-1h','-30m','-15m','-5m'],so:'↺ Start Over',lv:'🔴 Live',rec:'● Record Now',arch:'Archive: 7d',days:['2 days ago','Yesterday','Today'],
+  bLive:'LIVE NOW',bCu:'CATCH-UP',bUp:'UPCOMING',today:'Today',
+  hPast:'▶ Press OK to watch from archive',hLive:'↺ Start Over · 🔴 Live · ● Record',hUp:'⏰ Reminder · ● Schedule Record',
+  tip:'Tip: the top chips jump back -5m to -4h at any moment',keys:[['◀ ▶','Past / Future'],['▲ ▼','Quick Jump'],['OK','Watch / Schedule'],['BACK','Close']],
+  extra:[{he:'מגזין ספורט',en:'Sports Magazine'},{he:'חדשות הספורט',en:'Sports News'}]}
+};
 var T={
  he:{now:'עכשיו',next:'הבא',left:function(x){return 'נותרו '+x+" דק'"},hints:[['▲▼','זיפזופ'],['OK','רשימת ערוצים'],['MENU','הגדרות']],
   catsT:'קטגוריות',cats:[['⭐ מועדפים',3],['כל הערוצים',248],['ספורט',36],['סרטים',42],['דוקו וטבע',28],['מוזיקה',19],['ילדים',24]],allT:'כל הערוצים · 248',
@@ -1548,10 +1832,11 @@ function progInfo(c){
   return {start:start,end:new Date(start.getTime()+c.len*60000),el:el,pct:Math.min(98,Math.max(3,el/c.len*100)),left:c.len-el};
 }
 function logo(c,L,cls){return '<span class="chlogo '+(cls||'')+'" style="background:linear-gradient(135deg,'+c.color+',#0b0d14 140%)">'+c[L].charAt(0)+'</span>'}
-function rail(on){
-  var items=[['tv',IC.tv],['film',IC.film],['series',IC.series],['search',IC.search],['guide',IC.guide],['gear',IC.gear]];
-  var LOGO_DATA="data:image/webp;base64,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";
-  return '<div class="rail"><img class="logo" src="'+LOGO_DATA+'" alt="">'+items.map(function(i){return '<span class="ri'+(i[0]===on?' on':'')+'">'+i[1]+'</span>'}).join('')+'</div>';
+var LOGO_DATA="data:image/webp;base64,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";
+function rail(on,L){
+  var x=X[L||'he'],a=[['tv',IC.tv,0],['film',IC.film,1],['series',IC.series,2]],b=[['guide',IC.guide,3],['sports',IC.trophy,4],['search',IC.search,5],['pl',IC.list,6],['gear',IC.gear,7]];
+  function it(i){return '<div class="nri'+(i[0]===on?' on':'')+'"><span>'+i[1]+'<em>'+x.nav[i[2]]+'</em></span></div>'}
+  return '<div class="nr"><img class="logo" src="'+LOGO_DATA+'" alt="">'+a.map(it).join('')+'<hr>'+b.map(it).join('')+'</div>';
 }
 function guardImgs(root){
   $$('img',root).forEach(function(im){
@@ -1589,7 +1874,7 @@ TV.prototype.zap=function(d){if(this.view!=='live')this.show('live');this.idx=(t
 TV.prototype.go=function(i){if(i<0||i>=CH.length)return;if(this.view!=='live')this.show('live');this.idx=i;liveFill(this,true)};
 
 function liveFill(tv,anim){
-  var r=tv.root,c=CH[tv.idx],L=tv.lang,t=tv.t(),p=progInfo(c);
+  var r=tv.root,c=CH[tv.idx],L=tv.lang,t=tv.t(),x=X[L],p=progInfo(c);
   var vid=$('.vid',r);if(!vid)return;
   vid.style.background='radial-gradient(120% 90% at 30% 30%,'+c.color+'55,#05060a 70%)';
   var imgs=$$('.vid img',r),cur=$('.vid img.on',r),nx=cur===imgs[0]?imgs[1]:imgs[0];
@@ -1601,10 +1886,15 @@ function liveFill(tv,anim){
   $('.chnum',r).textContent=c.n;
   var lg=$('.chlogo',r);lg.textContent=c[L].charAt(0);lg.style.background='linear-gradient(135deg,'+c.color+',#0b0d14 140%)';
   $('.chname',r).textContent=c[L];
-  $('.tq',r).textContent=c.q;$('.tf',r).textContent=c.f;$('.tc',r).textContent=c.cat[L];
-  $('.pn',r).textContent=c.now[L];$('.pleft',r).textContent=t.left(p.left);
+  $('.tq',r).textContent=c.q;$('.tf',r).textContent=c.f;
+  $('.lb-cu',r).style.display=c.cu?'':'none';
+  $('.lb-fav',r).style.display=c.fav?'':'none';
+  var po=$('.lb-poster',r);po.style.visibility='';po.src=IMG(c.img,240);
+  $('.pn',r).textContent=c.now[L];
+  $('.pleft',r).innerHTML='<bdi dir="ltr">'+hm(p.start)+' - '+hm(p.end)+'</bdi>  ·  '+t.left(p.left);
+  $('.lb-desc',r).textContent=c.d[L];
   $('.pbar i',r).style.width=p.pct+'%';
-  $('.nt',r).textContent=hm(p.end);$('.pnx',r).textContent=c.next[L];
+  $('.lb-next',r).innerHTML=x.nextP+'<bdi dir="ltr">'+hm(p.end)+'</bdi>  '+c.next[L];
   $('.clock',r).textContent=hm(new Date());
   if(anim){
     var f=$('.flash',r);f.classList.remove('go');void f.offsetWidth;f.classList.add('go');
@@ -1612,29 +1902,37 @@ function liveFill(tv,anim){
     var z=$('.zapms',r);z.textContent='⚡ '+(170+Math.floor(Math.random()*110))+'ms';z.classList.add('on');clearTimeout(tv._zt);tv._zt=setTimeout(function(){z.classList.remove('on')},1400);
   }
 }
+function barFocus(tv){var x=X[tv.lang];$$('.bb',tv.root).forEach(function(b,i){b.classList.toggle('focus',i===tv.bf)});var l=$('.lb-lbl',tv.root);if(l)l.textContent=x.btns[tv.bf]}
 
 var VIEWS={
  live:{
-  html:function(tv){var t=tv.t();return '<div class="sv"><div class="vid"><img alt=""><img alt=""></div><div class="shade-t"></div><div class="shade-b"></div><div class="flash"></div>'+
-   '<div class="osd-top"><div class="chb"><span class="chnum"></span><span class="chlogo"></span><div><div class="chname"></div><div class="chmeta"><span class="live">LIVE</span><span class="tag tq"></span><span class="tag tf"></span><span class="tc"></span></div></div></div><div class="clock"></div></div>'+
-   '<div class="osd-bot"><div class="prow"><span class="plbl">'+t.now+'</span><span class="ptitle pn"></span><span class="pleft"></span></div><div class="pbar"><i></i></div>'+
-   '<div class="prow next"><span class="plbl next">'+t.next+'</span><span class="nt ltr"></span><span class="pnx"></span></div>'+
-   '<div class="hints">'+t.hints.map(function(h){return '<span><kbd>'+h[0]+'</kbd>'+h[1]+'</span>'}).join('')+'</div></div>'+
+  html:function(tv){var x=X[tv.lang];
+   var B=[[IC.pause,'pri'],[IC.history,'hl'],[IC.list],[IC.apps],[IC.subs],[IC.vol],[IC.starO],[IC.more]];
+   return '<div class="sv"><div class="vid"><img alt=""><img alt=""></div><div class="flash"></div><div class="lb-top"></div><div class="clock lb-clock"></div>'+
+   '<div class="lb"><div class="lb-id"><span class="chlogo"></span><div style="flex:1;min-width:0"><div class="lb-r1"><span class="chnum"></span><span class="chname"></span><span class="lbadge">'+x.live+'</span><span class="pl ac lb-cu">'+x.cuP+'</span></div>'+
+   '<div class="lb-r2"><span class="pl tq"></span><span class="pl tf"></span><span class="pl">AAC</span><span class="lb-fav">'+IC.star+'</span></div></div></div>'+
+   '<div class="lb-now"><span class="iw lb-pw"><img class="lb-poster" alt=""></span><div class="lb-nowc"><div class="lb-l1"><span class="lb-ov">'+x.now+'</span><span class="ptitle pn"></span><span class="pleft"></span></div><div class="lb-desc"></div><div class="pbar"><i></i></div><div class="lb-next"></div></div></div>'+
+   '<div class="lb-btns">'+B.map(function(b){return '<span class="bb '+(b[1]||'')+'">'+b[0]+'</span>'}).join('')+'</div><div class="lb-lbl"></div></div>'+
    '<div class="numovl"></div><div class="zapms"></div></div>'},
-  init:function(tv){liveFill(tv,false);if(tv.autoZap&&!REDUCE)tv.every(4600,function(){tv.zap(1)});else tv.every(20000,function(){liveFill(tv,false)})}
+  init:function(tv){liveFill(tv,false);tv.bf=0;barFocus(tv);
+   if(tv.autoZap&&!REDUCE)tv.every(4600,function(){tv.zap(1)});
+   else if(!tv.manual&&!REDUCE){var k=0;tv.every(1500,function(){tv.bf=(tv.bf+1)%8;barFocus(tv);if(++k%12===0)liveFill(tv,false)})}
+   else tv.every(20000,function(){liveFill(tv,false)})}
  },
  drawer:{
-  html:function(tv){var t=tv.t(),L=tv.lang,c0=CH[tv.idx];
-   return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c0.img)+'" alt=""></div><div class="dim"></div><div class="ui">'+rail('tv')+
-   '<div class="cats"><h4>'+t.catsT+'</h4>'+t.cats.map(function(c,i){return '<div class="cat'+(i===1?' on':'')+'">'+c[0]+'<small>'+c[1]+'</small></div>'}).join('')+'</div>'+
-   '<div class="list"><h4>'+t.allT+'</h4>'+CH.slice(0,6).map(function(c,i){var p=progInfo(c);
-     return '<div class="chrow" data-i="'+i+'"><span class="n">'+c.n+'</span>'+logo(c,L)+'<div class="t"><b>'+c[L]+'</b><span>'+c.now[L]+'</span><div class="mini"><i style="width:'+p.pct+'%"></i></div></div>'+
-     (i===tv.idx?'<span class="eq"><i></i><i></i><i></i></span>':'')+(c.fav?'<span class="ic">'+IC.star+'</span>':'')+'</div>'}).join('')+'</div></div></div>'},
-  init:function(tv){tv.focus=Math.min(tv.idx,5);drawerFocus(tv);if(!tv.manual&&!REDUCE)tv.every(1150,function(){tv.focus=(tv.focus+1)%6;drawerFocus(tv)})}
+  html:function(tv){var x=X[tv.lang],L=tv.lang,c0=CH[tv.idx];
+   return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c0.img)+'" alt=""></div><div class="dr">'+rail('tv',L)+
+   '<div class="dc"><div class="ovl">'+x.catsH+IC.gear+'</div>'+x.catsX.map(function(c,i){return '<div class="dcat'+(i===0?' on':'')+'">'+c[0]+'<b>'+c[1]+'</b><small>'+c[2]+'</small></div>'}).join('')+'</div>'+
+   '<div class="dl"><div class="dl-h"><b>'+x.catsX[0][1]+'</b><span>'+x.chs(248)+'</span></div>'+CH.slice(0,5).map(function(c,i){var p=progInfo(c);
+     return '<div class="dr-row"><div class="crow'+(i===tv.idx?' play':'')+'"><span class="n">'+c.n+'</span>'+logo(c,L)+
+     '<div class="t"><b>'+c[L]+'</b><span><bdi dir="ltr">'+hm(p.start)+'</bdi> '+c.now[L]+'</span><span class="s2">'+x.nextC+' <bdi dir="ltr">'+hm(p.end)+'</bdi> '+c.next[L]+'</span><div class="mini"><i style="width:'+p.pct+'%"></i></div></div>'+
+     '<span class="ics">'+(c.fav?'<span class="fav">'+IC.heart+'</span>':'')+(i===tv.idx?'<span class="eqc"><span class="eq"><i></i><i></i><i></i></span></span>':'')+'</span></div>'+
+     (c.cu?'<span class="cub">'+IC.history+'</span>':'')+'</div>'}).join('')+'</div></div></div>'},
+  init:function(tv){tv.focus=Math.min(tv.idx,4);drawerFocus(tv);if(!tv.manual&&!REDUCE)tv.every(1150,function(){tv.focus=(tv.focus+1)%5;drawerFocus(tv)})}
  },
  vod:{
   html:function(tv){var t=tv.t(),L=tv.lang;
-   return '<div class="sv"><div class="vod"></div><div class="ui">'+rail('film')+
+   return '<div class="sv"><div class="vod"></div><div class="ui">'+rail('film',tv.lang)+
    '<div class="cats" style="width:16cqw"><h4>'+t.catsT+'</h4>'+t.vodCats.map(function(c,i){return '<div class="cat'+(i===0?' on':'')+'">'+c+'</div>'}).join('')+'</div>'+
    '<div class="vod-main"><div class="vod-top"><div class="seg"><span class="on">'+t.movies+'</span><span>'+t.series+'</span></div><div class="search">'+IC.search+t.searchPh+'<span class="mic">'+IC.mic+'</span></div></div>'+
    '<div class="vod-sub">'+t.vodSub+'</div><div class="posters">'+VOD.map(function(v,i){
@@ -1643,24 +1941,45 @@ var VIEWS={
   init:function(tv){tv.focus=0;vodFocus(tv);if(!tv.manual&&!REDUCE)tv.every(1300,function(){tv.focus=(tv.focus+1)%VOD.length;vodFocus(tv)})}
  },
  epg:{
-  html:function(tv){var t=tv.t(),L=tv.lang,now=new Date();
-   var ws=new Date(now);ws.setSeconds(0,0);ws.setMinutes(ws.getMinutes()-ws.getMinutes()%30-30);var W=120*60000;
+  html:function(tv){var x=X[tv.lang],L=tv.lang,now=new Date();
+   var ws=new Date(now);ws.setSeconds(0,0);ws.setMinutes(ws.getMinutes()-ws.getMinutes()%30-30);var W=150*60000;
    function pos(d){return (d-ws)/W*100}
-   var times='';for(var k=0;k<4;k++){var d=new Date(ws.getTime()+k*30*60000);times+='<span style="inset-inline-start:'+(k*25)+'%">'+hm(d)+'</span>'}
+   var ticks='';for(var k=0;k<=10;k++){var d=new Date(ws.getTime()+k*15*60000),half=d.getMinutes()%30===0;
+     ticks+='<i class="'+(half?'h':'')+'" style="inset-inline-start:'+(k*10)+'%"></i>'+(half&&k<10?'<span style="inset-inline-start:'+(k*10)+'%">'+hm(d)+'</span>':'')}
+   ticks+='<b class="dot" style="inset-inline-start:'+pos(now)+'%"></b>';
    var rows=CH.slice(0,5).map(function(c,ri){var p=progInfo(c),segs=[];
      segs.push({s:new Date(p.start.getTime()-90*60000),e:p.start,ti:c.prev[L],cls:'past'});
      segs.push({s:p.start,e:p.end,ti:c.now[L],cls:'now'});
      segs.push({s:p.end,e:new Date(p.end.getTime()+60*60000),ti:c.next[L],cls:''});
      segs.push({s:new Date(p.end.getTime()+60*60000),e:new Date(p.end.getTime()+180*60000),ti:c.prev[L],cls:''});
      var h='';segs.forEach(function(sg){var a=Math.max(0,pos(sg.s)),b=Math.min(100,pos(sg.e));if(b-a<=0.5)return;
-       h+='<div class="prog '+sg.cls+'" data-r="'+ri+'" style="inset-inline-start:calc('+a+'% + 2px);width:calc('+(b-a)+'% - 4px)"><b>'+sg.ti+'</b><span>'+hm(sg.s)+'–'+hm(sg.e)+'</span></div>'});
-     return '<div class="epg-row"><div class="epg-ch">'+logo(c,L)+c[L]+'</div><div class="epg-tr">'+h+'</div></div>'}).join('');
-   var nl=pos(now);
-   return '<div class="sv"><div class="epg"><div class="epg-head"><h3>'+t.guide+'</h3><span>'+now.toLocaleDateString(L==='he'?'he-IL':'en-US',{weekday:'long',day:'numeric',month:'long'})+' · '+t.updated+'</span></div>'+
-   '<div class="epg-grid"><div class="epg-times"><div></div><div class="tl">'+times+'</div></div>'+rows+
-   '<div class="nowline" style="inset-inline-start:calc(17.8cqw + (100% - 17.8cqw) * '+(nl/100)+')"></div></div>'+
-   '<div class="epg-detail"><img alt=""><div><b class="ed-t"></b><p class="ed-p"></p><span class="pill ed-pill"></span></div></div></div></div>'},
+       h+='<div class="gt '+sg.cls+'" data-r="'+ri+'" style="inset-inline-start:calc('+a+'% + 2px);width:calc('+(b-a)+'% - 4px)"><b>'+sg.ti+'</b>'+
+       (sg.cls==='now'?'<div class="pbar"><i style="width:'+p.pct+'%"></i></div>':'<span><bdi dir="ltr">'+hm(sg.s)+' - '+hm(sg.e)+'</bdi></span>')+'</div>'});
+     return '<div class="eg-row"><div class="eg-ch">'+logo(c,L)+'<div><b>'+c[L]+'</b><span>'+c.now[L]+'</span></div></div><div class="eg-tr">'+h+'<i class="eg-now" style="inset-inline-start:'+pos(now)+'%"></i></div></div>'}).join('');
+   return '<div class="sv"><div class="eg"><div class="eg-h"><h3>'+x.guideT+'</h3><span>'+x.upd(hm(new Date(now.getTime()-4*60000)))+'</span></div>'+
+   '<div class="eg-top"><div class="eg-det"><span class="iw ed-pw"><img class="ed-img" alt=""></span><div style="min-width:0;flex:1"><div class="l1"><b class="ed-t"></b><span class="lbadge">'+x.live+'</span><span class="pl ac ed-cu">'+x.cuP2+'</span></div><p class="ed-p"></p><p class="ed-h">'+x.hint+'</p></div></div><div class="eg-prev"><img class="ed-prev" alt=""></div></div>'+
+   '<div class="eg-ruler"><div class="cc0"></div><div class="tl">'+ticks+'</div></div><div class="eg-rows">'+rows+'</div></div></div>'},
   init:function(tv){tv.focus=0;epgFocus(tv);if(!REDUCE)tv.every(1700,function(){tv.focus=(tv.focus+1)%5;epgFocus(tv)})}
+ },
+ cu:{
+  html:function(tv){var x=X[tv.lang],L=tv.lang,c=CH[0],p=progInfo(c),S=p.start.getTime(),E=p.end.getTime(),M=60000;
+   var cards=[
+    {s:S-210*M,e:S-90*M,ti:x.extra[0],im:'1629217855633-79a6925d6c47',k:'past'},
+    {s:S-90*M,e:S,ti:c.prev,im:'1470229722913-7c0e2dbbafd3',k:'past'},
+    {s:S,e:E,ti:c.now,im:c.img,k:'live',d:c.d[L]},
+    {s:E,e:E+60*M,ti:c.next,im:'1514565131-fce0801e5785',k:'up'},
+    {s:E+60*M,e:E+150*M,ti:x.extra[1],im:'1629217855633-79a6925d6c47',k:'up'}];
+   var html=cards.map(function(cd){var b=cd.k==='past'?['cu',x.bCu,x.hPast]:cd.k==='live'?['lv',x.bLive,x.hLive]:['up',x.bUp,x.hUp];
+     return '<div class="cc"><span class="iw cc-pw"><img src="'+IMG(cd.im,240)+'" alt=""></span><div class="ci"><span class="bdg '+b[0]+'">'+b[1]+'</span><span class="tm">'+x.today+' <bdi dir="ltr">'+hm(new Date(cd.s))+' - '+hm(new Date(cd.e))+'</bdi></span><b>'+cd.ti[L]+'</b>'+(cd.d?'<p>'+cd.d+'</p>':'')+'<span class="hint">'+b[2]+'</span></div></div>'}).join('');
+   return '<div class="sv"><div class="vid"><img class="on" src="'+IMG(c.img)+'" alt=""></div><div class="cu-dim"></div><div class="cu">'+
+   '<div class="cu-h">'+logo(c,L)+'<div style="min-width:0"><div class="r1">'+IC.history+'<b>'+c[L]+'</b><span class="pl ac">'+x.cuTitle+'</span></div><p>'+x.cuSub+'</p></div></div>'+
+   '<div class="cu-chips">'+x.chips.map(function(s){return '<span class="chip">'+IC.history+s+'</span>'}).join('')+'<span class="chip so">'+x.so+'</span><span class="chip lv">'+x.lv+'</span><span class="chip rec">'+x.rec+'</span></div>'+
+   '<div class="cu-days"><span>'+x.arch+'</span>'+x.days.map(function(d){return '<span class="chip">'+d+'</span>'}).join('')+'</div>'+
+   '<div class="cu-cards"><div class="trk">'+html+'</div></div>'+
+   '<div class="cu-foot"><span>'+x.tip+'</span><div class="kh">'+x.keys.map(function(k){return '<span><kbd>'+k[0]+'</kbd>'+k[1]+'</span>'}).join('')+'</div></div></div></div>'},
+  init:function(tv){var cs=$$('.cc',tv.root),trk=$('.trk',tv.root),seq=[2,1,0,1,2,3,4,3],k=0;
+   function f(){var i=seq[k%seq.length];cs.forEach(function(e,j){e.classList.toggle('focus',j===i)});trk.style.transform='translateX('+(28.5-i*34.45)+'cqw)'}
+   f();if(!REDUCE)tv.every(1500,function(){k++;f()})}
  },
  fav:{
   html:function(tv){var t=tv.t();
@@ -1681,7 +2000,7 @@ var VIEWS={
  },
  settings:{
   html:function(tv){var t=tv.t();
-   return '<div class="sv"><div class="settings"></div><div class="ui">'+rail('gear')+
+   return '<div class="sv"><div class="settings"></div><div class="ui">'+rail('gear',tv.lang)+
    '<div class="cats"><h4>'+t.catsT+'</h4>'+t.setCats.map(function(c,i){return '<div class="cat'+(i===1?' on':'')+'">'+c+'</div>'}).join('')+'</div>'+
    '<div class="set-main"><h3>'+t.setT+'</h3>'+t.opts.map(function(o){var v=o[2]==='t1'?'<span class="tgl on"></span>':o[2]==='t0'?'<span class="tgl"></span>':'<span class="val">'+o[2]+' ›</span>';
      return '<div class="opt"><div class="ot"><b>'+o[0]+'</b><span>'+o[1]+'</span></div>'+v+'</div>'}).join('')+'</div></div></div>'},
@@ -1708,14 +2027,15 @@ var VIEWS={
   init:function(tv){drawQR($('canvas',tv.root))}
  }
 };
-function drawerFocus(tv){$$('.chrow',tv.root).forEach(function(r,i){r.classList.toggle('focus',i===tv.focus)})}
+function drawerFocus(tv){$$('.crow',tv.root).forEach(function(r,i){r.classList.toggle('focus',i===tv.focus)})}
 function vodFocus(tv){$$('.poster',tv.root).forEach(function(r,i){r.classList.toggle('focus',i===tv.focus)})}
-function epgFocus(tv){var L=tv.lang,t=tv.t(),c=CH[tv.focus],p=progInfo(c);
-  $$('.prog',tv.root).forEach(function(e){e.classList.toggle('focus',e.classList.contains('now')&&+e.getAttribute('data-r')===tv.focus)});
-  var im=$('.epg-detail img',tv.root);im.style.visibility='';im.src=IMG(c.img,480);
+function epgFocus(tv){var L=tv.lang,c=CH[tv.focus],p=progInfo(c);
+  $$('.gt',tv.root).forEach(function(e){e.classList.toggle('focus',e.classList.contains('now')&&+e.getAttribute('data-r')===tv.focus)});
+  var im=$('.ed-img',tv.root);im.style.visibility='';im.src=IMG(c.img,240);
+  var pv=$('.ed-prev',tv.root);pv.style.visibility='';pv.src=IMG(c.img,480);
   $('.ed-t',tv.root).textContent=c.now[L];
-  $('.ed-p',tv.root).innerHTML=c[L]+' · <span class="ltr">'+hm(p.start)+'–'+hm(p.end)+'</span> · '+t.epgDesc;
-  $('.ed-pill',tv.root).textContent=tv.focus%2?t.catchup:t.onair}
+  $('.ed-cu',tv.root).style.display=c.cu?'':'none';$('.ed-h',tv.root).style.visibility=c.cu?'':'hidden';
+  $('.ed-p',tv.root).innerHTML=c[L]+' · <bdi dir="ltr">'+hm(p.start)+' - '+hm(p.end)+'</bdi> · '+c.d[L]}
 function drawQR(cv){
   var x=cv.getContext('2d'),N=29,seed=7;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
   x.fillStyle='#fff';x.fillRect(0,0,N,N);x.fillStyle='#0b0d14';
@@ -1732,10 +2052,11 @@ var rem=new TV($('#remoteScreen'),{manual:true,idx:0});rem.show('qr');
 
 /* tour tabs */
 var TABS=[
- {v:'live',ic:IC.tv,b:'שידור חי',s:'OSD נקי עם עכשיו/הבא, תגיות איכות וזיפזופ מיידי'},
- {v:'drawer',ic:IC.list,b:'רשימת ערוצים',s:'קטגוריות, מספור מ-1 בכל קבוצה ומועדפים'},
+ {v:'live',ic:IC.tv,b:'סרגל שליטה בשידור חי',s:'עכשיו/הבא עם תקציר ופוסטר, תגיות איכות וכל הכפתורים בשורה אחת'},
+ {v:'cu',ic:IC.history,b:'סרגל זמן ו-Catch-up',s:'חוזרים עד 4 שעות אחורה, מתחילים מההתחלה או מקליטים'},
+ {v:'drawer',ic:IC.list,b:'רשימת ערוצים',s:'תפריט צד, קטגוריות ועכשיו/הבא בכל ערוץ'},
+ {v:'epg',ic:IC.guide,b:'מדריך שידורים',s:'כרטיס תוכנית, תצוגה מקדימה חיה וסמן "עכשיו"'},
  {v:'vod',ic:IC.film,b:'סרטים וסדרות',s:'פוסטרים, ז׳אנרים וחיפוש בעברית ובאנגלית'},
- {v:'epg',ic:IC.guide,b:'מדריך שידורים',s:'ציר זמן אמיתי, סמן "עכשיו" וצפייה לאחור'},
  {v:'fav',ic:IC.starO,b:'סטודיו מועדפים',s:'מסדרים את הערוצים בדיוק כמו שאתם רוצים'},
  {v:'settings',ic:IC.gear,b:'הגדרות חכמות',s:'AFR, באפר, טיימר שינה והפעלה אוטומטית'},
  {v:'update',ic:IC.refresh,b:'עדכון מהאוויר',s:'גרסה חדשה? לחיצה אחת מהטלוויזיה'}
@@ -1767,7 +2088,7 @@ $$('[data-r]').forEach(function(b){b.addEventListener('click',function(){
   if(!connected){connected=true;rem.toast(t.connected);rem.show('live');return}
   var v=rem.view;
   if(k==='up'||k==='down'){
-    if(v==='drawer'){rem.focus=(rem.focus+(k==='down'?1:-1)+6)%6;drawerFocus(rem)}
+    if(v==='drawer'){rem.focus=(rem.focus+(k==='down'?1:-1)+5)%5;drawerFocus(rem)}
     else if(v==='vod'){rem.focus=(rem.focus+(k==='down'?5:-5)+VOD.length)%VOD.length;vodFocus(rem)}
     else rem.zap(k==='up'?1:-1);
   }else if(k==='left'||k==='right'){
