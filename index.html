@@ -752,6 +752,12 @@ footer small{color:var(--dim);font-size:13px}
 .screen .chrow.focus{background:var(--ac);border-color:rgba(255,255,255,.92);transform:none;box-shadow:none}
 .screen .sbtn.focus{background:var(--ac);color:#fff;border-color:rgba(255,255,255,.92)}
 .screen .chlogo{box-shadow:none}
+
+/* nav: keep one line; drop the least important links as space runs out */
+.brand,.nav-links a{white-space:nowrap}
+.nav-links{gap:clamp(12px,1.7vw,28px)}
+@media (max-width:1240px){.nav-links li:nth-child(8),.nav-links li:nth-child(9){display:none}}
+@media (max-width:1040px){.nav-links li:nth-child(5),.nav-links li:nth-child(6){display:none}}
 </style>
 </head>
 <body>
